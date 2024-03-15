@@ -30,3 +30,29 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+
+*.pdb
+*.idb
+
+# User files
+*.user
+*.log
+
+# Archivos de Mac
+**/.DS_Store
+
+# Archivos de la compilacion de las librerias de EDEN
+*.EDENBUILD
+
+# Folders
+
+[Bb]in/*
+[Tt]emp/
+[Ll]ib/
+.vs/
+
+# Exceptions
+
+![Bb]in/[Aa]ssets/

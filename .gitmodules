@@ -1,0 +1,3 @@
+[submodule "EDEN"]
+	path = EDEN
+	url = https://github.com/UCM-FDI-DISIA/EDEN
