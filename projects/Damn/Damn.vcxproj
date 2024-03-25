@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
