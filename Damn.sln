@@ -15,7 +15,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDEN_Physics", "EDEN\projec
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDEN_Render", "EDEN\projects\EDEN_Render\EDEN_Render.vcxproj", "{F5CA8298-8ABD-4899-9D89-3C6D64D6985E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDEN_Script", "EDEN\projects\EDEN_Script\EDEN_Script.vcxproj", "{E0DED4FB-14BA-40E6-95BB-21AE65321226}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDEN_Script", "EDEN\projects\EDEN_Script\EDEN_Script\EDEN_Script.vcxproj", "{E0DED4FB-14BA-40E6-95BB-21AE65321226}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
