@@ -1,5 +1,13 @@
 #include "DamnMain.h"
 
-std::string saludo() {
-	return "hola";
+#include "SceneManager.h"
+
+void RegisterComponents()
+{
+
+}
+
+void LoadScene(eden::SceneManager* scnManager)
+{
+	scnManager->PushScene("Menu");
 }
