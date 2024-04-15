@@ -10,16 +10,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b8ad4659-0bd9-4e56-b507-78d4d00c1130}</ProjectGuid>
+    <ProjectGuid>{b3a4856e-9d16-4fa7-b2a4-00b2e1f21b76}</ProjectGuid>
     <RootNamespace>Damn</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -54,27 +48,29 @@
     <OutDir>$(SolutionDir)EDEN\bin\</OutDir>
     <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>game_d</TargetName>
+    <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)EDEN\bin\</OutDir>
     <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>game</TargetName>
+    <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EDEN_EXPORTS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;$(SolutionDir)EDEN\dependencies\Lua\src\src\;$(SolutionDir)EDEN\dependencies\LuaBridge\Source\LuaBridge\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>EDEN_Export_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>EDEN_Export_d.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -83,20 +79,30 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EDEN_EXPORTS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;$(SolutionDir)EDEN\dependencies\Lua\src\src\;$(SolutionDir)EDEN\dependencies\LuaBridge\Source\LuaBridge\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>EDEN_Export.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>EDEN_Export.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
+    <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
+    <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
