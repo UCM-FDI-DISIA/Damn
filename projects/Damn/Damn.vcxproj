@@ -45,14 +45,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)EDEN\bin\</OutDir>
+    <OutDir>$(SolutionDir)bin\</OutDir>
     <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>game_d</TargetName>
     <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)EDEN\bin\</OutDir>
+    <OutDir>$(SolutionDir)bin\</OutDir>
     <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>game</TargetName>
     <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
@@ -69,7 +69,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>EDEN_Export_d.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -89,7 +89,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)EDEN\bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>EDEN_Export.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
