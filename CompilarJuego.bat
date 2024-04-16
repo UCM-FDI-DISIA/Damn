@@ -2,9 +2,9 @@
 
 call ActualizarMotor.bat
 
-set GAMEDLLFOLDERS=bin
+set GAMEDLLFOLDERS=.\bin
 
-for %%i in (".\bin\debug\*") do (
+for %%i in (".\EDEN\bin\*") do (
         XCOPY /y "%%i" %GAMEDLLFOLDERS%
 )
 
