@@ -97,11 +97,13 @@
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
     <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
     <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
+    <ClInclude Include="..\..\src\Damn\MovementController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
+    <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
