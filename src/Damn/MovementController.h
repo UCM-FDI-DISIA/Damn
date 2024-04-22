@@ -1,9 +1,9 @@
 #ifndef _MOVEMENT_CONTROLLER_H
 #define _MOVEMENT_CONTROLLER_H
 
-#include<Component.h>
-#include<Vector3.h>
-#include<CRigidBody.h>
+#include <Component.h>
+#include <Vector3.h>
+#include <CRigidBody.h>
 
 class MovementController : public eden_ec::Component
 {
@@ -12,8 +12,8 @@ public:
 
 	~MovementController() override = default;
 
-	/// @brief Construye el componente dado unos argumentos. Se obtendrán de una lectura de un .lua
-	/// @param args Argumentos leídos de .lua
+	/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
+	/// @param args Argumentos leidos de .lua
 	void Init(eden_script::ComponentArguments* args) override;
 
 	/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso el RigidBody de la entidad

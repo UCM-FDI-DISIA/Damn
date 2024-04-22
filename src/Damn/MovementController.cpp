@@ -1,6 +1,6 @@
 #include "MovementController.h"
-#include<Entity.h>
-#include<ComponentArguments.h>
+#include <Entity.h>
+#include <ComponentArguments.h>
 
 void MovementController::Init(eden_script::ComponentArguments* args)
 {
