@@ -28,6 +28,7 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Damn\PlayButton.h">
+    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -45,6 +46,7 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Damn\PlayButton.cpp">
+    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
