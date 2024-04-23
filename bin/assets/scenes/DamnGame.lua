@@ -32,7 +32,7 @@ Entity1 = {
 		{
 			Name = "CAMERA_MOVEMENT",
 			Arguments = { 
-				Sensivity = "5.0"
+				Sensivity = "25.0"
 			}
 		}
 	}
