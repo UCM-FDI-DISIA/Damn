@@ -29,6 +29,7 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Damn\PlayButton.h">
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h">
+    <ClInclude Include="..\..\src\Damn\CEnemyAttack.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,6 +48,7 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Damn\PlayButton.cpp">
     <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp">
+    <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
