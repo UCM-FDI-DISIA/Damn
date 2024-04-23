@@ -27,6 +27,9 @@
     <ClInclude Include="..\..\src\Damn\MovementController.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Damn\InputController.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\Damn\PlayButton.h">
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h">
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h">
@@ -58,6 +61,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\InputController.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

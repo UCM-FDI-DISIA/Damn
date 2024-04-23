@@ -2,22 +2,22 @@
 #include <Entity.h>
 #include <ComponentArguments.h>
 
-void MovementController::Init(eden_script::ComponentArguments* args)
+void damn::MovementController::Init(eden_script::ComponentArguments* args)
 {
 	_speed = args->GetValueToFloat("Speed");
 }
 
-void MovementController::Start()
+void damn::MovementController::Start()
 {
 	_rigidBody = _ent->GetComponent<eden_ec::CRigidBody>();
 }
 
-void MovementController::Update(float deltaTime)
+void damn::MovementController::Update(float deltaTime)
 {
-	_rigidBody->SetLinealVelocity(_direction * _speed * deltaTime);
+	_rigidBody->SetLinealVelocity(_direction * _speed);
 }
 
-void MovementController::SetDirection(eden_utils::Vector3 newDir)
+void damn::MovementController::SetDirection(eden_utils::Vector3 newDir)
 {
 	_direction = newDir.Normalized();
 }

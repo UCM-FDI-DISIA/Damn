@@ -5,7 +5,6 @@
 #include "SceneManager.h"
 #include <iostream>
 
-const std::string eden_ec::CEnemyAttack::_id = "ENEMY_ATTACK";
 void eden_ec::CEnemyAttack::Init(eden_script::ComponentArguments* args)
 {
 	
