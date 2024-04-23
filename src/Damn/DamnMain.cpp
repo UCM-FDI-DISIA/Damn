@@ -10,6 +10,7 @@
 #include "ChangeCameraBackground.h"
 #include "CEnemyAttack.h"
 #include "CameraMovement.h"
+#include "CProyectileMovement.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -21,6 +22,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<ChangeCameraBackground>();
 	factory->RegisterComponent<eden_ec::CEnemyAttack>();
 	factory->RegisterComponent<eden_ec::CameraMovement>();
+	factory->RegisterComponent<eden_ec::CProyectileMovement>();
 }
 
 void LoadScene() {

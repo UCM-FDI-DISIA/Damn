@@ -5,7 +5,7 @@ Cube = {
             Name = "TRANSFORM", 
             Arguments = {
                 Position = "0|0|0",
-                Rotation = "0|0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
                 Scale = "1|1|1"
             }
         },
@@ -18,6 +18,32 @@ Cube = {
     }
 }
 
+Bullet = {
+    Name = "Bullet", 
+    Components = {
+        {
+            Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.3|0.3|0.3"
+            }
+        },
+        {
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "PruebaCubo"
+            }
+        },
+        {
+            Name = "PROYECTILE_MOVEMENT",
+            Arguments = {
+                Speed = "0.2"
+            }
+        }
+    }
+}
+
 Frog = {
     Name = "Frog", 
     Components = {
@@ -25,7 +51,7 @@ Frog = {
             Name = "TRANSFORM", 
             Arguments = {
                 Position = "0|0|100",
-                Rotation = "0|0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
                 Scale = "10|10|10"
             }
         },
@@ -38,4 +64,4 @@ Frog = {
     }
 }
 
-Blueprints = { Cube, Frog }
+Blueprints = { Cube, Frog, Bullet }

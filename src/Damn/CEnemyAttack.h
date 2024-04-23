@@ -24,7 +24,10 @@ namespace eden_ec {
 	protected:
 		const static std::string _id;
 	private:
-		class Entity* player;
+		class Entity* _player;
+		float _attackRate = 1;
+		float _lastAttack = 0;
+		float _attackTimer = 0;
 	};
 }
 #endif

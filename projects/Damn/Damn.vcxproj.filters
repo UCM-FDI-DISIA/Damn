@@ -1,110 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
+    <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\Health.cpp" />
+    <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
+    <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
+    <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
+    <ClCompile Include="..\..\src\Damn\InputController.cpp" />
+    <ClCompile Include="..\..\src\Damn\PlayButton.cpp" />
+    <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
+    <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Damn\DamnMain.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\Hito2Prueba.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\MovementController.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\InputController.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\PlayButton.h">
-    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h">
-    <ClInclude Include="..\..\src\Damn\CEnemyAttack.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\CameraMovement.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\DamnMain.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\Health.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\MovementController.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\PlayButton.cpp">
-    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp">
-    <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\InputController.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Damn\CameraMovement.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\src\Damn\CEnemyAttack.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\DamnMain.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\Health.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\Hito2Prueba.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\MovementController.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\PlayButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Damn\PlayerHealth.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{ebb289b9-5a65-41bd-b025-d27013f871fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{e216099d-e9f7-44a4-bf78-684563b4af5c}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
+    <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
+    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\Health.h" />
+    <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
+    <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
+    <ClInclude Include="..\..\src\Damn\InputController.h" />
+    <ClInclude Include="..\..\src\Damn\MovementController.h" />
+    <ClInclude Include="..\..\src\Damn\PlayButton.h" />
+    <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
+    <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
+    <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
   </ItemGroup>
 </Project>
