@@ -48,6 +48,20 @@ Entity2 = {
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
 			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0.0|0.0|0.0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "DYNAMIC",
+				CollisionLayer = "PLAYER"
+			}
 		}
 	}
 }
@@ -86,10 +100,35 @@ Entity3 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3 }
+Entity4 = {
+	Name = "Enemy",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PruebaCubo"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|5.0|0.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "1.0|1.0|1.0"
+			}
+		},
+		{
+			 Name = "ENEMY_ATTACK",
+			 Arguments = {}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3, Entity4 }
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = ""
+		DEFAULT = "",
+		PLAYER = ""
 	}
 }

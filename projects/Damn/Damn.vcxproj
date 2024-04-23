@@ -94,18 +94,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\Health.h" />
     <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
     <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
+    <ClInclude Include="..\..\src\Damn\InputController.h" />
     <ClInclude Include="..\..\src\Damn\MovementController.h" />
     <ClInclude Include="..\..\src\Damn\PlayButton.h" />
+    <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
+    <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\Health.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
     <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
+    <ClCompile Include="..\..\src\Damn\InputController.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayButton.cpp" />
+    <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
+    <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
