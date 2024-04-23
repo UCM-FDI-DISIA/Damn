@@ -33,11 +33,37 @@ Entity2 = {
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
 			}
+		},
+		{
+			Name = "ENEMY_ATTACK",
+			Arguments = {
+
+			}
 		}
 	}
 }
 
-Entities = { Entity1, Entity2 }
+Entity3 = {
+	Name = "Player",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PruebaCubo"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "4.0|0.0|0.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "1.0|1.0|1.0"
+			}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3 }
 
 CollisionLayers = {
 	Layers = {
