@@ -9,6 +9,7 @@
 #include "InputController.h"
 #include "ChangeCameraBackground.h"
 #include "CEnemyAttack.h"
+#include "CameraMovement.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -19,6 +20,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::InputController>();
 	factory->RegisterComponent<ChangeCameraBackground>();
 	factory->RegisterComponent<eden_ec::CEnemyAttack>();
+	factory->RegisterComponent<eden_ec::CameraMovement>();
 }
 
 void LoadScene() {

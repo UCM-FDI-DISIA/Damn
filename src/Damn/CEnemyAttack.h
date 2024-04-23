@@ -11,7 +11,7 @@ namespace eden_ec {
 		CEnemyAttack() = default;
 		~CEnemyAttack() = default;
 
-		//static std::string GetID() { return "ENEMY_ATTACK"; }
+		static std::string GetID() { return "ENEMY_ATTACK"; }
 
 		void Init(eden_script::ComponentArguments* args) override;
 
@@ -20,6 +20,7 @@ namespace eden_ec {
 		void Start() override;
 
 		void Update(float t) override;
+
 	protected:
 		const static std::string _id;
 	private:
