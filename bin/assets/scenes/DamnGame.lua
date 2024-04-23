@@ -4,8 +4,8 @@ Entity1 = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "7.358891487121582|4.958309173583984|6.925790786743164",
-				Rotation = "false|0.7804827094078064|0.483536034822464|-0.33687159419059753|0.20870360732078552",
+				Position = "-5.921108245849609|-11.02579116821289|1.858309268951416",
+				Rotation = "false|0.646895170211792|0.6883831024169922|-0.23910118639469147|-0.22469086945056915",
 				Scale = "1.0|1.0|1.0"
 			}
 		},
@@ -18,20 +18,20 @@ Entity1 = {
 }
 
 Entity2 = {
-	Name = "Frog",
+	Name = "Cube",
 	Components = {
 		{
 			Name = "MESH_RENDERER",
 			Arguments = {
-				Mesh = "Cube.057"
+				Mesh = "PruebaCubo"
 			}
 		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|-0.954870343208313|-0.0",
-				Rotation = "false|1.0|0.0|-0.0|0.0",
-				Scale = "10.0|10.0|10.0"
+				Position = "0.0|0.0|0.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "1.0|1.0|1.0"
 			}
 		}
 	}
@@ -41,6 +41,6 @@ Entities = { Entity1, Entity2 }
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = "DEFAULT"
+		DEFAULT = ""
 	}
 }

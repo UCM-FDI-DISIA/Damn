@@ -39,13 +39,12 @@ Entity2 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "buttonTest",
+                Script= "MenuPlayButton",
 			}
         },
 		{
-            Name = "PRUEBA",
+            Name = "PLAY_BUTTON",
             Arguments = {
-
 			}
         },
 		{
