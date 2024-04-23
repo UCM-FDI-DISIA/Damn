@@ -14,7 +14,7 @@ namespace eden_input {
 	class InputManager;
 }
 
-extern "C" __declspec(dllexport) void RegisterComponents(eden_ec::ComponentFactory * factory);
-extern "C" __declspec(dllexport) void LoadScene(eden::SceneManager * scnManager);
+extern "C" __declspec(dllexport) void RegisterComponents();
+extern "C" __declspec(dllexport) void LoadScene();
 
 #endif // !DAMN_MAIN_H_

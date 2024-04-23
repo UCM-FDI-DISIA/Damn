@@ -16,6 +16,8 @@ public:
 	/// @param args Argumentos leidos de .lua
 	void Init(eden_script::ComponentArguments* args) override;
 
+	void Awake() override {};
+
 	/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso el RigidBody de la entidad
 	void Start() override;
 
