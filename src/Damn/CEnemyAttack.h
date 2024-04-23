@@ -23,7 +23,7 @@ namespace eden_ec {
 	protected:
 		const static std::string _id;
 	private:
-		
+		class Entity* player;
 	};
 }
 #endif
