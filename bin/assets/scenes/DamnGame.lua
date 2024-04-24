@@ -54,23 +54,9 @@ Entity2 = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|0.0|0.0",
+				Position = "0.0|10|0.0",
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
-			}
-		},
-		{
-			Name = "RIGIDBODY",
-			Arguments = {
-				Mass = "1.0",
-				Bounciness = "0.0",
-				Friction = "0.0",
-				AABB = "1|1|1",
-				PosOffset = "0.0|0.0|0.0",
-				Radius = "0.0",
-				Shape = "BOX",
-				CollisionFlag = "DYNAMIC",
-				CollisionLayer = "PLAYER"
 			}
 		}
 	}
