@@ -28,7 +28,11 @@ namespace eden_ec {
 	}
 	void CameraMovement::Init(eden_script::ComponentArguments* args) {
 		_sensivity = args->GetValueToFloat("Sensivity");
-	};
+	}
+	void CameraMovement::SetMouseDirection(std::pair<int, int> mouseDir)
+	{
+		_mouseDirection = mouseDir;
+	}
 
 	void CameraMovement::Update(float dt) {
 		_transform->Yaw(-dt * _mouseDirection.first * _sensivity);
@@ -67,5 +71,5 @@ namespace eden_ec {
 	void CameraMovement::SetMouseDirection(std::pair<int, int> mouseDir)
 	{
 		_mouseDirection = mouseDir;
-	}
+	}*/
 }
