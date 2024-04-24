@@ -36,7 +36,7 @@ namespace eden_ec {
 
 	void CameraMovement::Update(float dt) {
 		_transform->Yaw(-dt * _mouseDirection.first * _sensivity);
-		_transform->Pitch(-dt * _mouseDirection.second * _sensivity);
+		_transform->LocalPitch(-dt * _mouseDirection.second * _sensivity);
 		/*eden_utils::Vector3 movement = { 0,0,0 };
 
 		//bool vectorChanged = false;
@@ -72,4 +72,5 @@ namespace eden_ec {
 	{
 		_mouseDirection = mouseDir;
 	}*/
+	}
 }
