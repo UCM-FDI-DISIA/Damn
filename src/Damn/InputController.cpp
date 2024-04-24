@@ -36,18 +36,17 @@ void damn::InputController::Update(float deltatime)
 	//}
 
 	if (eden_input::InputManager::getInstance()->IsKeyHeld('w')) {
-		newDir = eden_utils::Vector3(0, 0, -1);
+		newDir += _transform->GetForward() * -1;
 	}
 	else if (eden_input::InputManager::getInstance()->IsKeyHeld('s')) {
-		newDir = eden_utils::Vector3(0, 0, 1);
+		newDir += _transform->GetForward();
 	}
 	if (eden_input::InputManager::getInstance()->IsKeyHeld('d')) {
-		newDir = eden_utils::Vector3(1, 0, 0);
+		newDir += _transform->GetRight();
 	}
 	else if (eden_input::InputManager::getInstance()->IsKeyHeld('a')) {
-		newDir = eden_utils::Vector3(-1, 0, 0);
+		newDir += _transform->GetRight() * -1;
 	}
-	newDir = _transform->GetRotation() * newDir;
 
 	_movementController->SetDirection(newDir);
 

@@ -70,7 +70,7 @@ namespace eden_ec {
 	}
 	void CameraMovement::SetMouseDirection(std::pair<int, int> mouseDir)
 	{
-		_mouseDirection = mouseDir;
-	}*/
+		_mouseDirection = mouse
+}*/
 	}
 }
