@@ -34,6 +34,16 @@ Entity1 = {
 			Arguments = { 
 				Sensivity = "25.0"
 			}
+		},
+		{
+			Name = "MOVEMENT_CONTROLLER",
+			Arguments = {
+				Speed = 10;
+			}
+		},
+		{
+			Name = "INPUT_CONTROLLER",
+			Arguments = {}
 		}
 	}
 }
@@ -89,8 +99,8 @@ Entity3 = {
 				Mass = "1.0",
 				Bounciness = "0.0",
 				Friction = "1.0",
-				AABB = "500|1|500",
-				PosOffset = "0|0|0",
+				AABB = "100|5|100",
+				PosOffset = "0.0|0.0|0.0",
 				Radius = "0.0",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",

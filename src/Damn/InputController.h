@@ -4,6 +4,10 @@
 #include <Component.h>
 #include<Transform.h>
 
+namespace eden_ec {
+	class CameraMovement;
+}
+
 namespace damn {
 	class MovementController;
 
@@ -29,6 +33,7 @@ namespace damn {
 		static std::string GetID() { return "INPUT_CONTROLLER"; }
 	private:
 		MovementController* _movementController;
+		eden_ec::CameraMovement* _cameraMovement;
 		eden_ec::CTransform* _transform;
 	};
 }

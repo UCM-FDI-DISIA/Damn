@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EDEN_Export", "EDEN\projects\EDEN_Export\EDEN_Export.vcxproj", "{D2CD25B4-633F-4916-B5FA-860855288D4B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Damn", "projects\Damn\Damn.vcxproj", "{B3A4856E-9D16-4FA7-B2A4-00B2E1F21B76}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FB7F2DC-CA2C-4188-BB10-11979C37681F} = {1FB7F2DC-CA2C-4188-BB10-11979C37681F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,6 +4,7 @@
 #include<InputManager.h>
 #include<Vector3.h>
 #include "MovementController.h"
+#include "CameraMovement.h"
 
 void damn::InputController::Init(eden_script::ComponentArguments* args)
 {
@@ -12,7 +13,8 @@ void damn::InputController::Init(eden_script::ComponentArguments* args)
 
 void damn::InputController::Start()
 {
-	_movementController = _ent->GetComponent<MovementController>();
+	_movementController = _ent->GetComponent<damn::MovementController>();
+	_cameraMovement = _ent->GetComponent<eden_ec::CameraMovement>();
 	_transform = _ent->GetComponent<eden_ec::CTransform>();
 }
 
@@ -35,4 +37,5 @@ void damn::InputController::Update(float deltatime)
 
 	_movementController->SetDirection(newDir);
 
+	_cameraMovement->SetMouseDirection(eden_input::InputManager::getInstance()->GetMouseDir());
 }

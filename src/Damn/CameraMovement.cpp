@@ -16,7 +16,7 @@
 
 namespace eden_ec {
 
-	CameraMovement::CameraMovement(float sensivity) : _sensivity(sensivity) {};
+	CameraMovement::CameraMovement(float sensivity) : _sensivity(sensivity), _mouseDirection(std::pair<int, int>()) {};
 
 	void CameraMovement::Start() {
 		_transform = _ent->GetComponent<CTransform>();
@@ -31,12 +31,9 @@ namespace eden_ec {
 	};
 
 	void CameraMovement::Update(float dt) {
-		std::pair<int, int> mouseDir = _inputMngr->GetMouseDir();
-		_transform->Yaw(-dt * mouseDir.first * _sensivity);
-		_transform->LocalPitch(-dt * mouseDir.second * _sensivity);
-
-#pragma region movement
-		//eden_utils::Vector3 movement = { 0,0,0 };
+		_transform->Yaw(-dt * _mouseDirection.first * _sensivity);
+		_transform->Pitch(-dt * _mouseDirection.second * _sensivity);
+		/*eden_utils::Vector3 movement = { 0,0,0 };
 
 		//bool vectorChanged = false;
 
@@ -66,5 +63,9 @@ namespace eden_ec {
 #ifdef _DEBUG
 		//std::cout << "MOUSE DIR:\nX: " + std::to_string(mouseDir.first) + "\nY: " + std::to_string(mouseDir.second) + '\n';
 #endif
+	}
+	void CameraMovement::SetMouseDirection(std::pair<int, int> mouseDir)
+	{
+		_mouseDirection = mouseDir;
 	}
 }

@@ -25,6 +25,8 @@ namespace eden_ec {
 
 		void Update(float dt);
 
+		void SetMouseDirection(std::pair<int, int> mouseDir);
+
 		static std::string GetID() { return "CAMERA_MOVEMENT"; }
 
 	protected:
@@ -39,6 +41,7 @@ namespace eden_ec {
 		eden_input::InputManager* _inputMngr = nullptr;
 
 		float _sensivity = 5.0f;
+		std::pair<int, int> _mouseDirection;
 	};
 }
 
