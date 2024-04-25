@@ -107,6 +107,9 @@
     <ClInclude Include="..\..\src\Damn\PlayButton.h" />
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
+    <ClInclude Include="..\..\src\Damn\Shotgun.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
@@ -121,6 +124,9 @@
     <ClCompile Include="..\..\src\Damn\PlayButton.cpp" />
     <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

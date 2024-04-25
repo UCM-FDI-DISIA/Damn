@@ -10,6 +10,7 @@ namespace eden_ec {
 
 namespace damn {
 	class MovementController;
+	class WeaponManager;
 
 	class InputController : public eden_ec::Component
 	{
@@ -33,6 +34,7 @@ namespace damn {
 		static std::string GetID() { return "INPUT_CONTROLLER"; }
 	private:
 		MovementController* _movementController;
+		WeaponManager* _weaponManager;
 		eden_ec::CameraMovement* _cameraMovement;
 		eden_ec::CTransform* _transform;
 	};

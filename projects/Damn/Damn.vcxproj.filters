@@ -13,6 +13,9 @@
     <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
@@ -27,5 +30,8 @@
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
+    <ClInclude Include="..\..\src\Damn\Shotgun.h" />
   </ItemGroup>
 </Project>
