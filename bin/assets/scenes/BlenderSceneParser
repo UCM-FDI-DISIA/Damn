@@ -48,14 +48,8 @@ for ob in objects:
     #ARGUMENTOS DEL COMPONENTE
     dato += "\t\t\t\tPosition = "+ "\""+ str(ob.location.x) + "|" + str(ob.location.z) + "|"+ str(-ob.location.y) + "\","+ "\n"
     
-    rot_output = ob.rotation_euler.to_quaternion()
-    x = 0
-    y = 0
-    z = 0
-    if rot_output[1] != 0: x = 1 
-    if rot_output[3] != 0: y = 1 
-    if rot_output[2] != 0: z = 1 
-    dato += "\t\t\t\tRotation = "+ "\""+ "false|" + str(grados(2*math.acos(rot_output[0]))) + "|" + str(x) + "|" + str(y) + "|" +str(z) + "\","+ "\n"
+    ob.rotation_mode = 'QUATERNION'
+    dato += "\t\t\t\tRotation = "+ "\""+ "false|" + str(ob.rotation_quaternion.w) + "|" + str(ob.rotation_quaternion.x) + "|" + str(ob.rotation_quaternion.y) + "|" +str(ob.rotation_quaternion.z) + "\","+ "\n"
 
     dato += "\t\t\t\tScale = "+ "\""+ str(ob.scale.x) + "|" + str(ob.scale.z) + "|" + str(ob.scale.y)+ "\""
     

@@ -15,7 +15,7 @@ Entity1 = {
 				Mass = "1.0",
 				Bounciness = "0.0",
 				Friction = "1.0",
-				AABB = "1|2|1",
+				AABB = "1|5|1",
 				PosOffset = "0|0|0",
 				Radius = "0.0",
 				Shape = "BOX",
@@ -58,6 +58,13 @@ Entity2 = {
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
 			}
+		},
+		{
+			Name = "ENEMY_ATTACK",
+			Arguments = {
+				AttackRate = "0.5",
+				RotationSpeed = "0.2"	
+			}
 		}
 	}
 }
@@ -97,30 +104,28 @@ Entity3 = {
 }
 
 Entity4 = {
-	Name = "Enemy",
+	Name = "Sun",
 	Components = {
-		{
-			Name = "MESH_RENDERER",
-			Arguments = {
-				Mesh = "PruebaCubo"
-			}
-		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|5.0|0.0",
+				Position = "0.0|15.0|0.0",
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
 			}
 		},
 		{
-			 Name = "ENEMY_ATTACK",
-			 Arguments = {}
+			Name = "LIGHT",
+			Arguments = {
+				LightType = "LT_DIRECTIONAL",
+				DiffuseColor = "10.0|10.0|10.0",
+				SpecularColor = "0.0|0.0|0.0"
+			}
 		}
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3 }
+Entities = { Entity1, Entity2, Entity3, Entity4 }
 
 CollisionLayers = {
 	Layers = {

@@ -26,8 +26,9 @@ namespace eden_ec {
 	private:
 		class Entity* _player;
 		float _attackRate = 1;
-		float _lastAttack = 0;
 		float _attackTimer = 0;
+		float _rotationSpeed = 0.4;
+		int _rotationCoef = 1;
 	};
 }
 #endif

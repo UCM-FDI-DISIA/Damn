@@ -5,11 +5,13 @@
 #include "SceneManager.h"
 #include "CProyectileMovement.h"
 #include <math.h>
+#include <ComponentArguments.h>
 #include <iostream>
 
 void eden_ec::CEnemyAttack::Init(eden_script::ComponentArguments* args)
 {
-	
+	_attackRate = args->GetValueToFloat("AttackRate");
+	_rotationSpeed = args->GetValueToFloat("RotationSpeed");
 }
 
 void eden_ec::CEnemyAttack::Awake()
@@ -25,28 +27,24 @@ void eden_ec::CEnemyAttack::Start()
 void eden_ec::CEnemyAttack::Update(float t)
 {
 	if (_player) {
-		//_ent->GetComponent<CTransform>()->Roll(1);
-		eden_utils::Vector3 dir = _player->GetComponent<CTransform>()->GetPosition() - _ent->GetComponent<CTransform>()->GetPosition();
-		dir.Normalize();
-		//std::cout << dir.GetX() << " " << dir.GetY() << " " << dir.GetZ() << '\n';
-		//_ent->GetComponent<CTransform>()->Translate(dir * 0.001);
-		//_ent->GetComponent<CTransform>()->Yaw(0.5);
-		float angle = dir.Dot(_ent->GetComponent<CTransform>()->GetForward());
-		angle = atan(angle)* (180/3.1415);
-		//angle = acos(angle) * 57.3;
-		std::cout << angle << '\n';
-		//std::cout << dir.GetX() << " " << dir.GetY() << " " << dir.GetZ() << '\n';
-	}
-	else {
-		std::cout << "No player\n";
-		//player = eden::SceneManager::getInstance()->FindEntity("Player");
-	}
-	
-	_attackTimer += t;
-	if (_attackTimer >= _attackRate) {
-		_attackTimer = 0;
-		Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
-		f->GetComponent<CTransform>()->SetPosition(_ent->GetComponent<CTransform>()->GetPosition());
-		f->GetComponent<CProyectileMovement>()->SetDirection(_ent->GetComponent<CTransform>()->GetForward());
+		eden_utils::Vector3 newPlayePos(_player->GetComponent<CTransform>()->GetPosition().GetX(), _ent->GetComponent<CTransform>()->GetPosition().GetY(), _player->GetComponent<CTransform>()->GetPosition().GetZ());
+		eden_utils::Vector3 dir = (newPlayePos - _ent->GetComponent<CTransform>()->GetPosition()).Normalized();
+		float frontAngle = acos(dir.Dot(_ent->GetComponent<CTransform>()->GetForward())) * (180/PI);
+		if (frontAngle > 1) {
+			float rightAngle = acos(dir.Dot(_ent->GetComponent<CTransform>()->GetRight())) * (180 / PI);
+			if (rightAngle > 90) _rotationCoef = -1;
+			else _rotationCoef = 1;
+			_ent->GetComponent<CTransform>()->Yaw(_rotationSpeed * _rotationCoef);
+		}
+		else {
+			_attackTimer += t;
+			if (_attackTimer >= _attackRate) {
+				_attackTimer = 0;
+				std::cout << "Disparo \n\n";
+				//Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
+				//f->GetComponent<CTransform>()->SetPosition(_ent->GetComponent<CTransform>()->GetPosition());
+				//f->GetComponent<CProyectileMovement>()->SetDirection(_ent->GetComponent<CTransform>()->GetForward());
+			}
+		}
 	}
 }
