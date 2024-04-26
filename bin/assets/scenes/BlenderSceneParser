@@ -35,7 +35,12 @@ for ob in objects:
     #file1.write("Entity" + str(cont) + " = {" "\n") 
     dato += "Entity" + str(cont) + " = {" "\n"
     
-    dato += "\tName = " + "\""+ob.name+ "\"," + "\n" 
+    #Si es un blueprint se coge solo la primera parte del nombre
+    nombreEnt = ob.name
+    if("isPrefab" in ob and ob["isPrefab"] == True):
+        nombreEnt = ob.name.split(".")[0]
+    
+    dato += "\tName = " + "\""+nombreEnt+ "\"," + "\n" 
     #file1.write(dato)
     
     dato += "\tComponents = {" + "\n" 
