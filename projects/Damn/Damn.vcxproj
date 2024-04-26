@@ -99,6 +99,7 @@
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
     <ClInclude Include="..\..\src\Damn\Health.h" />
     <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
     <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
     <ClCompile Include="..\..\src\Damn\Health.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
