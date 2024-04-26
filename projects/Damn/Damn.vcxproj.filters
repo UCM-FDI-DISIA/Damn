@@ -16,6 +16,7 @@
     <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
@@ -33,5 +34,6 @@
     <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
 </Project>

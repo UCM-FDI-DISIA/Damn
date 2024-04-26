@@ -45,10 +45,10 @@ void damn::InputController::Update(float deltatime)
 	if (eden_input::InputManager::getInstance()->IsMouseButtonDown(eden_input::InputManager::MOUSEBUTTON::LEFT)) {
 		_weaponManager->Shoot();
 	}
-	if (eden_input::InputManager::getInstance()->IsMouseButtonDown('r')) {
+	if (eden_input::InputManager::getInstance()->IsKeyDown('r')) {
 		_weaponManager->Reload();
 	}
-	if (eden_input::InputManager::getInstance()->IsMouseButtonDown(eden_input::InputManager::TAB)) {
+	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::TAB)) {
 		_weaponManager->ChangeWeapon();
 	}
 }

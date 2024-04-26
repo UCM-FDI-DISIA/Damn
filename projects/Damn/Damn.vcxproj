@@ -110,6 +110,7 @@
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
     <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
