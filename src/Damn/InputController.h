@@ -6,6 +6,7 @@
 
 namespace eden_ec {
 	class CameraMovement;
+	class CRigidBody;
 }
 
 namespace damn {
@@ -37,6 +38,7 @@ namespace damn {
 		WeaponManager* _weaponManager;
 		eden_ec::CameraMovement* _cameraMovement;
 		eden_ec::CTransform* _transform;
+		eden_ec::CRigidBody* _rb;
 	};
 }
 #endif 

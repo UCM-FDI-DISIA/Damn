@@ -19,6 +19,9 @@ void damn::InputController::Start()
 	_weaponManager = _ent->GetComponent<WeaponManager>();
 	_cameraMovement = _ent->GetComponent<eden_ec::CameraMovement>();
 	_transform = _ent->GetComponent<eden_ec::CTransform>();
+	_rb = _ent->GetComponent<eden_ec::CRigidBody>();
+	_rb->SetTemporalDeactivation(true);
+	
 }
 
 void damn::InputController::Update(float deltatime)
