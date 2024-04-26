@@ -38,7 +38,7 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.2"
+                Speed = "0.05"
             }
         }
     }

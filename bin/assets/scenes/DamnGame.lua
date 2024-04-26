@@ -74,8 +74,8 @@ Entity2 = {
 		{
 			Name = "ENEMY_ATTACK",
 			Arguments = {
-				AttackRate = "0.5",
-				RotationSpeed = "0.2"	
+				AttackRate = "2",
+				RotationSpeed = "0.08"	
 			}
 		}
 	}

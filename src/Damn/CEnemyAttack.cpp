@@ -36,14 +36,13 @@ void eden_ec::CEnemyAttack::Update(float t)
 			else _rotationCoef = 1;
 			_ent->GetComponent<CTransform>()->Yaw(_rotationSpeed * _rotationCoef);
 		}
-		else {
+		if(frontAngle <= 2) {
 			_attackTimer += t;
 			if (_attackTimer >= _attackRate) {
 				_attackTimer = 0;
-				std::cout << "Disparo \n\n";
-				//Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
-				//f->GetComponent<CTransform>()->SetPosition(_ent->GetComponent<CTransform>()->GetPosition());
-				//f->GetComponent<CProyectileMovement>()->SetDirection(_ent->GetComponent<CTransform>()->GetForward());
+				Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
+				f->GetComponent<CTransform>()->SetPosition(_ent->GetComponent<CTransform>()->GetPosition());
+				f->GetComponent<CProyectileMovement>()->SetDirection(_ent->GetComponent<CTransform>()->GetForward());
 			}
 		}
 	}
