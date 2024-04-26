@@ -11,6 +11,8 @@
 #include "CEnemyAttack.h"
 #include "CameraMovement.h"
 #include "CProyectileMovement.h"
+#include "PlayerHealth.h"
+#include "EnemyHealth.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -23,6 +25,8 @@ void RegisterComponents() {
 	factory->RegisterComponent<eden_ec::CEnemyAttack>();
 	factory->RegisterComponent<eden_ec::CameraMovement>();
 	factory->RegisterComponent<eden_ec::CProyectileMovement>();
+	factory->RegisterComponent<damn::EnemyHealth>();
+	factory->RegisterComponent<damn::PlayerHealth>();
 }
 
 void LoadScene() {

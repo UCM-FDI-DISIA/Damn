@@ -10,6 +10,12 @@ Entity1 = {
 			}
 		},
 		{
+			Name = "PLAYER_HEALTH",
+			Arguments = {
+				MaximumHealth = "100"
+			}
+		},
+		{
 			Name = "RIGIDBODY",
 			Arguments = {
 				Mass = "1.0",
@@ -57,6 +63,12 @@ Entity2 = {
 				Position = "0.0|1|0.0",
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "1.0|1.0|1.0"
+			}
+		},
+		{
+			Name = "ENEMY_HEALTH",
+			Arguments = {
+				MaximumHealth = "1000"
 			}
 		},
 		{
