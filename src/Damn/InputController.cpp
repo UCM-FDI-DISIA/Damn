@@ -46,12 +46,15 @@ void damn::InputController::Update(float deltatime)
 	_cameraMovement->SetMouseDirection(eden_input::InputManager::getInstance()->GetMouseDir());
 
 	if (eden_input::InputManager::getInstance()->IsMouseButtonDown(eden_input::InputManager::MOUSEBUTTON::LEFT)) {
-		_weaponManager->Shoot();
+		if(_weaponManager)
+			_weaponManager->Shoot();
 	}
 	if (eden_input::InputManager::getInstance()->IsKeyDown('r')) {
-		_weaponManager->Reload();
+		if (_weaponManager)
+			_weaponManager->Reload();
 	}
 	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::TAB)) {
-		_weaponManager->ChangeWeapon();
+		if (_weaponManager)
+			_weaponManager->ChangeWeapon();
 	}
 }
