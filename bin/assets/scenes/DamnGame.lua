@@ -137,7 +137,46 @@ Entity4 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4 }
+Entity5 = {
+	Name = "Ammo",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "3.0|2|1.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "0.3|0.3|0.3"
+			}
+		},
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PruebaCubo"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "2|2|2",
+				PosOffset = "0.0|0.0|0.0",
+				Radius = "1.0",
+				Shape = "BOX",
+				CollisionFlag = "KINEMATIC",
+				CollisionLayer = ""
+			}
+		},
+		{
+			Name = "AMMO_BOX_COMPONENT",
+			Arguments = {
+			}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5 }
 
 CollisionLayers = {
 	Layers = {

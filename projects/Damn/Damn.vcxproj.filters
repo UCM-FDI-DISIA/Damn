@@ -18,6 +18,7 @@
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\CAmmoBoxComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
@@ -37,5 +38,6 @@
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
+    <ClInclude Include="..\..\src\Damn\CAmmoBoxComponent.h" />
   </ItemGroup>
 </Project>

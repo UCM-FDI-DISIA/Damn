@@ -13,6 +13,7 @@
 #include "CProyectileMovement.h"
 #include "PlayerHealth.h"
 #include "EnemyHealth.h"
+#include "CAmmoBoxComponent.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -27,6 +28,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<eden_ec::CProyectileMovement>();
 	factory->RegisterComponent<damn::EnemyHealth>();
 	factory->RegisterComponent<damn::PlayerHealth>();
+	factory->RegisterComponent<eden_ec::CAmmoBoxComponent>();
 }
 
 void LoadScene() {

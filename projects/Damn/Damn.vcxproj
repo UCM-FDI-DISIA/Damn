@@ -95,6 +95,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\CAmmoBoxComponent.h" />
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
@@ -114,6 +115,7 @@
     <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\CAmmoBoxComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
