@@ -50,6 +50,10 @@ Entity1 = {
 		{
 			Name = "INPUT_CONTROLLER",
 			Arguments = {}
+		},
+		{
+			Name = "WEAPON_MANAGER",
+			Arguments = {}
 		}
 	}
 }
@@ -138,6 +142,63 @@ Entity4 = {
 }
 
 Entity5 = {
+	Name = "Gun",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|5.0|8.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "0.4|0.4|0.4"
+			}
+		},
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Cube.057"
+			}
+		},
+		{
+			Name = "WEAPON_COMPONENT",
+			Arguments = {
+				MaxAmmo = "50",
+				MagazineSize = "25",
+				Cadence = "0.5"
+			}
+		}
+	}
+}
+
+Entity6 = {
+	Name = "Shotgun",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|5.0|8.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "0.4|0.4|0.4"
+			}
+		},
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PruebaCubo"
+			}
+		},
+		{
+			Name = "SHOTGUN",
+			Arguments = {
+				MaxAmmo = "10",
+				MagazineSize = "5",
+				Cadence = "2",
+				Balas = "3"
+			}
+		}
+	}
+}
+
+Entity7 = {
 	Name = "Ammo",
 	Components = {
 		{
@@ -176,7 +237,8 @@ Entity5 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5 }
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7 }
 
 CollisionLayers = {
 	Layers = {

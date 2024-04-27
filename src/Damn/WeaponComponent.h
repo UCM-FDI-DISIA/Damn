@@ -38,6 +38,10 @@ namespace damn {
 		/// @param ammo Cantidad de municion que se añade
 		virtual void AddAmmo(int ammo);
 
+		/// @brief Metodo que se llama para cambiar la visibilidad del arma
+		/// @param visible Booleana que establece la visibilidad
+		virtual void SetVisible(bool visible);
+
 		static std::string GetID() { return "WEAPON_COMPONENT"; }
 	protected:
 		int _maxAmmo;

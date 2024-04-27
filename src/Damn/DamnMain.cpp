@@ -13,6 +13,8 @@
 #include "CProyectileMovement.h"
 #include "PlayerHealth.h"
 #include "EnemyHealth.h"
+#include "WeaponManager.h"
+#include "Shotgun.h"
 #include "CAmmoBoxComponent.h"
 
 void RegisterComponents() {
@@ -28,6 +30,9 @@ void RegisterComponents() {
 	factory->RegisterComponent<eden_ec::CProyectileMovement>();
 	factory->RegisterComponent<damn::EnemyHealth>();
 	factory->RegisterComponent<damn::PlayerHealth>();
+	factory->RegisterComponent<damn::WeaponManager>();
+	factory->RegisterComponent<damn::WeaponComponent>();
+	factory->RegisterComponent<damn::Shotgun>();
 	factory->RegisterComponent<eden_ec::CAmmoBoxComponent>();
 }
 

@@ -3,12 +3,14 @@
 #include <Transform.h>
 #include "Entity.h"
 #include "SceneManager.h"
+#include "Scene.h"
 #include <ComponentArguments.h>
+#include <CMeshRenderer.h>
 
 void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 {
-	_maxAmmo = args->GetValueToInt("Max ammo");
-	_magazineSize = args->GetValueToInt("Magazine size");
+	_maxAmmo = args->GetValueToInt("MaxAmmo");
+	_magazineSize = args->GetValueToInt("MagazineSize");
 	_cadence = args->GetValueToFloat("Cadence");
 
 	_magazineAmmo = _magazineSize;
@@ -19,6 +21,7 @@ void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 
 void damn::WeaponComponent::Start()
 {
+	_ent->GetComponent<eden_ec::CTransform>()->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player")->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _ent->GetComponent<eden_ec::CTransform>()->GetParent();
 }
 
@@ -35,9 +38,10 @@ void damn::WeaponComponent::Shoot()
 	if (_canShoot && _magazineAmmo > 0) {
 		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
 		bullet->GetComponent<eden_ec::CTransform>()->SetPosition(_ent->GetComponent<eden_ec::CTransform>()->GetPosition());
-		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(_ent->GetComponent<eden_ec::CTransform>()->GetForward());
+		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(_ent->GetComponent<eden_ec::CTransform>()->GetForward() * -1);
 
 		_canShoot = false;
+		_elapsedTime = 0;
 		_magazineAmmo--;
 	}
 	else if (_magazineAmmo == 0)
@@ -59,4 +63,9 @@ void damn::WeaponComponent::Reload()
 void damn::WeaponComponent::AddAmmo(int ammo)
 {
 	_currentAmmo + ammo > _maxAmmo ? _currentAmmo = _maxAmmo : _currentAmmo += ammo;
+}
+
+void damn::WeaponComponent::SetVisible(bool visible)
+{
+	_ent->GetComponent<eden_ec::CMeshRenderer>()->SetInvisible(!visible);
 }

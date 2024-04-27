@@ -38,7 +38,9 @@ void damn::WeaponManager::AddAmmo(int ammo)
 
 void damn::WeaponManager::ChangeWeapon()
 {
+	_weapons[_actualWeapon]->SetVisible(false);
 	_actualWeapon = static_cast<WEAPON>((static_cast<int>(_actualWeapon) + 1) % NUM_WEAPONS);
+	_weapons[_actualWeapon]->SetVisible(true);
 }
 
 void damn::WeaponManager::UnlockShotGun()

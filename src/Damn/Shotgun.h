@@ -1,7 +1,7 @@
 #ifndef _SHOTGUN_H
 #define _SHOTGUN_H
 
-#define ANGLE 22.5
+#define ANGLE 45
 
 #include "WeaponComponent.h"
 
@@ -14,6 +14,8 @@ namespace damn {
 		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
 		/// @param args Argumentos leidos de .lua
 		void Init(eden_script::ComponentArguments* args) override;
+		/// @brief Metodo heredado de Component
+		void Start() override;
 		/// @brief Metodo que se llama cuando pueda disparar el arma
 		void Shoot() override final;
 
