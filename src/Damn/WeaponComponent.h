@@ -42,6 +42,8 @@ namespace damn {
 		/// @param visible Booleana que establece la visibilidad
 		virtual void SetVisible(bool visible);
 
+		std::pair<int, int> GetAmmo();
+
 		static std::string GetID() { return "WEAPON_COMPONENT"; }
 	protected:
 		int _maxAmmo;

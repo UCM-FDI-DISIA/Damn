@@ -237,8 +237,122 @@ Entity7 = {
 	}
 }
 
+Entity8 = {
+	Name = "HEALTH_BAR",
+	Components = {
+		{
+			Name = "BAR",
+			Arguments = {
+                OverlayName= "HealthBar",
+				XPos = "17",
+                YPos = "5",
+                Width = "30",
+                Height = "5",
+                Texture = "PlayButton_Ini.png",
+                Depth = "1"
+			}
+		}
+	}
+}
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7 }
+Entity9 = {
+	Name = "AMMO_TEXT",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+                OverlayName= "AmmoText",
+				XPos = "70",
+                YPos = "90",
+                Tam = "5",
+                Text = "XX/XX",
+                Font = "DejaVuSerifCondensed-Italic.ttf",
+                Color = "255|255|255",
+                Depth = "1"
+			}
+		}
+	}
+}
+
+Entity10 = {
+	Name = "GUN_IMAGE",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "GunImage",
+				XPos = "90",
+                YPos = "90",
+                Width = "30",
+                Height = "30",
+                Texture = "Pistol.png",
+                Depth = "1"
+			}
+		}
+	}
+}
+
+Entity11 = {
+	Name = "TIME_TEXT",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+                OverlayName= "TimeText",
+				XPos = "82",
+                YPos = "3",
+                Tam = "5",
+                Text = "TIME LEFT: XX",
+                Font = "DejaVuSerifCondensed-Italic.ttf",
+                Color = "255|0|0",
+                Depth = "1"
+			}
+		}
+	}
+}
+
+
+Entity12 = {
+	Name = "ENEMIES_LEFT_TEXT",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+                OverlayName= "EnemiesLeftText",
+				XPos = "80",
+                YPos = "8",
+                Tam = "5",
+                Text = "ENEMIES LEFT: XX",
+                Font = "DejaVuSerifCondensed-Italic.ttf",
+                Color = "0|255|0",
+                Depth = "1"
+			}
+		}
+	}
+}
+
+
+
+Entity13 = {
+	Name = "MANAGERS",
+	Components = {
+		{
+			Name = "UIMANAGER",
+			Arguments = {
+
+			}
+		},
+		{
+			Name = "GAMEMANAGER",
+			Arguments = {
+				MaxTime = "60"
+			}
+		}
+	}
+}
+
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13 }
 
 CollisionLayers = {
 	Layers = {

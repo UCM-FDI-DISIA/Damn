@@ -323,3 +323,37 @@ material PlayButton_Clicked.png {
         }
     }
 }
+
+material Pistol.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Pistol.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Shotgun.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Shotgun.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}

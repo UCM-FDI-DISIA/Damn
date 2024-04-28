@@ -8,6 +8,7 @@
 
 namespace damn {
 	class WeaponComponent;
+	class UIManager;
 	class WeaponManager : public eden_ec::Component
 	{
 	public:
@@ -44,12 +45,15 @@ namespace damn {
 		/// @brief Metodo para desbloquear la escopeta, pone el booleano shotgun en true
 		void UnlockShotGun();
 
+		void UpdateUIAmmo();
+
 		static std::string GetID() { return "WEAPON_MANAGER"; }
 	private:
 		enum WEAPON { GUN, SHOTGUN };
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
 		bool _shotgun;
+		UIManager* _uiManager;
 	};
 }
 #endif

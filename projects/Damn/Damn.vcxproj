@@ -101,6 +101,7 @@
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
     <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
+    <ClInclude Include="..\..\src\Damn\GameManager.h" />
     <ClInclude Include="..\..\src\Damn\Health.h" />
     <ClInclude Include="..\..\src\Damn\Hito2MenuPausa.h" />
     <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
@@ -110,9 +111,9 @@
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
+    <ClInclude Include="..\..\src\Damn\UIManager.h" />
     <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
-    <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Damn\CAmmoBoxComponent.cpp" />
@@ -121,6 +122,7 @@
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
     <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\GameManager.cpp" />
     <ClCompile Include="..\..\src\Damn\Health.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2MenuPausa.cpp" />
     <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
@@ -130,9 +132,9 @@
     <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
+    <ClCompile Include="..\..\src\Damn\UIManager.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
-    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

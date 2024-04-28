@@ -69,3 +69,8 @@ void damn::WeaponComponent::SetVisible(bool visible)
 {
 	_ent->GetComponent<eden_ec::CMeshRenderer>()->SetInvisible(!visible);
 }
+
+std::pair<int, int> damn::WeaponComponent::GetAmmo()
+{
+	return std::pair<int, int>(_magazineAmmo, _currentAmmo);
+}

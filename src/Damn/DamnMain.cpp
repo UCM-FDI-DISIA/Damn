@@ -16,6 +16,8 @@
 #include "WeaponManager.h"
 #include "Shotgun.h"
 #include "CAmmoBoxComponent.h"
+#include "UIManager.h"
+#include "GameManager.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -34,6 +36,8 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::WeaponComponent>();
 	factory->RegisterComponent<damn::Shotgun>();
 	factory->RegisterComponent<eden_ec::CAmmoBoxComponent>();
+	factory->RegisterComponent<damn::UIManager>();
+	factory->RegisterComponent<damn::GameManager>();
 }
 
 void LoadScene() {

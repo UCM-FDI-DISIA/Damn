@@ -4,20 +4,23 @@
 #include "Health.h"
 
 namespace damn {
+	class GameManager;
 	class EnemyHealth : public Health
 	{
 	public:
 		EnemyHealth() = default;
-		~EnemyHealth() override = default;
+		~EnemyHealth() override;
 
 		// void Init(eden_script::ComponentArguments* args) override;
-		// void Start() override;
+		void Start() override;
 		// void Awake() override {};
 		// void Update(float deltaTime) override;
 
 		static std::string GetID() { return "ENEMY_HEALTH"; }
 
 		void LoseHealth(int health) override;
+	private:
+		static GameManager* _gameManager;
 	};
 }
 
