@@ -16,7 +16,7 @@ void damn::UIManager::UpdateAmmo(int magazineAmmo, int leftAmmo)
 {
 	if (_ents[AMMO_TEXT] != nullptr) {
 		std::string text = std::to_string(magazineAmmo) + "/" + std::to_string(leftAmmo);
-		//_ents[AMMO_TEXT]->GetComponent<eden_ec::CText>()->SetNewText("hola");
+		_ents[AMMO_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(text);
 	}
 }
 
@@ -31,14 +31,14 @@ void damn::UIManager::ChangeWeapon(int magazineAmmo, int leftAmmo, int numWeapon
 void damn::UIManager::SetEnemiesLeft(int enemies)
 {
 	if (_ents[ENEMIES_LEFT_TEXT] != nullptr) {
-		//_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + std::to_string(_enemiesLeft));
+		_ents[ENEMIES_LEFT_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + std::to_string(enemies));
 	}
 }
 
 void damn::UIManager::SetTimeLeft(int time)
 {
 	if (_ents[TIME_TEXT] != nullptr) {
-		//_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + std::to_string(_timerText));
+		_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + std::to_string(time));
 	}
 }
 

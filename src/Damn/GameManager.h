@@ -19,7 +19,7 @@ namespace damn {
 		float _timer;
 		float _timerText;
 		float _maxTime;
-		float _enemiesLeft;
+		int _enemiesLeft;
 		UIManager* _uiManager;
 
 	protected:
