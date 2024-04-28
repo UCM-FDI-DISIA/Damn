@@ -1,153 +1,304 @@
 Entity1 = {
-	Name = "Player",
+	Name = "Wall",
 	Components = {
 		{
-			Name = "TRANSFORM",
+			Name = "MESH_RENDERER",
 			Arguments = {
-				Position = "0.0|5|10",
-				Rotation = "false|1.0|0.0|0.0|0.0",
-				Scale = "1.0|1.0|1.0"
+				Mesh = "GeaCube"
 			}
 		},
 		{
-			Name = "PLAYER_HEALTH",
+			Name = "TRANSFORM",
 			Arguments = {
-				MaximumHealth = "100"
+				Position = "2.159928798675537|2.355266571044922|-3.6958885192871094",
+				Rotation = "false|0.9659239649772644|0.0003822667058557272|-0.25881826877593994|-0.001967353280633688",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
 			}
 		},
 		{
 			Name = "RIGIDBODY",
 			Arguments = {
-				Mass = "1.0",
-				Bounciness = "0.0",
-				Friction = "1.0",
-				AABB = "1|5|1",
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
-				Radius = "0.0",
+				Radius = "4.971125602722168",
 				Shape = "BOX",
-				CollisionFlag = "DYNAMIC",
-				CollisionLayer = ""
-
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
 			}
-		},
-		{
-			Name = "CAMERA",
-			Arguments = {
-			}
-		},
-		{
-			Name = "CAMERA_MOVEMENT",
-			Arguments = { 
-				Sensivity = "25.0"
-			}
-		},
-		{
-			Name = "MOVEMENT_CONTROLLER",
-			Arguments = {
-				Speed = 10;
-			}
-		},
-		{
-			Name = "INPUT_CONTROLLER",
-			Arguments = {}
-		},
-		{
-			Name = "WEAPON_MANAGER",
-			Arguments = {}
 		}
 	}
 }
 
 Entity2 = {
-	Name = "Frog",
+	Name = "Wall",
 	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "GeaCube"
+			}
+		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|1|0.0",
-				Rotation = "true|1.0|0.0|0.0|0.0",
-				Scale = "1.0|1.0|1.0"
+				Position = "-2.1207685470581055|2.355266571044922|-3.7184972763061523",
+				Rotation = "false|0.9659237861633301|-0.000652624003123492|0.2588188052177429|-0.0018949112854897976",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
 			}
 		},
 		{
-			Name = "ENEMY_HEALTH",
+			Name = "RIGIDBODY",
 			Arguments = {
-				MaximumHealth = "1000"
-			}
-		},
-		{
-			Name = "ENEMY_ATTACK",
-			Arguments = {
-				AttackRate = "2",
-				RotationSpeed = "0.08"	
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0000001490115875",
+				PosOffset = "0|0|0",
+				Radius = "4.971125602722168",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity3 = {
-	Name = "Floor",
+	Name = "Wall",
 	Components = {
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "0.0|0.0|0.0",
-				Rotation = "true|1.0|0.0|0.0|0.0",
-				Scale = "1|0.01|1"
-			}
-		},
 		{
 			Name = "MESH_RENDERER",
 			Arguments = {
-				Mesh = "cube"
+				Mesh = "GeaCube"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "2.1843175888061523|2.335390090942383|3.795958995819092",
+				Rotation = "false|0.9659237861633301|-0.000652624003123492|0.2588188052177429|-0.0018949112854897976",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
 			}
 		},
 		{
 			Name = "RIGIDBODY",
 			Arguments = {
-				Mass = "1.0",
-				Bounciness = "0.0",
-				Friction = "1.0",
-				AABB = "100|5|100",
-				PosOffset = "0.0|0.0|0.0",
-				Radius = "0.0",
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0000001490115875",
+				PosOffset = "0|0|0",
+				Radius = "4.971125602722168",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = ""
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity4 = {
-	Name = "Sun",
+	Name = "Wall",
 	Components = {
 		{
-			Name = "TRANSFORM",
+			Name = "MESH_RENDERER",
 			Arguments = {
-				Position = "0.0|15.0|0.0",
-				Rotation = "true|1.0|0.0|0.0|0.0",
-				Scale = "1.0|1.0|1.0"
+				Mesh = "YellowCube"
 			}
 		},
 		{
-			Name = "LIGHT",
+			Name = "TRANSFORM",
 			Arguments = {
-				LightType = "LT_DIRECTIONAL",
-				DiffuseColor = "10.0|10.0|10.0",
-				SpecularColor = "0.0|0.0|0.0"
+				Position = "-4.380697250366211|2.335361957550049|0.00630497932434082",
+				Rotation = "false|0.7071051597595215|-0.0015126446960493922|0.7071055769920349|-0.0013147293357178569",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0000001490115875",
+				PosOffset = "0|0|0",
+				Radius = "4.971125602722168",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity5 = {
+	Name = "Wall",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PurpleCube"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "4.379556179046631|2.335390090942383|0.00630497932434082",
+				Rotation = "false|0.7071051597595215|-0.0015126446960493922|0.7071055769920349|-0.0013147293357178569",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0000001490115875",
+				PosOffset = "0|0|0",
+				Radius = "4.971125602722168",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity6 = {
+	Name = "Wall",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "PurpleCube"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-2.1701979637145996|2.35526704788208|3.8041114807128906",
+				Rotation = "false|0.9659239649772644|0.0003822667058557272|-0.25881826877593994|-0.001967353280633688",
+				Scale = "2.485562801361084|2.0387473106384277|0.05000000819563866"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "4.971125602722168",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity7 = {
+	Name = "Player",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|1.5431431531906128|-0.0",
+				Rotation = "false|1.0|0.0|0.0|-0.0",
+				Scale = "1.0|1.0|1.0"
+			}
+		}
+	}
+}
+
+Entity8 = {
+	Name = "Floor",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Circle"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.08858978748321533|4.733010768890381|-0.0055043697357177734",
+				Rotation = "false|1.0|0.0|0.0|-0.0",
+				Scale = "5.0|5.0|5.0"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "1.7320507049560547|0.13111546039581298|2.0",
+				PosOffset = "0|0|0",
+				Radius = "10.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+
+Entity9 = {
+	Name = "Floor",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Circle"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|0.0|-0.0",
+				Rotation = "false|1.0|0.0|0.0|-0.0",
+				Scale = "5.0|5.0|5.0"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "1.7320507049560547|0.13111546039581298|2.0",
+				PosOffset = "0|0|0",
+				Radius = "10.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+Entity14 = {
 	Name = "Gun",
 	Components = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|5.0|8.0",
+				Position = "0.0|2.0|-2.0",
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "0.4|0.4|0.4"
 			}
@@ -169,13 +320,13 @@ Entity5 = {
 	}
 }
 
-Entity6 = {
+Entity15 = {
 	Name = "Shotgun",
 	Components = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.0|5.0|8.0",
+				Position = "0.0|2.0|-2.0",
 				Rotation = "true|1.0|0.0|0.0|0.0",
 				Scale = "0.4|0.4|0.4"
 			}
@@ -198,7 +349,7 @@ Entity6 = {
 	}
 }
 
-Entity7 = {
+Entity16 = {
 	Name = "Ammo",
 	Components = {
 		{
@@ -226,7 +377,8 @@ Entity7 = {
 				Radius = "1.0",
 				Shape = "BOX",
 				CollisionFlag = "KINEMATIC",
-				CollisionLayer = ""
+				CollisionLayer = "",
+				Trigger = "false"
 			}
 		},
 		{
@@ -237,7 +389,7 @@ Entity7 = {
 	}
 }
 
-Entity8 = {
+Entity17 = {
 	Name = "HEALTH_BAR",
 	Components = {
 		{
@@ -255,7 +407,7 @@ Entity8 = {
 	}
 }
 
-Entity9 = {
+Entity18 = {
 	Name = "AMMO_TEXT",
 	Components = {
 		{
@@ -331,8 +483,6 @@ Entity12 = {
 	}
 }
 
-
-
 Entity13 = {
 	Name = "MANAGERS",
 	Components = {
@@ -352,11 +502,32 @@ Entity13 = {
 }
 
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13 }
+Entity19 = {
+	Name = "Light",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0|2|0",
+				Rotation = "true|0|1|0|0",
+				Scale = "1|1|1"
+			}
+		},
+		{
+			Name = "LIGHT",
+			Arguments = {
+				LightType = "LT_POINT",
+				DiffuseColor = "0.1|0.1|0.1",
+				SpecularColor = "0|0|0"
+			}
+		}
+	}
+}
+--[[Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9--]]
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19 }
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = "",
-		PLAYER = ""
+		DEFAULT = ""
 	}
 }

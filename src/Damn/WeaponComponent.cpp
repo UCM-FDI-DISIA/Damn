@@ -21,7 +21,7 @@ void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 
 void damn::WeaponComponent::Start()
 {
-	_ent->GetComponent<eden_ec::CTransform>()->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player")->GetComponent<eden_ec::CTransform>());
+	_ent->GetComponent<eden_ec::CTransform>()->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _ent->GetComponent<eden_ec::CTransform>()->GetParent();
 }
 
