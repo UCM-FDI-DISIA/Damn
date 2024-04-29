@@ -13,6 +13,15 @@ Entity1 = {
 			Name = "CAMERA",
 			Arguments = {
 			}
+		},
+		{
+			Name = "CHANGE_CAMERA_BACKGROUND",
+			Arguments = {
+				r = "201",
+				g = "1",
+				b = "1",
+				a = "1"
+			}
 		}
 	}
 }
@@ -88,24 +97,25 @@ Entity3 = {
 	}		
 }
 Entity4 = {
-	Name = "UI_Image",
+	Name = "TitleTextP1",
 	Components = {
 		{
-			Name = "IMAGE",
+			Name = "TEXT",
 			Arguments = {
-                OverlayName= "image",
+                OverlayName= "titletextp1",
 				XPos = "50",
-                YPos = "50",
-                Width = "100",
-                Height = "100",
-                Texture = "MainMenuBackground.png",
-                Depth = "1"
+				YPos = "20",
+				Tam = "5",
+				Text = "0123456789\"",
+				Font = "DoomDamn",
+				Color = "0|0|255",
+				Depth = "0"
 			}
 		}
 	}	
 }
 
-Entities = { Entity1, Entity2, Entity3,Entity4}
+Entities = { Entity1, Entity2, Entity3, Entity4}
 
 CollisionLayers = {
 	Layers = {
