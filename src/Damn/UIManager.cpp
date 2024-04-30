@@ -42,6 +42,13 @@ void damn::UIManager::SetTimeLeft(int time)
 	}
 }
 
+void damn::UIManager::SetScore(int score)
+{
+	if (_ents[SCORE_TEXT] != nullptr) {
+		_ents[SCORE_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(SCORE + std::to_string(score));
+	}
+}
+
 void damn::UIManager::Update(float dt)
 {
 }

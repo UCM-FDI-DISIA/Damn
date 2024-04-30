@@ -36,11 +36,19 @@ void damn::GameManager::DieEnemy()
 	_uiManager->SetEnemiesLeft(_enemiesLeft);
 }
 
+void damn::GameManager::AddScore(int score)
+{
+	_score += score;
+	_uiManager->SetScore(_score);
+}
+
 void damn::GameManager::Awake()
 {
-	_uiManager = _ent->GetComponent<UIManager>();
-	_uiManager->SetTimeLeft(_maxTime);
 	_enemiesLeft = 0;
+	_score = 0;
+	_uiManager = _ent->GetComponent<UIManager>();
+	_uiManager->SetScore(_score);
+	_uiManager->SetTimeLeft(_maxTime);
 }
 
 void damn::GameManager::Start()

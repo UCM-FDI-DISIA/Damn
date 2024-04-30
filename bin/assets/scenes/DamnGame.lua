@@ -529,8 +529,27 @@ Entity19 = {
 		}
 	}
 }
+
+Entity20 = {
+	Name = "SCORE_TEXT",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+                OverlayName= "ScoreText",
+				XPos = "83",
+                YPos = "13",
+                Tam = "5",
+                Text = "SCORE: XX",
+                Font = "DejaVuSerifCondensed-Italic.ttf",
+                Color = "255|0|255",
+                Depth = "1"
+			}
+		}
+	}
+}
 --[[Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9--]]
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19 }
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20 }
 
 CollisionLayers = {
 	Layers = {

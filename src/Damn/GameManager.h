@@ -12,6 +12,7 @@ namespace damn {
 		void Init(eden_script::ComponentArguments* args) override;
 		void RegisterEnemy();
 		void DieEnemy();
+		void AddScore(int score);
 		static std::string GetID() { return "GAMEMANAGER"; }
 
 	private:
@@ -19,6 +20,7 @@ namespace damn {
 		float _timer;
 		float _timerText;
 		float _maxTime;
+		int _score;
 		int _enemiesLeft;
 		UIManager* _uiManager;
 
