@@ -90,13 +90,13 @@ Player = {
 		{
 			Name = "CAMERA_MOVEMENT",
 			Arguments = { 
-				Sensivity = "25.0"
+				Sensivity = "50.0"
 			}
 		},
 		{
 			Name = "MOVEMENT_CONTROLLER",
 			Arguments = {
-				Speed = 10;
+				Speed = "10";
 			}
 		},
 		{

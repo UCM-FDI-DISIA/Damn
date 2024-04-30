@@ -66,13 +66,16 @@ for ob in objects:
     dato += "\t\t\t\tPosition = "+ "\""+ str(ob.location.x) + "|" + str(ob.location.z) + "|"+ str(-ob.location.y) + "\","+ "\n"
     #file1.write(dato)
     
+    ob.rotation_mode = "XYZ"
     ob.rotation_euler[0] = ob.rotation_euler[0] + math.radians(-90)
     ob.rotation_mode = 'QUATERNION'
     dato += "\t\t\t\tRotation = "+ "\""+ "false|"+str(ob.rotation_quaternion.w) + "|" +  str(ob.rotation_quaternion.x) + "|" + str(ob.rotation_quaternion.z) + "|" + str(-ob.rotation_quaternion.y) + "\","+ "\n"
     
     #file1.write(dato)
-    dato += "\t\t\t\tScale = "+ "\""+ str(ob.scale.x) + "|" + str(ob.scale.z) + "|" + str(ob.scale.y)+ "\""
+    dato += "\t\t\t\tScale = "+ "\""+ str(ob.scale.x) + "|" + str(ob.scale.y) + "|" + str(ob.scale.z)+ "\""
     #file1.write(dato)
+    ob.rotation_mode = "XYZ"
+    ob.rotation_euler[0] = ob.rotation_euler[0] + math.radians(90)
     
     #FIN DE ARGUMENTOS
     if len(ob.children) == 0:
@@ -100,7 +103,7 @@ for ob in objects:
             if isinstance(prop_value, str):
                 if (prop_name == "AABB" or prop_name == "Radius") and not("manualRB" in child and child["manualRB"] == True):
                         if prop_name == "AABB":
-                            dato += "\t\t\t\t" + prop_name + " = \"" + str(ob.dimensions.x/ob.scale.x) + "|" +str(ob.dimensions.z/ob.scale.z) + "|" + str(ob.dimensions.y/ob.scale.y) + "\""
+                            dato += "\t\t\t\t" + prop_name + " = \"" + str(ob.dimensions.x/abs(ob.scale.x)) + "|" +str(ob.dimensions.z/abs(ob.scale.z)) + "|" + str(ob.dimensions.y/abs(ob.scale.y)) + "\""
                         else:
                             dato += "\t\t\t\t" + prop_name + " = \"" + str(max(ob.dimensions.x, max(ob.dimensions.y, ob.dimensions.z))) + "\""
                 else:
