@@ -51,8 +51,8 @@ void damn::WeaponComponent::Shoot()
 void damn::WeaponComponent::Reload()
 {
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
-		_magazineAmmo += ((_magazineSize - _magazineAmmo));
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
+		_magazineAmmo += ((_magazineSize - _magazineAmmo));
 	}
 	else if (_currentAmmo > 0) {
 		_magazineAmmo += _currentAmmo;

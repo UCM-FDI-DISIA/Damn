@@ -40,6 +40,6 @@ void eden_ec::CAmmoBoxComponent::PickUpAmmo()
 	Entity* otherEnt = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "other");
 	if (otherEnt->HasComponent("WEAPON_MANAGER")) {
 		otherEnt->GetComponent<damn::WeaponManager>()->AddAmmo(_ammoGiven);
-		//_ent->SetAlive(false);
+		_ent->SetAlive(false);
 	}
 }
