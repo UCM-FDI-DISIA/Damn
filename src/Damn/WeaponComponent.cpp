@@ -6,6 +6,7 @@
 #include "Scene.h"
 #include <ComponentArguments.h>
 #include <CMeshRenderer.h>
+#include <iostream>
 
 void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 {
