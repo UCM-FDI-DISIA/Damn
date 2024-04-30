@@ -23,6 +23,8 @@ namespace eden_ec {
 
 		void Update(float t) override;
 
+		void PickUpAmmo();
+
 	protected:
 		const static std::string _id;
 	private:
@@ -31,6 +33,7 @@ namespace eden_ec {
 		float _timeCounter = 0;
 		float _scaleGrowth = 1.2;
 		float _minScale = 1;
+		int _ammoGiven = 10;
 		eden_utils::Vector3 _originalScale;
 	};
 }

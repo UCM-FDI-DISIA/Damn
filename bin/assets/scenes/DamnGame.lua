@@ -377,7 +377,7 @@ Entity16 = {
 				Radius = "1.0",
 				Shape = "BOX",
 				CollisionFlag = "KINEMATIC",
-				CollisionLayer = "",
+				CollisionLayer = "DEFAULT",
 				Trigger = "false"
 			}
 		},
@@ -385,7 +385,13 @@ Entity16 = {
 			Name = "AMMO_BOX_COMPONENT",
 			Arguments = {
 			}
-		}
+		},
+		{
+            Name = "BEHAVIOUR",
+			Arguments = {
+                Script= "ammoCollision"
+			}
+        }
 	}
 }
 
