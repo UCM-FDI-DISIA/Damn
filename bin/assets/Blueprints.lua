@@ -40,7 +40,13 @@ Bullet = {
             Arguments = {
                 Speed = "0.05"
             }
-        }
+        },
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "CollisionDamage"
+			}
+		}
     }
 }
 
