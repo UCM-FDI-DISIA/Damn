@@ -697,31 +697,9 @@ Entity22 = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.8133107423782349|5.464506149291992|5.160520076751709",
+				Position = "0.8133107423782349|3.8|0.160520076751709",
 				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
-				Scale = "0.6571059823036194|0.6571059823036194|0.6571059823036194"
-			}
-		},
-		{
-			Name = "WEAPON_COMPONENT",
-			Arguments = {
-				MaxAmmo = "50",
-				MagazineSize = "25",
-				Cadence = "0.5"
-			}
-		}
-	}
-}
-
-Entity23 = {
-	Name = "Shotgun",
-	Components = {
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "0.8133107423782349|5.464506149291992|5.160520076751709",
-				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
-				Scale = "0.6571059823036194|0.6571059823036194|0.6571059823036194"
+				Scale = "0.3|0.3|0.3"
 			}
 		},
 		{
@@ -741,6 +719,43 @@ Entity23 = {
         },
 		{
 			Name = "WEAPON_COMPONENT",
+			Arguments = {
+				MaxAmmo = "50",
+				MagazineSize = "25",
+				Cadence = "0.5"
+			}
+		}
+	}
+}
+
+Entity23 = {
+	Name = "Shotgun",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.8133107423782349|3.8|0.160520076751709",
+				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
+				Scale = "0.3|0.3|0.3"
+			}
+		},
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "shotgun"
+			}
+		},
+		{
+            Name = "ANIMATOR",
+            Arguments = {
+                AnimNames = "shootShotgun|reloadShotgun|idleShotgun",
+                AnimMeshNames = "shootShotgun|reloadShotgun|idleShotgun",
+                NextAnim = "idleShotgun|idleShotgun|idleShotgun",
+                LoopAnims = "false|false|true"
+            }
+        },
+		{
+			Name = "SHOTGUN",
 			Arguments = {
 				MaxAmmo = "10",
 				MagazineSize = "5",

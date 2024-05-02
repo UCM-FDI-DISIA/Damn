@@ -46,3 +46,9 @@ void damn::Shotgun::Shoot()
 	else if (_magazineAmmo == 0)
 		Reload();
 }
+
+void damn::Shotgun::Reload()
+{
+	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadShotgun");
+	WeaponComponent::Reload();
+}
