@@ -8,6 +8,7 @@
 #include<Entity.h>
 #include<Vector3.h>
 #include<CMeshRenderer.h>
+#include "CAnimator.h"
 void damn::Shotgun::Init(eden_script::ComponentArguments* args)
 {
 	_numBalas = args->GetValueToInt("Balas");
@@ -40,6 +41,7 @@ void damn::Shotgun::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
 	}
 	else if (_magazineAmmo == 0)
 		Reload();

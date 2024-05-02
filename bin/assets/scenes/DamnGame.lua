@@ -725,6 +725,21 @@ Entity23 = {
 			}
 		},
 		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "shotgun"
+			}
+		},
+		{
+            Name = "ANIMATOR",
+            Arguments = {
+                AnimNames = "shootShotgun|reloadShotgun|idleShotgun",
+                AnimMeshNames = "shootShotgun|reloadShotgun|idleShotgun",
+                NextAnim = "idleShotgun|idleShotgun|idleShotgun",
+                LoopAnims = "false|false|true"
+            }
+        },
+		{
 			Name = "WEAPON_COMPONENT",
 			Arguments = {
 				MaxAmmo = "10",
