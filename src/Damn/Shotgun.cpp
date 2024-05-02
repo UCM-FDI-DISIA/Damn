@@ -23,6 +23,7 @@ void damn::Shotgun::Start()
 
 void damn::Shotgun::Shoot()
 {
+	PlayShootAnim();
 	if (_canShoot && _magazineAmmo > 0) {
 		float alfa = (float) ANGLE / _numBalas;
 		eden_utils::Vector3 dir = eden_utils::Vector3(0, 0, 0);
@@ -41,14 +42,23 @@ void damn::Shotgun::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
-		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
 	}
 	else if (_magazineAmmo == 0)
 		Reload();
 }
 
-void damn::Shotgun::Reload()
+void damn::Shotgun::PlayIdleAnim()
+{
+	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("idleShotgun");
+}
+
+void damn::Shotgun::PlayShootAnim()
+{
+	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
+}
+
+void damn::Shotgun::PlayReloadAnim()
 {
 	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadShotgun");
-	WeaponComponent::Reload();
 }
+

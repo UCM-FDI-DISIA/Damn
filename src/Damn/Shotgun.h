@@ -19,10 +19,11 @@ namespace damn {
 		/// @brief Metodo que se llama cuando pueda disparar el arma
 		void Shoot() override final;
 
-		//Método para hacer la animación de recarga
-		virtual void Reload() override;
-
 		static std::string GetID() { return "SHOTGUN"; }
+	protected:
+		virtual void PlayIdleAnim() override;
+		virtual void PlayShootAnim() override;
+		virtual void PlayReloadAnim() override;
 	private:
 		int _numBalas;
 	};
