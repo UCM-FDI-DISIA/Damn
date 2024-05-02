@@ -58,6 +58,7 @@ namespace damn {
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();
 		virtual void PlayReloadAnim();
+		virtual bool isAnyAnimPlaying();
 	};
 }
 #endif 

@@ -23,8 +23,7 @@ void damn::Shotgun::Start()
 
 void damn::Shotgun::Shoot()
 {
-	PlayShootAnim();
-	if (_canShoot && _magazineAmmo > 0) {
+	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
 		float alfa = (float) ANGLE / _numBalas;
 		eden_utils::Vector3 dir = eden_utils::Vector3(0, 0, 0);
 		eden_utils::Vector3 up = _cameraTransform->GetUp();
@@ -42,6 +41,7 @@ void damn::Shotgun::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
+		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)
 		Reload();
@@ -49,16 +49,27 @@ void damn::Shotgun::Shoot()
 
 void damn::Shotgun::PlayIdleAnim()
 {
-	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("idleShotgun");
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("idleShotgun")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("idleShotgun");
+	}
 }
 
 void damn::Shotgun::PlayShootAnim()
 {
-	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootShotgun")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
+	}
 }
 
 void damn::Shotgun::PlayReloadAnim()
 {
-	_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadShotgun");
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadShotgun")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadShotgun");
+	}
+}
+
+bool damn::Shotgun::isAnyAnimPlaying()
+{
+	return (_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadShotgun") || _ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootShotgun"));
 }
 

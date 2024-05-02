@@ -697,24 +697,24 @@ Entity22 = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "0.8133107423782349|3.8|0.160520076751709",
-				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
-				Scale = "0.3|0.3|0.3"
+				Position = "0.8133107423782349|3.8|2.0",
+				Rotation = "false|2.0|0.0|1.0|-0.0",
+				Scale = "0.7|0.7|0.7"
 			}
 		},
 		{
 			Name = "MESH_RENDERER",
 			Arguments = {
-				Mesh = "shotgun"
+				Mesh = "pistol"
 			}
 		},
 		{
             Name = "ANIMATOR",
             Arguments = {
-                AnimNames = "shootPistol|reloadPistol|idlePistol",
-                AnimMeshNames = "shootShotgun|reloadShotgun|idleShotgun",
-                NextAnim = "idlePistol|idlePistol|idlePistol",
-                LoopAnims = "false|false|true"
+                AnimNames = "shootPistol|reloadPistol|idlePistol|reloadSpecialPistol",
+                AnimMeshNames = "shootPistol|reloadPistol|idlePistol|reloadPistolEspecial",
+                NextAnim = "idlePistol|idlePistol|idlePistol|idlePistol",
+                LoopAnims = "false|false|true|false"
             }
         },
 		{

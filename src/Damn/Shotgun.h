@@ -24,6 +24,7 @@ namespace damn {
 		virtual void PlayIdleAnim() override;
 		virtual void PlayShootAnim() override;
 		virtual void PlayReloadAnim() override;
+		virtual bool isAnyAnimPlaying() override;
 	private:
 		int _numBalas;
 	};
