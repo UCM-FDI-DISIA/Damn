@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include <ComponentArguments.h>
+#include "CAnimator.h"
 #include <CMeshRenderer.h>
 
 void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
@@ -23,6 +24,7 @@ void damn::WeaponComponent::Start()
 {
 	_ent->GetComponent<eden_ec::CTransform>()->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _ent->GetComponent<eden_ec::CTransform>()->GetParent();
+	PlayIdleAnim();
 }
 
 void damn::WeaponComponent::Update(float deltaTime)
@@ -35,6 +37,7 @@ void damn::WeaponComponent::Update(float deltaTime)
 
 void damn::WeaponComponent::Shoot()
 {
+	PlayShootAnim();
 	if (_canShoot && _magazineAmmo > 0) {
 		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
 		bullet->GetComponent<eden_ec::CTransform>()->SetPosition(_ent->GetComponent<eden_ec::CTransform>()->GetPosition());
@@ -50,6 +53,7 @@ void damn::WeaponComponent::Shoot()
 
 void damn::WeaponComponent::Reload()
 {
+	PlayReloadAnim();
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
 		_magazineAmmo += ((_magazineSize - _magazineAmmo));
@@ -73,4 +77,25 @@ void damn::WeaponComponent::SetVisible(bool visible)
 std::pair<int, int> damn::WeaponComponent::GetAmmo()
 {
 	return std::pair<int, int>(_magazineAmmo, _currentAmmo);
+}
+
+void damn::WeaponComponent::PlayIdleAnim()
+{
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("idlePistol")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("idlePistol");
+	}
+}
+
+void damn::WeaponComponent::PlayShootAnim()
+{
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootPistol")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootPistol");
+	}
+}
+
+void damn::WeaponComponent::PlayReloadAnim()
+{
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol")) {
+		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
+	}
 }

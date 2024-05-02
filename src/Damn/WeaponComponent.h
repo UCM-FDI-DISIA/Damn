@@ -54,6 +54,10 @@ namespace damn {
 		float _elapsedTime;
 		bool _canShoot;
 		eden_ec::CTransform* _cameraTransform;
+
+		virtual void PlayIdleAnim();
+		virtual void PlayShootAnim();
+		virtual void PlayReloadAnim();
 	};
 }
 #endif 

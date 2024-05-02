@@ -711,9 +711,9 @@ Entity22 = {
 		{
             Name = "ANIMATOR",
             Arguments = {
-                AnimNames = "shootShotgun|reloadShotgun|idleShotgun",
+                AnimNames = "shootPistol|reloadPistol|idlePistol",
                 AnimMeshNames = "shootShotgun|reloadShotgun|idleShotgun",
-                NextAnim = "idleShotgun|idleShotgun|idleShotgun",
+                NextAnim = "idlePistol|idlePistol|idlePistol",
                 LoopAnims = "false|false|true"
             }
         },
