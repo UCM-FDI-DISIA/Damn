@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
     <ClCompile Include="..\..\src\Damn\Health.cpp" />
@@ -9,7 +8,6 @@
     <ClCompile Include="..\..\src\Damn\Hito2Prueba.cpp" />
     <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
     <ClCompile Include="..\..\src\Damn\InputController.cpp" />
-    <ClCompile Include="..\..\src\Damn\PlayButton.cpp" />
     <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
@@ -20,9 +18,11 @@
     <ClCompile Include="..\..\src\Damn\CAmmoBoxComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\UIManager.cpp" />
     <ClCompile Include="..\..\src\Damn\GameManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\CChangeCameraBackground.cpp" />
+    <ClCompile Include="..\..\src\Damn\CMainMenuCameraRotation.cpp" />
+    <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
     <ClInclude Include="..\..\src\Damn\Health.h" />
@@ -30,7 +30,6 @@
     <ClInclude Include="..\..\src\Damn\Hito2Prueba.h" />
     <ClInclude Include="..\..\src\Damn\InputController.h" />
     <ClInclude Include="..\..\src\Damn\MovementController.h" />
-    <ClInclude Include="..\..\src\Damn\PlayButton.h" />
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
@@ -41,5 +40,8 @@
     <ClInclude Include="..\..\src\Damn\CAmmoBoxComponent.h" />
     <ClInclude Include="..\..\src\Damn\UIManager.h" />
     <ClInclude Include="..\..\src\Damn\GameManager.h" />
+    <ClInclude Include="..\..\src\Damn\CChangeCameraBackground.h" />
+    <ClInclude Include="..\..\src\Damn\CMainMenuCameraRotation.h" />
+    <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
   </ItemGroup>
 </Project>
