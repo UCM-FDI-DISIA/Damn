@@ -21,6 +21,7 @@
     <ClCompile Include="..\..\src\Damn\CChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\CMainMenuCameraRotation.cpp" />
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
+    <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -43,5 +44,6 @@
     <ClInclude Include="..\..\src\Damn\CChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\CMainMenuCameraRotation.h" />
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
+    <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
   </ItemGroup>
 </Project>

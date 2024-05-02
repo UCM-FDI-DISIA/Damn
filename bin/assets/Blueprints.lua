@@ -198,4 +198,31 @@ Wall = {
 	}
 }
 
-Blueprints = { Cube, Frog, Bullet, Player, Wall, Floor }
+Enemy = {
+	Name = "Enemy",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|1|0.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "1.0|1.0|1.0"
+			}
+		},
+		{
+			Name = "ENEMY_HEALTH",
+			Arguments = {
+				MaximumHealth = "1000"
+			}
+		},
+		{
+			Name = "ENEMY_ATTACK",
+			Arguments = {
+				AttackRate = "0.5",
+				RotationSpeed = "0.2"	
+			}
+		}
+	}
+}
+
+Blueprints = { Cube, Frog, Bullet, Player, Wall, Floor, Enemy }

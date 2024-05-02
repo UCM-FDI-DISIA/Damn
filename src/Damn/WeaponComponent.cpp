@@ -37,8 +37,8 @@ void damn::WeaponComponent::Update(float deltaTime)
 
 void damn::WeaponComponent::Shoot()
 {
-	PlayShootAnim();
-	if (_canShoot && _magazineAmmo > 0) {
+	
+	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
 		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
 		bullet->GetComponent<eden_ec::CTransform>()->SetPosition(_ent->GetComponent<eden_ec::CTransform>()->GetPosition());
 		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(_ent->GetComponent<eden_ec::CTransform>()->GetForward() * -1);
@@ -46,6 +46,7 @@ void damn::WeaponComponent::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
+		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)
 		Reload();
@@ -53,14 +54,16 @@ void damn::WeaponComponent::Shoot()
 
 void damn::WeaponComponent::Reload()
 {
-	PlayReloadAnim();
+	if (isAnyAnimPlaying()) return;
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
 		_magazineAmmo += ((_magazineSize - _magazineAmmo));
+		PlayReloadAnim();
 	}
 	else if (_currentAmmo > 0) {
 		_magazineAmmo += _currentAmmo;
 		_currentAmmo = 0;
+		PlayReloadAnim();
 	}
 }
 
@@ -95,7 +98,18 @@ void damn::WeaponComponent::PlayShootAnim()
 
 void damn::WeaponComponent::PlayReloadAnim()
 {
-	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol")) {
-		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
+	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") && !_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol")) {
+		int x = rand() % 101;
+		if (x < 90) {
+			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
+		}
+		else {
+			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadSpecialPistol");
+		}
 	}
+}
+
+bool damn::WeaponComponent::isAnyAnimPlaying()
+{
+	return (_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") || _ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol") || _ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootPistol"));
 }
