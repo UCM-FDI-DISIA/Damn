@@ -2068,7 +2068,7 @@ Entity64 = {
 		{
 			Name = "MESH_RENDERER",
 			Arguments = {
-				Mesh = "pistol"
+				Mesh = "rifle"
 			}
 		},
 		{
@@ -2082,10 +2082,10 @@ Entity64 = {
 		{
 			Name = "ANIMATOR",
 			Arguments = {
-				AnimNames = "shootPistol|reloadPistol|idlePistol|reloadSpecialPistol",
-				AnimMeshNames = "shootPistol|reloadPistol|idlePistol|reloadPistolEspecial",
-				NextAnim = "idlePistol|idlePistol|idlePistol|idlePistol",
-				LoopAnims = "false|false|true|false"
+				AnimNames = "shootRifle|reloadRifle|idleRifle",
+				AnimMeshNames = "fireRifle|reloadRifle|idleRifle",
+				NextAnim = "idleRifle|idleRifle|idleRifle",
+				LoopAnims = "false|false|true"
 			}
 		},
 		{
