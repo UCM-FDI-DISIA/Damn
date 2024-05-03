@@ -1,7 +1,7 @@
 @echo off
 
 git submodule init
-:: git submodule update --remote :: Usaremos esto cuando esté todo subido a la rama main
+git submodule update --remote
 
 cd EDEN
 

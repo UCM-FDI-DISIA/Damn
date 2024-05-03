@@ -4,11 +4,14 @@
 
 #include "Transform.h"
 #include "CRigidBody.h"
+#include "CCamera.h"
 
 #include "ComponentArguments.h"
 
 #include "RenderManager.h"
 #include "InputManager.h"
+
+#include <math.h>
 
 #ifdef _DEBUG
 #include <iostream>
@@ -25,6 +28,11 @@ namespace eden_ec {
 
 		eden_render::RenderManager* renderMngr = eden_render::RenderManager::getInstance();
 		renderMngr->SetRelativeMouseMode(true);
+
+		eden_ec::CCamera* cam = _ent->GetComponent<eden_ec::CCamera>();
+		if (cam) {
+			cam->SetNearClipDistance(0.1);
+		}
 	}
 	void CameraMovement::Init(eden_script::ComponentArguments* args) {
 		_sensivity = args->GetValueToFloat("Sensivity");
@@ -35,9 +43,12 @@ namespace eden_ec {
 	}
 
 	void CameraMovement::Update(float dt) {
+		 
 		_transform->Yaw(-dt * _mouseDirection.first * _sensivity);
 		_transform->LocalPitch(-dt * _mouseDirection.second * _sensivity);
-
+		if (abs(_transform->GetRotation().ToEuler().GetX()) > 1) { //Limita el pitch de la cámara
+			_transform->LocalPitch(dt * _mouseDirection.second * _sensivity);
+		}
 		/*eden_utils::Vector3 movement = { 0,0,0 };
 
 		//bool vectorChanged = false;
