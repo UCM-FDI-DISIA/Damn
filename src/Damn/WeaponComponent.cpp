@@ -54,17 +54,16 @@ void damn::WeaponComponent::Shoot()
 
 void damn::WeaponComponent::Reload()
 {
-	if (isAnyAnimPlaying()) return;
+	if (isAnyAnimPlaying() || _magazineAmmo >= _magazineSize) return;
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
 		_magazineAmmo += ((_magazineSize - _magazineAmmo));
-		PlayReloadAnim();
 	}
 	else if (_currentAmmo > 0) {
 		_magazineAmmo += _currentAmmo;
 		_currentAmmo = 0;
-		PlayReloadAnim();
 	}
+	PlayReloadAnim();
 }
 
 void damn::WeaponComponent::AddAmmo(int ammo)
@@ -100,7 +99,7 @@ void damn::WeaponComponent::PlayReloadAnim()
 {
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") && !_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol")) {
 		int x = rand() % 101;
-		if (x < 90) {
+		if (x < 50) {
 			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
 		}
 		else {
