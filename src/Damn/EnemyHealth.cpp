@@ -8,7 +8,7 @@ damn::GameManager* damn::EnemyHealth::_gameManager = nullptr;
 
 damn::EnemyHealth::~EnemyHealth()
 {
-	_gameManager->DieEnemy();
+	//_gameManager->DieEnemy();
 }
 
 void damn::EnemyHealth::Start()

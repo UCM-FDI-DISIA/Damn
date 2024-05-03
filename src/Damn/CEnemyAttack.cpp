@@ -6,7 +6,6 @@
 #include "CProyectileMovement.h"
 #include <math.h>
 #include <ComponentArguments.h>
-#include <iostream>
 
 void eden_ec::CEnemyAttack::Init(eden_script::ComponentArguments* args)
 {
@@ -45,6 +44,5 @@ void eden_ec::CEnemyAttack::Update(float t)
 				f->GetComponent<CProyectileMovement>()->SetDirection(_ent->GetComponent<CTransform>()->GetForward());
 			}
 		}
-		std::cout << frontAngle << '\n';
 	}
 }

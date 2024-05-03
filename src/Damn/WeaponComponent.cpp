@@ -99,7 +99,7 @@ void damn::WeaponComponent::PlayReloadAnim()
 {
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") && !_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol")) {
 		int x = rand() % 101;
-		if (x < 50) {
+		if (x < 90) {
 			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
 		}
 		else {
