@@ -64,7 +64,37 @@ Ammo = {
 		}
 	}
 }
-
+Bullet = {
+    Name = "ShotgunBullet", 
+    Components = {
+        {
+            Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.3|0.3|0.3"
+            }
+        },
+        {
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "ShotgunShell"
+            }
+        },
+        {
+            Name = "PROYECTILE_MOVEMENT",
+            Arguments = {
+                Speed = "0.5"
+            }
+        },
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "CollisionDamage"
+			}
+		}
+    }
+}
 Bullet = {
     Name = "Bullet", 
     Components = {
@@ -79,13 +109,13 @@ Bullet = {
         {
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "PruebaCubo"
+                Mesh = "ShotgunShell"
             }
         },
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.5"
+                Speed = "0.001"
             }
         },
 		{

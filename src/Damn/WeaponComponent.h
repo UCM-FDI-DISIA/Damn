@@ -5,6 +5,7 @@
 
 namespace eden_ec {
 	class CTransform;
+	class CAnimator;
 }
 
 namespace damn {
@@ -54,6 +55,9 @@ namespace damn {
 		float _elapsedTime;
 		bool _canShoot;
 		eden_ec::CTransform* _cameraTransform;
+		eden_ec::CTransform* _tr;
+		eden_ec::CAnimator* _animator;
+
 
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();

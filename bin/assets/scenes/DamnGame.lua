@@ -1808,7 +1808,7 @@ Entity55 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-24.583890914916992|4.428698539733887|-4.364519119262695",
-				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775725081562996|-0.014775769785046577",
+				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775724150240421|-0.014775770716369152",
 				Scale = "0.6255058646202087|0.6564507484436035|0.6564506888389587"
 			}
 		},
@@ -1878,7 +1878,7 @@ Entity57 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-26.89447784423828|4.006252288818359|2.9490795135498047",
-				Rotation = "false|0.19415901601314545|0.679926872253418|-0.6799276471138|-0.19416524469852448",
+				Rotation = "false|0.19581814110279083|0.6794554591178894|-0.6794493794441223|-0.19581639766693115",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1913,7 +1913,7 @@ Entity58 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.7322416305542|4.006254196166992|3.315239191055298",
-				Rotation = "false|0.19415901601314545|0.679926872253418|-0.6799276471138|-0.19416524469852448",
+				Rotation = "false|0.19581814110279083|0.6794554591178894|-0.6794493794441223|-0.19581639766693115",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1948,7 +1948,7 @@ Entity59 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.433406829833984|4.006251335144043|-2.0262086391448975",
-				Rotation = "false|0.47349974513053894|0.5251602530479431|-0.5251638889312744|-0.4735056459903717",
+				Rotation = "false|0.4737434685230255|0.5249494910240173|-0.5249444246292114|-0.4737388789653778",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1958,7 +1958,7 @@ Entity59 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0000001270416465",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -1983,7 +1983,7 @@ Entity60 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.845291137695312|7.811142921447754|3.72383189201355",
-				Rotation = "false|0.48569729924201965|0.5139002799987793|-0.5139045715332031|-0.4857023060321808",
+				Rotation = "false|0.4857933521270752|0.5138185620307922|-0.5138137340545654|-0.4857887923717499",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -2165,7 +2165,29 @@ Entity67 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67 }
+Entity68 = {
+	Name = "A_LIGHT.001",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.6480690240859985|1.407318353652954|-0.6305416822433472",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
+				Scale = "0.6571059823036194|0.6571059823036194|0.6571059823036194"
+			}
+		},
+		{
+			Name = "LIGHT",
+			Arguments = {
+				LightType = "LT_DIRECTIONAL",
+				DiffuseColor = "0.5|0.5|0.5",
+				SpecularColor = "0|0|0"
+			}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68 }
 
 CollisionLayers = {
 	Layers = {
