@@ -38,7 +38,7 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.05"
+                Speed = "0.5"
             }
         },
 		{
@@ -209,6 +209,12 @@ Enemy = {
 				Scale = "1.0|1.0|1.0"
 			}
 		},
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Cube.057"
+            }
+        },
 		{
 			Name = "ENEMY_HEALTH",
 			Arguments = {

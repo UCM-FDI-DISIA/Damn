@@ -2,7 +2,7 @@
 #define _GAME_MANAGER_H
 
 #define NUM_ENEMIES 3
-#define TIME_CALM 5000
+#define TIME_CALM 5
 
 #include <vector>
 
