@@ -767,7 +767,7 @@ Entity23 = {
 }
 
 Entity24 = {
-	Name = "AUI_HealthBar",
+	Name = "AUI_HEALTH_BAR",
 	Components = {
 		{
 			Name = "TRANSFORM",
@@ -781,11 +781,23 @@ Entity24 = {
 			Name = "BAR",
 			Arguments = {
 				OverlayName = "HealthBar",
-				XPos = "17",
-				YPos = "5",
-				Width = "30",
-				Height = "5",
-				Texture = "PlayButton_Ini.png",
+				XPos = "18",
+				YPos = "24",
+				Width = "22",
+				Height = "7",
+				Texture = "HealthBar.png",
+				Depth = "2"
+			}
+		},
+		{
+			Name = "IMAGE",
+			Arguments = {
+				OverlayName = "BackBarImage",
+				XPos = "18",
+				YPos = "24",
+				Width = "22",
+				Height = "7",
+				Texture = "BackBar.png",
 				Depth = "1"
 			}
 		}
@@ -807,14 +819,14 @@ Entity25 = {
 			Name = "TEXT",
 			Arguments = {
 				OverlayName = "AmmoText",
-				XPos = "70",
+				XPos = "95",
 				YPos = "90",
 				Width = "30",
 				Depth = "1",
-				Tam = "5",
+				Tam = "3.5",
 				Text = "XX/XX",
-				Font = "DejaVuSerifCondensed-Italic.ttf",
-				Color = "255|255|255"
+				Font = "01-digit2000.regular.ttf",
+                Color = "1|129|255"
 			}
 		}
 	}
@@ -835,12 +847,12 @@ Entity26 = {
 			Name = "IMAGE",
 			Arguments = {
 				OverlayName = "GunImage",
-				XPos = "90",
-				YPos = "90",
-				Width = "30",
-				Height = "30",
+				XPos = "79",
+				YPos = "92",
+				Width = "23",
+				Height = "10",
 				Texture = "Pistol.png",
-				Depth = "1"
+				Depth = "2"
 			}
 		}
 	}
@@ -862,12 +874,12 @@ Entity27 = {
 			Arguments = {
 				OverlayName = "TimeText",
 				XPos = "82",
-				YPos = "3",
+				YPos = "30",
 				Depth = "1",
-				Tam = "5",
-				Text = "TIME LEFT: XX",
-				Font = "DejaVuSerifCondensed-Italic.ttf",
-				Color = "255|0|0"
+				Tam = "3",
+				Text = "TIME: XXXX",
+				Font = "01-digit2000.regular.ttf",
+                Color = "0|0|0"
 			}
 		}
 	}
@@ -888,13 +900,13 @@ Entity28 = {
 			Name = "TEXT",
 			Arguments = {
 				OverlayName = "EnemiesLeftText",
-				XPos = "80",
-				YPos = "8",
+				XPos = "77",
+				YPos = "20",
 				Depth = "1",
-				Tam = "5",
-				Text = "ENEMIES LEFT: XX",
-				Font = "DejaVuSerifCondensed-Italic.ttf",
-				Color = "0|255|0"
+				Tam = "3",
+				Text = "ENEMIES: XX",
+				Font = "01-digit2000.regular.ttf",
+                Color = "0|0|0"
 			}
 		}
 	}
@@ -962,13 +974,13 @@ Entity31 = {
 			Name = "TEXT",
 			Arguments = {
 				OverlayName = "ScoreText",
-				XPos = "83",
-				YPos = "13",
+				XPos = "81",
+				YPos = "25",
 				Depth = "1",
-				Tam = "5",
-				Text = "SCORE: XX",
-				Font = "DejaVuSerifCondensed-Italic.ttf",
-				Color = "255|0|255"
+				Tam = "3",
+				Text = "SCORE: XXXX",
+				Font = "01-digit2000.regular.ttf",
+                Color = "0|0|0"
 			}
 		}
 	}
@@ -2094,7 +2106,63 @@ Entity63 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63 }
+Entity64 = {
+	Name = "AUI_ROUND_TEXT",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+                OverlayName= "RoundText",
+				XPos = "10",
+                YPos = "83",
+                Tam = "12",
+                Text = "XX",
+                Font = "01-digit2000.regular.ttf",
+                Color = "1|129|255",
+                Depth = "1"
+			}
+		}
+	}
+}
+
+Entity65 = {
+	Name = "AUI_HELMET_IMAGE",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+				OverlayName = "HelmetImage",
+				XPos = "50",
+				YPos = "50",
+				Width = "192",
+				Height = "108",
+				Texture = "Helmet.png",
+				Depth = "1"
+			}
+		}
+	}
+}
+
+Entity66 = {
+	Name = "AUI_FrontBar",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+				OverlayName = "FrontBarImage",
+				XPos = "18",
+				YPos = "24",
+				Width = "22",
+				Height = "7",
+				Texture = "FrontBar.png",
+				Depth = "3"
+			}
+		}
+	}
+}
+
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66 }
 
 CollisionLayers = {
 	Layers = {

@@ -234,3 +234,71 @@ material Shotgun.png {
         }
     }
 }
+
+material BackBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture BackBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material FrontBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture FrontBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material HealthBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture HealthBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Helmet.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Helmet.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}

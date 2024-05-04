@@ -31,26 +31,82 @@ void damn::UIManager::ChangeWeapon(int magazineAmmo, int leftAmmo, int numWeapon
 void damn::UIManager::SetEnemiesLeft(int enemies)
 {
 	if (_ents[ENEMIES_LEFT_TEXT] != nullptr) {
-		_ents[ENEMIES_LEFT_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + std::to_string(enemies));
+		_ents[ENEMIES_LEFT_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + GetFormat(enemies));
 	}
 }
 
 void damn::UIManager::SetTimeLeft(int time)
 {
 	if (_ents[TIME_TEXT] != nullptr) {
-		_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + std::to_string(time));
+		_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + GetFormat(time));
 	}
 }
 
 void damn::UIManager::SetScore(int score)
 {
 	if (_ents[SCORE_TEXT] != nullptr) {
-		_ents[SCORE_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(SCORE + std::to_string(score));
+		_ents[SCORE_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(SCORE + GetFormat(score));
+	}
+}
+
+void damn::UIManager::SetRound(int round)
+{
+	if (_ents[ROUND_TEXT] != nullptr) {
+		if (round > MAX_ROUND_NUMBER) {
+			_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(MAX_ROUND_NUMBER));
+			return;
+		}
+
+		std::string text = "";
+		std::string finalText = "";
+		std::string n = std::to_string(round);
+		int index = 2;
+		for (int i = n.size() - 1; i >= 0; i--) {
+			if (n[i] == '4') {
+				text.push_back(_numbers[index - 2]);
+				text.push_back(_numbers[index - 1]);
+			}
+			else if (n[i] == '9') {
+				text.push_back(_numbers[index - 2]);
+				text.push_back(_numbers[index]);
+			}
+			else if (n[i] != '0') {
+				int num = n[i] - '0';
+				if (n[i] - '0' >= 5) {
+					text.push_back(_numbers[index - 1]);
+					for (int i = 0; i < num - 5; ++i) {
+						text.push_back(_numbers[index - 2]);
+					}
+				}
+				else {
+					for (int i = 0; i < num; ++i) {
+						text.push_back(_numbers[index - 2]);
+					}
+				}
+			}
+			finalText = text + finalText;
+			text.clear();
+			index += 2;
+		}
+		_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(finalText);
 	}
 }
 
 void damn::UIManager::Update(float dt)
 {
+}
+
+std::string damn::UIManager::GetFormat(int value)
+{
+	if (value > MAX_UI_NUMBER) return std::to_string(MAX_UI_NUMBER);
+	else {
+		std::string result = "";
+		for (int i = (MAX_UI_NUMBER + 1)/10; i >= 10 && value / i <= 0; i /= 10) {
+			result.push_back('0');
+		}
+		result += std::to_string(value);
+		return result;
+	}
 }
 
 void damn::UIManager::Awake()
