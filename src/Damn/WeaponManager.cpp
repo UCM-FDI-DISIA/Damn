@@ -1,6 +1,7 @@
 #include "WeaponManager.h"
 #include "WeaponComponent.h"
 #include "Shotgun.h"
+#include "Rifle.h"
 #include <SceneManager.h>
 #include <Scene.h>
 #include <Entity.h>
@@ -14,6 +15,7 @@ void damn::WeaponManager::Start()
 
 #ifdef _DEBUG
 	_shotgun = true;
+	_rifle = true;
 #endif
 
 	/*_weapons = std::vector<WeaponComponent*>(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Gun")->GetComponent<WeaponComponent>(),
@@ -21,6 +23,7 @@ void damn::WeaponManager::Start()
 	_weapons = std::vector<WeaponComponent*>();
 	_weapons.push_back(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Gun")->GetComponent<WeaponComponent>());
 	_weapons.push_back(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Shotgun")->GetComponent<Shotgun>());
+	_weapons.push_back(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Rifle")->GetComponent<Rifle>());
 	std::pair<int,int> ammo = _weapons[_actualWeapon]->GetAmmo();
 	_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
 }
@@ -55,6 +58,11 @@ void damn::WeaponManager::ChangeWeapon()
 void damn::WeaponManager::UnlockShotGun()
 {
 	_shotgun = true;
+}
+
+void damn::WeaponManager::UnlockRifle()
+{
+	_rifle = true;
 }
 
 void damn::WeaponManager::UpdateUIAmmo()
