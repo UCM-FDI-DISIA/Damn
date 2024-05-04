@@ -111,6 +111,7 @@
     <ClInclude Include="..\..\src\Damn\MovementController.h" />
     <ClInclude Include="..\..\src\Damn\CEnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
+    <ClInclude Include="..\..\src\Damn\Rifle.h" />
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
     <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
     <ClInclude Include="..\..\src\Damn\UIManager.h" />
@@ -134,6 +135,7 @@
     <ClCompile Include="..\..\src\Damn\InputController.cpp" />
     <ClCompile Include="..\..\src\Damn\CEnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\Rifle.cpp" />
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
     <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
     <ClCompile Include="..\..\src\Damn\UIManager.cpp" />

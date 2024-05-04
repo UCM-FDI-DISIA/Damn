@@ -4,8 +4,8 @@
 #include "Component.h"
 #include "Vector3.h"
 
-
 namespace eden_ec {
+	class CTransform;
 	class CProyectileMovement : public Component
 	{
 	public:
@@ -25,6 +25,7 @@ namespace eden_ec {
 		inline void SetDirection(eden_utils::Vector3 newDirection) { _direction = newDirection;}
 
 	protected:
+		CTransform* _tr;
 		const static std::string _id;
 	private:
 		eden_utils::Vector3 _direction;

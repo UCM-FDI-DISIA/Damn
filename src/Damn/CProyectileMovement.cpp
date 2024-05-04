@@ -14,9 +14,10 @@ void eden_ec::CProyectileMovement::Awake()
 
 void eden_ec::CProyectileMovement::Start()
 {
+	_tr = _ent->GetComponent<CTransform>();
 }
 
 void eden_ec::CProyectileMovement::Update(float t)
 {
-	_ent->GetComponent<CTransform>()->Translate(_direction.Normalized() * _proyectileSpeed);
+	_tr->Translate(_direction.Normalized() * _proyectileSpeed * t);
 }

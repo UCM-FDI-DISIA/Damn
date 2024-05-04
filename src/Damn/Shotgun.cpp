@@ -35,9 +35,7 @@ void damn::Shotgun::Shoot()
 			angle = (float)((-alfa + alfa * i));
 			dir = forward.RotatedAroundPoint(up, angle);
 			
-			eden_utils::Vector3 position = _tr->GetPosition();
-			eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
-			bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet", position, rotation);
+			bullet = CreateBullet("ShotgunShell");
 			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(dir.Normalized() * -1);
 		}
 		_canShoot = false;

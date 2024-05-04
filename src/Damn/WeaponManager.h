@@ -1,7 +1,7 @@
 #ifndef _WEAPON_MANAGER_H
 #define _WEAPON_MANAGER_H
 
-#define NUM_WEAPONS 2
+#define NUM_WEAPONS 3
 
 #include "Component.h"
 #include<vector>
@@ -45,14 +45,17 @@ namespace damn {
 		/// @brief Metodo para desbloquear la escopeta, pone el booleano shotgun en true
 		void UnlockShotGun();
 
+		void UnlockRifle();
+
 		void UpdateUIAmmo();
 
 		static std::string GetID() { return "WEAPON_MANAGER"; }
 	private:
-		enum WEAPON { GUN, SHOTGUN };
+		enum WEAPON { GUN, SHOTGUN, RIFLE };
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
-		bool _shotgun;
+		bool _shotgun = false;
+		bool _rifle = false;
 		UIManager* _uiManager;
 	};
 }

@@ -64,8 +64,8 @@ Ammo = {
 		}
 	}
 }
-Bullet = {
-    Name = "ShotgunBullet", 
+ShotgunShell = {
+    Name = "ShotgunShell", 
     Components = {
         {
             Name = "TRANSFORM", 
@@ -79,6 +79,37 @@ Bullet = {
             Name = "MESH_RENDERER",
             Arguments = {
                 Mesh = "ShotgunShell"
+            }
+        },
+        {
+            Name = "PROYECTILE_MOVEMENT",
+            Arguments = {
+                Speed = "0.001"
+            }
+        },
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "CollisionDamage"
+			}
+		}
+    }
+}
+EnemyBullet = {
+    Name = "EnemyBullet", 
+    Components = {
+        {
+            Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.3|0.3|0.3"
+            }
+        },
+        {
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "PistolBullet"
             }
         },
         {
@@ -109,7 +140,7 @@ Bullet = {
         {
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "ShotgunShell"
+                Mesh = "PistolBullet"
             }
         },
         {
@@ -308,4 +339,4 @@ Enemy = {
 	}
 }
 
-Blueprints = { Cube, Frog, Bullet, Player, Wall, Floor, Enemy, Ammo }
+Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo }

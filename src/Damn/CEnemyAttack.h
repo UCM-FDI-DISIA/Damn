@@ -5,6 +5,7 @@
 #include "Component.h"
 
 namespace eden_ec {
+	class CTransform;
 	class CEnemyAttack : public Component
 	{
 	public:
@@ -24,7 +25,11 @@ namespace eden_ec {
 	protected:
 		const static std::string _id;
 	private:
-		class Entity* _player;
+		Entity* _player;
+		CTransform* _tr;
+		CTransform* _playerTr;
+
+
 		float _attackRate = 1;
 		float _attackTimer = 0;
 		float _rotationSpeed = 0.4;
