@@ -320,7 +320,7 @@ Enemy = {
 		{
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "Cube.057"
+                Mesh = "Demon"
             }
         },
 		{
