@@ -770,8 +770,8 @@ Entity21 = {
 				OverlayName = "HealthBar",
 				XPos = "18",
 				YPos = "24",
-				Width = "22",
-				Height = "7",
+				Width = "20",
+				Height = "4",
 				Texture = "HealthBar.png",
 				Depth = "2"
 			}

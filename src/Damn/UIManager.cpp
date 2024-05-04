@@ -5,7 +5,7 @@
 #include "CText.h"
 #include "CImage.h"
 
-void damn::UIManager::UpdateHealthBar(float value, float maxValue)
+void damn::UIManager::UpdateHealthBar(float value, float maxValue)	
 {
 	if (_ents[HEALTH_BAR] != nullptr) {
 		_ents[HEALTH_BAR]->GetComponent<eden_ec::CBar>()->SetBarPercentage(value / maxValue * 100);
@@ -16,7 +16,7 @@ void damn::UIManager::UpdateAmmo(int magazineAmmo, int leftAmmo)
 {
 	if (_ents[AMMO_TEXT] != nullptr) {
 		std::string text = std::to_string(magazineAmmo) + "/" + std::to_string(leftAmmo);
-		_ents[AMMO_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(text);
+		_ents[AMMO_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(text, false);
 	}
 }
 
@@ -31,14 +31,14 @@ void damn::UIManager::ChangeWeapon(int magazineAmmo, int leftAmmo, int numWeapon
 void damn::UIManager::SetEnemiesLeft(int enemies)
 {
 	if (_ents[ENEMIES_LEFT_TEXT] != nullptr) {
-		_ents[ENEMIES_LEFT_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + GetFormat(enemies));
+		_ents[ENEMIES_LEFT_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(ENEMIES_LEFT + GetFormat(enemies), false);
 	}
 }
 
 void damn::UIManager::SetTimeLeft(int time)
 {
 	if (_ents[TIME_TEXT] != nullptr) {
-		_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + GetFormat(time));
+		_ents[TIME_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(TIME_LEFT + GetFormat(time), false);
 	}
 }
 
@@ -53,7 +53,7 @@ void damn::UIManager::SetRound(int round)
 {
 	if (_ents[ROUND_TEXT] != nullptr) {
 		if (round > MAX_ROUND_NUMBER) {
-			_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(MAX_ROUND_NUMBER));
+			_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(MAX_ROUND_NUMBER), false);
 			return;
 		}
 
@@ -88,7 +88,7 @@ void damn::UIManager::SetRound(int round)
 			text.clear();
 			index += 2;
 		}
-		_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(finalText);
+		_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(finalText, false);
 	}
 }
 
