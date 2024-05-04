@@ -29,6 +29,11 @@ namespace damn {
 		/// @param deltaTime El tiempo entre frames calculado por el motor
 		void Update(float deltaTime) override;
 
+		/// @brief Crea una bala con la rotación y la posición de la entidad
+		/// @param blueprintID Bala a instanciar
+		/// @return Devuelve la bala creada
+		eden_ec::Entity* CreateBullet(std::string blueprintID);
+
 		/// @brief Metodo que se llama cuando pueda disparar el arma
 		virtual void Shoot();
 
@@ -43,6 +48,8 @@ namespace damn {
 		/// @param visible Booleana que establece la visibilidad
 		virtual void SetVisible(bool visible);
 
+		/// @brief Devuelva las balas del cargador y las balas actuales
+		/// @return Número de balas del cargador y las balas restantes
 		std::pair<int, int> GetAmmo();
 
 		static std::string GetID() { return "WEAPON_COMPONENT"; }

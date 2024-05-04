@@ -37,13 +37,17 @@ void damn::WeaponComponent::Update(float deltaTime)
 	}
 }
 
+eden_ec::Entity*damn::WeaponComponent::CreateBullet(std::string blueprintID) {
+	eden_utils::Vector3 position = _tr->GetPosition();
+	eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
+	return eden::SceneManager::getInstance()->InstantiateBlueprint(blueprintID, position, rotation);
+}
+
 void damn::WeaponComponent::Shoot()
 {
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
 		
-		eden_utils::Vector3 position = _tr->GetPosition();
-		eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180,eden_utils::Vector3(0,1,0));
-		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet", position, rotation);
+		eden_ec::Entity* bullet = CreateBullet("Bullet");
 		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
 
 		_canShoot = false;
