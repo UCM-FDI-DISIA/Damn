@@ -147,9 +147,9 @@ EnemyBullet = {
 				Friction = "0.0",
 				AABB = "1|1|1",
 				PosOffset = "0|0|0",
-				Radius = "0.0",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
+				Radius = "0.2",
+				Shape = "SPHERE",
+				CollisionFlag = "DINAMIC",
 				CollisionLayer = "DEFAULT",
 				Trigger = "true"
 			}
@@ -188,7 +188,7 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "100"
+                Speed = "10"
             }
         },
 		{
@@ -199,9 +199,9 @@ Bullet = {
 				Friction = "0.0",
 				AABB = "1|1|1",
 				PosOffset = "0|0|0",
-				Radius = "0.0",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
+				Radius = "0.2",
+				Shape = "SPHERE",
+				CollisionFlag = "DINAMIC",
 				CollisionLayer = "DEFAULT",
 				Trigger = "true"
 			}
@@ -381,6 +381,21 @@ Enemy = {
 			}
 		},
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		},
+		{
             Name = "MESH_RENDERER",
             Arguments = {
                 Mesh = "Demon"
@@ -389,7 +404,7 @@ Enemy = {
 		{
 			Name = "ENEMY_HEALTH",
 			Arguments = {
-				MaximumHealth = "1000"
+				MaximumHealth = "100"
 			}
 		},
 		{

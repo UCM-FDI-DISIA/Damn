@@ -18,11 +18,12 @@ void damn::CBulletEnemyDamage::Start()
 void damn::CBulletEnemyDamage::HasHitEnemy()
 {
 	eden_ec::Entity* _other = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "other");
+	eden_ec::Entity* _self = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "self");
 	damn::Health* _healthComponent = nullptr;
 
 	if (_other->HasComponent("ENEMY_HEALTH")) {
 		_healthComponent = _other->GetComponent<EnemyHealth>();
-		_healthComponent->LoseHealth(_damage);
-		_ent->SetAlive(false);
+		_healthComponent->LoseHealth(_self->GetComponent<CBulletEnemyDamage>()->_damage);
 	}
+	_self->SetAlive(false);
 }
