@@ -28,7 +28,7 @@ namespace damn {
 		std::string GetFormat(int value);
 		//void Init(eden_script::ComponentArguments* args) override;
 		const std::vector<std::string> _ids = { "AUI_HEALTH_BAR", "AUI_AMMO_TEXT", "AUI_GUN_IMAGE", "AUI_TIME_TEXT", "AUI_ENEMIES_LEFT_TEXT", "AUI_SCORE_TEXT", "AUI_ROUND_TEXT"};
-		const std::vector<std::string> _weaponImages = { "Pistol.png", "Shotgun.png" };
+		const std::vector<std::string> _weaponImages = { "Pistol.png", "Shotgun.png", "Sniper.png"};
 		std::vector<eden_ec::Entity*> _ents = std::vector< eden_ec::Entity*>(_ids.size());
 		enum UIEnts {HEALTH_BAR, AMMO_TEXT, GUN_IMAGE, TIME_TEXT, ENEMIES_LEFT_TEXT, SCORE_TEXT, ROUND_TEXT };
 		const std::vector<char> _numbers = { 'I', 'V', 'X', 'L', 'C', 'D', 'M'};
