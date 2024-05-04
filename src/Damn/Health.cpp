@@ -14,10 +14,6 @@ void damn::Health::Init(eden_script::ComponentArguments* args)
 void damn::Health::Start()
 {
 	_currentHealth = _maxHealth;
-	eden_script::LuaManager* _luaMngr = eden_script::ScriptManager::Instance()->GetLuaManager();
-	_luaMngr->Regist(*this, "Health", &damn::Health::HasBeenHit, "HasBeenHit", this);
-	_luaMngr->SetGlobal(*this, "Health");
-	_luaMngr = nullptr;
 }
 
 void damn::Health::Update(float deltaTime)
@@ -29,12 +25,14 @@ void damn::Health::GainHealth(int health)
 {
 	_currentHealth += health;
 	if (_currentHealth > _maxHealth) _currentHealth = _maxHealth;
+	std::cout << "Vida actual: " << _currentHealth << ", vida maxima: " << _maxHealth << std::endl;
 }
 
 void damn::Health::LoseHealth(int health)
 {
 	_currentHealth -= health;
 	if (_currentHealth < 0);
+	std::cout << "Vida actual: " << _currentHealth << ", vida maxima: " << _maxHealth << std::endl;
 }
 
 int damn::Health::GetMaxHealth()
@@ -50,12 +48,4 @@ int damn::Health::GetCurrentHealth()
 void damn::Health::SetCurrentToMax()
 {
 	_currentHealth = _maxHealth;
-}
-
-void damn::Health::HasBeenHit()
-{
-	eden_ec::Entity* _other = luabridge::getGlobal(_ent->GetComponent<eden_ec::CLuaBehaviour>()->getLuaState(), "other");
-	std::cout << _other->GetEntityID() << std::endl;
-	_other->SetAlive(false);
-	LoseHealth(DAMAGE_TAKEN);
 }

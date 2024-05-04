@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Entity.h"
 #include "GameManager.h"
+#include <iostream>
 
 damn::GameManager* damn::EnemyHealth::_gameManager = nullptr;
 
@@ -22,5 +23,6 @@ void damn::EnemyHealth::Start()
 void damn::EnemyHealth::LoseHealth(int health)
 {
 	_currentHealth -= health;
+	std::cout << "ahora tengo " << _currentHealth << " puntos de vida" << std::endl;
 	if (_currentHealth < 0);
 }

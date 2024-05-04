@@ -98,6 +98,9 @@
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
     <ClInclude Include="..\..\src\Damn\CAmmoBoxComponent.h" />
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
+    <ClInclude Include="..\..\src\Damn\CBulletDamage.h" />
+    <ClInclude Include="..\..\src\Damn\CBulletEnemyDamage.h" />
+    <ClInclude Include="..\..\src\Damn\CBulletPlayerDamage.h" />
     <ClInclude Include="..\..\src\Damn\CChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\CMainMenuCameraRotation.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
@@ -122,6 +125,9 @@
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
     <ClCompile Include="..\..\src\Damn\CAmmoBoxComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\CBulletDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\CBulletEnemyDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\CBulletPlayerDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\CMainMenuCameraRotation.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />

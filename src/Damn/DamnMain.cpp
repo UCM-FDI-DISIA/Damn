@@ -21,6 +21,8 @@
 #include "CMainMenuCameraRotation.h"
 #include "Spawnpoint.h"
 #include "Rifle.h"
+#include "CBulletEnemyDamage.h"
+#include "CBulletPlayerDamage.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -44,6 +46,8 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::GameManager>();
 	factory->RegisterComponent<damn::Spawnpoint>();
 	factory->RegisterComponent<damn::Rifle>();
+	factory->RegisterComponent<damn::CBulletEnemyDamage>();
+	factory->RegisterComponent<damn::CBulletPlayerDamage>();
 }
 
 void LoadScene() {

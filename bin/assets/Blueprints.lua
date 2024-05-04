@@ -88,9 +88,30 @@ ShotgunShell = {
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_ENEMY_DAMAGE",
+			Arguments = {
+				Damage = "20"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsEnemy"
 			}
 		}
     }
@@ -119,9 +140,30 @@ EnemyBullet = {
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_PLAYER_DAMAGE",
+			Arguments = {
+				Damage = "20"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsPlayer"
 			}
 		}
     }
@@ -146,13 +188,34 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.001"
+                Speed = "100"
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_ENEMY_DAMAGE",
+			Arguments = {
+				Damage = "200"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsEnemy"
 			}
 		}
     }
