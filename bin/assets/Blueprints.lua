@@ -18,6 +18,83 @@ Cube = {
     }
 }
 
+Ammo = {
+	Name = "AmmoBox",
+	Components = {
+		{
+			Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.3|0.3|0.3"
+            }
+		},
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "ammoBox"
+            }
+        },
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "AMMO_BOX_COMPONENT",
+			Arguments = {
+
+			}
+		},
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "ammoCollision"
+			}
+		}
+	}
+}
+Bullet = {
+    Name = "ShotgunBullet", 
+    Components = {
+        {
+            Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.3|0.3|0.3"
+            }
+        },
+        {
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "ShotgunShell"
+            }
+        },
+        {
+            Name = "PROYECTILE_MOVEMENT",
+            Arguments = {
+                Speed = "0.5"
+            }
+        },
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "CollisionDamage"
+			}
+		}
+    }
+}
 Bullet = {
     Name = "Bullet", 
     Components = {
@@ -32,13 +109,13 @@ Bullet = {
         {
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "PruebaCubo"
+                Mesh = "ShotgunShell"
             }
         },
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.05"
+                Speed = "0.001"
             }
         },
 		{
@@ -210,6 +287,12 @@ Enemy = {
 			}
 		},
 		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Cube.057"
+            }
+        },
+		{
 			Name = "ENEMY_HEALTH",
 			Arguments = {
 				MaximumHealth = "1000"
@@ -225,4 +308,4 @@ Enemy = {
 	}
 }
 
-Blueprints = { Cube, Frog, Bullet, Player, Wall, Floor, Enemy }
+Blueprints = { Cube, Frog, Bullet, Player, Wall, Floor, Enemy, Ammo }

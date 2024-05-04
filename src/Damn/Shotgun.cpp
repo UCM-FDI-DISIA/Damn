@@ -17,6 +17,7 @@ void damn::Shotgun::Init(eden_script::ComponentArguments* args)
 
 void damn::Shotgun::Start()
 {
+	_tr = _ent->GetComponent<eden_ec::CTransform>();
 	_ent->GetComponent<eden_ec::CMeshRenderer>()->SetInvisible(true);
 	WeaponComponent::Start();
 }
@@ -27,15 +28,16 @@ void damn::Shotgun::Shoot()
 		float alfa = (float) ANGLE / _numBalas;
 		eden_utils::Vector3 dir = eden_utils::Vector3(0, 0, 0);
 		eden_utils::Vector3 up = _cameraTransform->GetUp();
-		eden_utils::Vector3 forward = _cameraTransform->GetForward();
+		eden_utils::Vector3 forward = eden_utils::Vector3(0,0,-1);
 		eden_ec::Entity* bullet;
 		float angle = 0;
 		for (int i = 0; i < _numBalas; ++i) {
 			angle = (float)((-alfa + alfa * i));
 			dir = forward.RotatedAroundPoint(up, angle);
-
-			bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
-			bullet->GetComponent<eden_ec::CTransform>()->SetPosition(_ent->GetComponent<eden_ec::CTransform>()->GetPosition());
+			
+			eden_utils::Vector3 position = _tr->GetPosition();
+			eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
+			bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet", position, rotation);
 			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(dir.Normalized() * -1);
 		}
 		_canShoot = false;

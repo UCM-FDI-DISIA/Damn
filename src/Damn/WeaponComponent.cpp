@@ -22,8 +22,10 @@ void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 
 void damn::WeaponComponent::Start()
 {
-	_ent->GetComponent<eden_ec::CTransform>()->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
-	_cameraTransform = _ent->GetComponent<eden_ec::CTransform>()->GetParent();
+	_tr = _ent->GetComponent<eden_ec::CTransform>();
+	_animator = _ent->GetComponent<eden_ec::CAnimator>();
+	_tr->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
+	_cameraTransform = _tr->GetParent();
 	PlayIdleAnim();
 }
 
@@ -37,11 +39,12 @@ void damn::WeaponComponent::Update(float deltaTime)
 
 void damn::WeaponComponent::Shoot()
 {
-	
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
-		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet");
-		bullet->GetComponent<eden_ec::CTransform>()->SetPosition(_ent->GetComponent<eden_ec::CTransform>()->GetPosition());
-		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(_ent->GetComponent<eden_ec::CTransform>()->GetForward() * -1);
+		
+		eden_utils::Vector3 position = _tr->GetPosition();
+		eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180,eden_utils::Vector3(0,1,0));
+		eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("Bullet", position, rotation);
+		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
 
 		_canShoot = false;
 		_elapsedTime = 0;
@@ -54,17 +57,16 @@ void damn::WeaponComponent::Shoot()
 
 void damn::WeaponComponent::Reload()
 {
-	if (isAnyAnimPlaying()) return;
+	if (isAnyAnimPlaying() || _magazineAmmo >= _magazineSize) return;
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
 		_magazineAmmo += ((_magazineSize - _magazineAmmo));
-		PlayReloadAnim();
 	}
 	else if (_currentAmmo > 0) {
 		_magazineAmmo += _currentAmmo;
 		_currentAmmo = 0;
-		PlayReloadAnim();
 	}
+	PlayReloadAnim();
 }
 
 void damn::WeaponComponent::AddAmmo(int ammo)
@@ -84,32 +86,42 @@ std::pair<int, int> damn::WeaponComponent::GetAmmo()
 
 void damn::WeaponComponent::PlayIdleAnim()
 {
-	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("idlePistol")) {
-		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("idlePistol");
+	/*if (!_animator->IsPlaying("idlePistol")) {
+		_animator->PlayAnim("idlePistol");
+	}*/
+	if (!_animator->IsPlaying("idleRifle")) {
+		_animator->PlayAnim("idleRifle");
 	}
 }
 
 void damn::WeaponComponent::PlayShootAnim()
 {
-	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootPistol")) {
-		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootPistol");
+	/*if (!_animator->IsPlaying("shootPistol")) {
+		_animator->PlayAnim("shootPistol");
+	}*/
+	if (!_animator->IsPlaying("shootRifle")) {
+		_animator->PlayAnim("shootRifle");
 	}
 }
 
 void damn::WeaponComponent::PlayReloadAnim()
 {
-	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") && !_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol")) {
+	/*if (!_animator->IsPlaying("reloadPistol") && !_animator->IsPlaying("reloadSpecialPistol")) {
 		int x = rand() % 101;
 		if (x < 90) {
-			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadPistol");
+			_animator->PlayAnim("reloadPistol");
 		}
 		else {
-			_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadSpecialPistol");
+			_animator->PlayAnim("reloadSpecialPistol");
 		}
+	}*/
+	if (!_animator->IsPlaying("reloadRifle")) {
+		_animator->PlayAnim("reloadRifle");
 	}
 }
 
 bool damn::WeaponComponent::isAnyAnimPlaying()
 {
-	return (_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadPistol") || _ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadSpecialPistol") || _ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootPistol"));
+	//return (_animator->IsPlaying("reloadPistol") || _animator->IsPlaying("reloadSpecialPistol") || _animator->IsPlaying("shootPistol"));
+	return (_animator->IsPlaying("reloadRifle") || _animator->IsPlaying("shootRifle"));
 }

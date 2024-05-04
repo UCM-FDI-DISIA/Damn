@@ -6,7 +6,6 @@
 #include "CProyectileMovement.h"
 #include <math.h>
 #include <ComponentArguments.h>
-#include <iostream>
 
 void eden_ec::CEnemyAttack::Init(eden_script::ComponentArguments* args)
 {
@@ -21,7 +20,7 @@ void eden_ec::CEnemyAttack::Awake()
 
 void eden_ec::CEnemyAttack::Start()
 {
-	_player = eden::SceneManager::getInstance()->FindEntity("Player");
+	_player = eden::SceneManager::getInstance()->FindEntity("Player_0");
 }
 
 void eden_ec::CEnemyAttack::Update(float t)
@@ -36,7 +35,7 @@ void eden_ec::CEnemyAttack::Update(float t)
 			else _rotationCoef = 1;
 			_ent->GetComponent<CTransform>()->Yaw(_rotationSpeed * _rotationCoef);
 		}
-		if(frontAngle <= 2) {
+		if(frontAngle <= 3) {
 			_attackTimer += t;
 			if (_attackTimer >= _attackRate) {
 				_attackTimer = 0;

@@ -19,6 +19,7 @@
 #include "UIManager.h"
 #include "GameManager.h"
 #include "CMainMenuCameraRotation.h"
+#include "Spawnpoint.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -40,6 +41,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<eden_ec::CAmmoBoxComponent>();
 	factory->RegisterComponent<damn::UIManager>();
 	factory->RegisterComponent<damn::GameManager>();
+	factory->RegisterComponent<damn::Spawnpoint>();
 }
 
 void LoadScene() {

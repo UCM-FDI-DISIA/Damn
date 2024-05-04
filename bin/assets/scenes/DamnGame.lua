@@ -1,18 +1,4 @@
 Entity1 = {
-	Name = "Player",
-	Components = {
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "0.8133107423782349|5.464506149291992|5.160520076751709",
-				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
-				Scale = "1.105026125907898|1.105026125907898|1.105026125907898"
-			}
-		}
-	}
-}
-
-Entity2 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -47,7 +33,7 @@ Entity2 = {
 	}
 }
 
-Entity3 = {
+Entity2 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -82,7 +68,7 @@ Entity3 = {
 	}
 }
 
-Entity4 = {
+Entity3 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -117,7 +103,7 @@ Entity4 = {
 	}
 }
 
-Entity5 = {
+Entity4 = {
 	Name = "Floor",
 	Components = {
 		{
@@ -152,7 +138,7 @@ Entity5 = {
 	}
 }
 
-Entity6 = {
+Entity5 = {
 	Name = "Cube.002",
 	Components = {
 		{
@@ -187,7 +173,7 @@ Entity6 = {
 	}
 }
 
-Entity7 = {
+Entity6 = {
 	Name = "Cube.001",
 	Components = {
 		{
@@ -222,7 +208,7 @@ Entity7 = {
 	}
 }
 
-Entity8 = {
+Entity7 = {
 	Name = "Sun",
 	Components = {
 		{
@@ -236,7 +222,7 @@ Entity8 = {
 	}
 }
 
-Entity9 = {
+Entity8 = {
 	Name = "Cube",
 	Components = {
 		{
@@ -271,7 +257,7 @@ Entity9 = {
 	}
 }
 
-Entity10 = {
+Entity9 = {
 	Name = "Cube.003",
 	Components = {
 		{
@@ -306,7 +292,7 @@ Entity10 = {
 	}
 }
 
-Entity11 = {
+Entity10 = {
 	Name = "Cylinder.001",
 	Components = {
 		{
@@ -341,7 +327,7 @@ Entity11 = {
 	}
 }
 
-Entity12 = {
+Entity11 = {
 	Name = "Cylinder.002",
 	Components = {
 		{
@@ -376,7 +362,7 @@ Entity12 = {
 	}
 }
 
-Entity13 = {
+Entity12 = {
 	Name = "Cylinder.003",
 	Components = {
 		{
@@ -411,7 +397,7 @@ Entity13 = {
 	}
 }
 
-Entity14 = {
+Entity13 = {
 	Name = "Cylinder.004",
 	Components = {
 		{
@@ -446,7 +432,7 @@ Entity14 = {
 	}
 }
 
-Entity15 = {
+Entity14 = {
 	Name = "Cube.004",
 	Components = {
 		{
@@ -481,7 +467,7 @@ Entity15 = {
 	}
 }
 
-Entity16 = {
+Entity15 = {
 	Name = "Cylinder.005",
 	Components = {
 		{
@@ -516,7 +502,7 @@ Entity16 = {
 	}
 }
 
-Entity17 = {
+Entity16 = {
 	Name = "Cube.005",
 	Components = {
 		{
@@ -551,7 +537,7 @@ Entity17 = {
 	}
 }
 
-Entity18 = {
+Entity17 = {
 	Name = "Cube.006",
 	Components = {
 		{
@@ -586,7 +572,7 @@ Entity18 = {
 	}
 }
 
-Entity19 = {
+Entity18 = {
 	Name = "Cube.007",
 	Components = {
 		{
@@ -621,7 +607,7 @@ Entity19 = {
 	}
 }
 
-Entity20 = {
+Entity19 = {
 	Name = "Cube.008",
 	Components = {
 		{
@@ -656,7 +642,7 @@ Entity20 = {
 	}
 }
 
-Entity21 = {
+Entity20 = {
 	Name = "Cube.009",
 	Components = {
 		{
@@ -766,7 +752,8 @@ Entity23 = {
 	}
 }
 
-Entity24 = {
+
+Entity21 = {
 	Name = "AUI_HEALTH_BAR",
 	Components = {
 		{
@@ -804,7 +791,7 @@ Entity24 = {
 	}
 }
 
-Entity25 = {
+Entity22 = {
 	Name = "AUI_AMMO_TEXT",
 	Components = {
 		{
@@ -832,7 +819,7 @@ Entity25 = {
 	}
 }
 
-Entity26 = {
+Entity23 = {
 	Name = "AUI_GUN_IMAGE",
 	Components = {
 		{
@@ -858,7 +845,7 @@ Entity26 = {
 	}
 }
 
-Entity27 = {
+Entity24 = {
 	Name = "AUI_TIME_TEXT",
 	Components = {
 		{
@@ -885,7 +872,7 @@ Entity27 = {
 	}
 }
 
-Entity28 = {
+Entity25 = {
 	Name = "AUI_ENEMIES_LEFT_TEXT",
 	Components = {
 		{
@@ -912,7 +899,7 @@ Entity28 = {
 	}
 }
 
-Entity29 = {
+Entity26 = {
 	Name = "MANAGERS",
 	Components = {
 		{
@@ -937,7 +924,7 @@ Entity29 = {
 	}
 }
 
-Entity30 = {
+Entity27 = {
 	Name = "A_LIGHT",
 	Components = {
 		{
@@ -959,7 +946,7 @@ Entity30 = {
 	}
 }
 
-Entity31 = {
+Entity28 = {
 	Name = "AUI_SCORE_TEXT",
 	Components = {
 		{
@@ -986,7 +973,7 @@ Entity31 = {
 	}
 }
 
-Entity32 = {
+Entity29 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1021,7 +1008,7 @@ Entity32 = {
 	}
 }
 
-Entity33 = {
+Entity30 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1056,7 +1043,7 @@ Entity33 = {
 	}
 }
 
-Entity34 = {
+Entity31 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1091,7 +1078,7 @@ Entity34 = {
 	}
 }
 
-Entity35 = {
+Entity32 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1126,7 +1113,7 @@ Entity35 = {
 	}
 }
 
-Entity36 = {
+Entity33 = {
 	Name = "Floor.001",
 	Components = {
 		{
@@ -1161,7 +1148,7 @@ Entity36 = {
 	}
 }
 
-Entity37 = {
+Entity34 = {
 	Name = "Cube.010",
 	Components = {
 		{
@@ -1196,7 +1183,7 @@ Entity37 = {
 	}
 }
 
-Entity38 = {
+Entity35 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1231,7 +1218,7 @@ Entity38 = {
 	}
 }
 
-Entity39 = {
+Entity36 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1266,7 +1253,7 @@ Entity39 = {
 	}
 }
 
-Entity40 = {
+Entity37 = {
 	Name = "Floor.002",
 	Components = {
 		{
@@ -1301,7 +1288,7 @@ Entity40 = {
 	}
 }
 
-Entity41 = {
+Entity38 = {
 	Name = "Cube.013",
 	Components = {
 		{
@@ -1336,7 +1323,7 @@ Entity41 = {
 	}
 }
 
-Entity42 = {
+Entity39 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1371,7 +1358,7 @@ Entity42 = {
 	}
 }
 
-Entity43 = {
+Entity40 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1406,7 +1393,7 @@ Entity43 = {
 	}
 }
 
-Entity44 = {
+Entity41 = {
 	Name = "Wall",
 	Components = {
 		{
@@ -1441,7 +1428,7 @@ Entity44 = {
 	}
 }
 
-Entity45 = {
+Entity42 = {
 	Name = "Cylinder.006",
 	Components = {
 		{
@@ -1476,7 +1463,7 @@ Entity45 = {
 	}
 }
 
-Entity46 = {
+Entity43 = {
 	Name = "Cylinder.007",
 	Components = {
 		{
@@ -1511,7 +1498,7 @@ Entity46 = {
 	}
 }
 
-Entity47 = {
+Entity44 = {
 	Name = "Cylinder.008",
 	Components = {
 		{
@@ -1546,7 +1533,7 @@ Entity47 = {
 	}
 }
 
-Entity48 = {
+Entity45 = {
 	Name = "Cube.011",
 	Components = {
 		{
@@ -1581,7 +1568,7 @@ Entity48 = {
 	}
 }
 
-Entity49 = {
+Entity46 = {
 	Name = "Cube.012",
 	Components = {
 		{
@@ -1616,7 +1603,7 @@ Entity49 = {
 	}
 }
 
-Entity50 = {
+Entity47 = {
 	Name = "Cube.014",
 	Components = {
 		{
@@ -1651,7 +1638,7 @@ Entity50 = {
 	}
 }
 
-Entity51 = {
+Entity48 = {
 	Name = "Cylinder.009",
 	Components = {
 		{
@@ -1686,7 +1673,7 @@ Entity51 = {
 	}
 }
 
-Entity52 = {
+Entity49 = {
 	Name = "Cylinder.010",
 	Components = {
 		{
@@ -1721,7 +1708,7 @@ Entity52 = {
 	}
 }
 
-Entity53 = {
+Entity50 = {
 	Name = "Cylinder.011",
 	Components = {
 		{
@@ -1756,7 +1743,7 @@ Entity53 = {
 	}
 }
 
-Entity54 = {
+Entity51 = {
 	Name = "Cube.015",
 	Components = {
 		{
@@ -1791,7 +1778,7 @@ Entity54 = {
 	}
 }
 
-Entity55 = {
+Entity52 = {
 	Name = "Cube.016",
 	Components = {
 		{
@@ -1826,7 +1813,7 @@ Entity55 = {
 	}
 }
 
-Entity56 = {
+Entity53 = {
 	Name = "Cube.017",
 	Components = {
 		{
@@ -1861,7 +1848,7 @@ Entity56 = {
 	}
 }
 
-Entity57 = {
+Entity54 = {
 	Name = "Cube.018",
 	Components = {
 		{
@@ -1896,7 +1883,7 @@ Entity57 = {
 	}
 }
 
-Entity58 = {
+Entity55 = {
 	Name = "Cube.019",
 	Components = {
 		{
@@ -1909,7 +1896,7 @@ Entity58 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-24.583890914916992|4.428698539733887|-4.364519119262695",
-				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775741845369339|-0.014775753952562809",
+				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775724150240421|-0.014775770716369152",
 				Scale = "0.6255058646202087|0.6564507484436035|0.6564506888389587"
 			}
 		},
@@ -1931,7 +1918,7 @@ Entity58 = {
 	}
 }
 
-Entity59 = {
+Entity56 = {
 	Name = "Cube.020",
 	Components = {
 		{
@@ -1966,7 +1953,7 @@ Entity59 = {
 	}
 }
 
-Entity60 = {
+Entity57 = {
 	Name = "Cube.021",
 	Components = {
 		{
@@ -1979,7 +1966,112 @@ Entity60 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-26.89447784423828|4.006252288818359|2.9490795135498047",
-				Rotation = "false|0.12335643917322159|0.696262776851654|-0.6962636113166809|-0.12336256355047226",
+				Rotation = "false|0.19581814110279083|0.6794554591178894|-0.6794493794441223|-0.19581639766693115",
+				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "3.8741366863250732",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity58 = {
+	Name = "Cube.022",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Crate"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-12.7322416305542|4.006254196166992|3.315239191055298",
+				Rotation = "false|0.19581814110279083|0.6794554591178894|-0.6794493794441223|-0.19581639766693115",
+				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "3.8741366863250732",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity59 = {
+	Name = "Cube.023",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Crate"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-12.433406829833984|4.006251335144043|-2.0262086391448975",
+				Rotation = "false|0.4737434685230255|0.5249494910240173|-0.5249444246292114|-0.4737388789653778",
+				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "3.8741366863250732",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity60 = {
+	Name = "Cube.024",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "Crate"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-12.845291137695312|7.811142921447754|3.72383189201355",
+				Rotation = "false|0.4857933521270752|0.5138185620307922|-0.5138137340545654|-0.4857887923717499",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -2002,111 +2094,152 @@ Entity60 = {
 }
 
 Entity61 = {
-	Name = "Cube.022",
+	Name = "Spawner",
 	Components = {
-		{
-			Name = "MESH_RENDERER",
-			Arguments = {
-				Mesh = "Crate"
-			}
-		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "-12.7322416305542|4.006254196166992|3.315239191055298",
-				Rotation = "false|0.12335643917322159|0.696262776851654|-0.6962636113166809|-0.12336256355047226",
-				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+				Position = "-17.456361770629883|3.1291747093200684|-3.546584367752075",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
+				Scale = "1.0|1.0|1.0"
 			}
 		},
 		{
-			Name = "RIGIDBODY",
+			Name = "SPAWNPOINT",
 			Arguments = {
-				Mass = "1",
-				Bounciness = "0",
-				Friction = "1",
-				AABB = "2.0|2.0|2.0",
-				PosOffset = "0|0|0",
-				Radius = "3.8741366863250732",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
-				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity62 = {
-	Name = "Cube.023",
+	Name = "Spawner.003",
 	Components = {
-		{
-			Name = "MESH_RENDERER",
-			Arguments = {
-				Mesh = "Crate"
-			}
-		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "-12.433406829833984|4.006251335144043|-2.0262086391448975",
-				Rotation = "false|0.42586004734039307|0.5644811391830444|-0.5644848942756653|-0.4258650541305542",
-				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+				Position = "5.293638229370117|3.1591744422912598|4.983415603637695",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
+				Scale = "1.0|1.0|1.0"
 			}
 		},
 		{
-			Name = "RIGIDBODY",
+			Name = "SPAWNPOINT",
 			Arguments = {
-				Mass = "1",
-				Bounciness = "0",
-				Friction = "1",
-				AABB = "2.0|2.0|2.0",
-				PosOffset = "0|0|0",
-				Radius = "3.8741366863250732",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
-				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity63 = {
-	Name = "Cube.024",
+	Name = "Spawner.004",
 	Components = {
-		{
-			Name = "MESH_RENDERER",
-			Arguments = {
-				Mesh = "Crate"
-			}
-		},
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "-12.845291137695312|7.811142921447754|3.72383189201355",
-				Rotation = "false|0.4630751311779022|0.5343753695487976|-0.5343795418739319|-0.4630798101425171",
-				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
+				Position = "19.053638458251953|3.329174518585205|3.143415689468384",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
+				Scale = "1.0|1.0|1.0"
 			}
 		},
 		{
-			Name = "RIGIDBODY",
+			Name = "SPAWNPOINT",
 			Arguments = {
-				Mass = "1",
-				Bounciness = "0",
-				Friction = "1",
-				AABB = "2.0|2.0|2.0000001270416465",
-				PosOffset = "0|0|0",
-				Radius = "3.8741366863250732",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
-				Trigger = "false"
 			}
 		}
 	}
 }
 
 Entity64 = {
+	Name = "Gun",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "rifle"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.8130000233650208|4.739999771118164|3.499999761581421",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|0.0",
+				Scale = "0.30000001192092896|0.30000001192092896|0.30000001192092896"
+			}
+		},
+		{
+			Name = "ANIMATOR",
+			Arguments = {
+				AnimNames = "shootRifle|reloadRifle|idleRifle",
+				AnimMeshNames = "fireRifle|reloadRifle|idleRifle",
+				NextAnim = "idleRifle|idleRifle|idleRifle",
+				LoopAnims = "false|false|true"
+			}
+		},
+		{
+			Name = "WEAPON_COMPONENT",
+			Arguments = {
+				MaxAmmo = "50",
+				MagazineSize = "25",
+				Cadence = "0.25"
+			}
+		}
+	}
+}
+
+Entity65 = {
+	Name = "Shotgun",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "shotgun"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.8100000023841858|5.008554458618164|2.835289478302002",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|0.0",
+				Scale = "0.10000000149011612|0.10000000149011612|0.10000000149011612"
+			}
+		},
+		{
+			Name = "ANIMATOR",
+			Arguments = {
+				AnimNames = "shootShotgun|reloadShotgun|idleShotgun",
+				AnimMeshNames = "shootShotgun|reloadShotgun|idleShotgun",
+				NextAnim = "idleShotgun|idleShotgun|idleShotgun",
+				LoopAnims = "false|false|true"
+			}
+		},
+		{
+			Name = "SHOTGUN",
+			Arguments = {
+				MaxAmmo = "10",
+				MagazineSize = "5",
+				Cadence = "0.8",
+				Balas = "3"
+			}
+		}
+	}
+}
+
+Entity66 = {
+	Name = "Player",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.813310980796814|5.464509963989258|5.160520076751709",
+				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
+				Scale = "1.1050000190734863|1.1050000190734863|1.1050000190734863"
+			}
+		}
+	}
+}
+
+Entity69 = {
 	Name = "AUI_ROUND_TEXT",
 	Components = {
 		{
@@ -2120,12 +2253,12 @@ Entity64 = {
                 Font = "01-digit2000.regular.ttf",
                 Color = "1|129|255",
                 Depth = "1"
-			}
-		}
-	}
+            }
+        }
+    }
 }
 
-Entity65 = {
+Entity70 = {
 	Name = "AUI_HELMET_IMAGE",
 	Components = {
 		{
@@ -2138,12 +2271,12 @@ Entity65 = {
 				Height = "108",
 				Texture = "Helmet.png",
 				Depth = "1"
-			}
-		}
-	}
+            }  
+		}		
+    }	
 }
 
-Entity66 = {
+Entity71 = {
 	Name = "AUI_FrontBar",
 	Components = {
 		{
@@ -2156,13 +2289,49 @@ Entity66 = {
 				Height = "7",
 				Texture = "FrontBar.png",
 				Depth = "3"
+            }  
+		}		
+    }	
+}
+
+
+Entity67 = {
+	Name = "AmmoBox",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "7.8733110427856445|3.8045101165771484|-2.2294797897338867",
+				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
+				Scale = "1.1050000190734863|1.1050000190734863|1.1050000190734863"
 			}
 		}
 	}
 }
 
+Entity68 = {
+	Name = "A_LIGHT.001",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.6480690240859985|1.407318353652954|-0.6305416822433472",
+				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
+				Scale = "0.6571059823036194|0.6571059823036194|0.6571059823036194"
+			}
+		},
+		{
+			Name = "LIGHT",
+			Arguments = {
+				LightType = "LT_DIRECTIONAL",
+				DiffuseColor = "0.5|0.5|0.5",
+				SpecularColor = "0|0|0"
+			}
+		}
+	}
+}
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66 }
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71 }
 
 CollisionLayers = {
 	Layers = {
