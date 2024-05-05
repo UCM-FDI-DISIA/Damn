@@ -84,7 +84,7 @@ ShotgunShell = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.001"
+                Speed = "40"
             }
         },
 		{
@@ -95,8 +95,8 @@ ShotgunShell = {
 				Friction = "0.0",
 				AABB = "1|1|1",
 				PosOffset = "0|0|0",
-				Radius = "0.0",
-				Shape = "BOX",
+				Radius = "0.3",
+				Shape = "SPHERE",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
 				Trigger = "true"
@@ -136,7 +136,7 @@ EnemyBullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.5"
+                Speed = "5"
             }
         },
 		{
@@ -157,7 +157,7 @@ EnemyBullet = {
 		{
 			Name = "BULLET_PLAYER_DAMAGE",
 			Arguments = {
-				Damage = "20"
+				Damage = "10"
 			}
 		},
 		{
@@ -188,7 +188,7 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "10"
+                Speed = "40"
             }
         },
 		{
@@ -209,7 +209,7 @@ Bullet = {
 		{
 			Name = "BULLET_ENEMY_DAMAGE",
 			Arguments = {
-				Damage = "200"
+				Damage = "20"
 			}
 		},
 		{
@@ -386,10 +386,10 @@ Enemy = {
 				Mass = "0.0",
 				Bounciness = "0.0",
 				Friction = "0.0",
-				AABB = "1|1|1",
+				AABB = "1.5|1.5|1.5",
 				PosOffset = "0|0|0",
-				Radius = "0.0",
-				Shape = "BOX",
+				Radius = "1.5",
+				Shape = "SPHERE",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
 				Trigger = "false"
@@ -404,13 +404,13 @@ Enemy = {
 		{
 			Name = "ENEMY_HEALTH",
 			Arguments = {
-				MaximumHealth = "100"
+				MaximumHealth = "50"
 			}
 		},
 		{
 			Name = "ENEMY_ATTACK",
 			Arguments = {
-				AttackRate = "0.5",
+				AttackRate = "1.5",
 				RotationSpeed = "0.2"	
 			}
 		}

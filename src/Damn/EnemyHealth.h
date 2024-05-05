@@ -11,7 +11,6 @@ namespace damn {
 		EnemyHealth() = default;
 		~EnemyHealth() override;
 
-		// void Init(eden_script::ComponentArguments* args) override;
 		void Start() override;
 		// void Awake() override {};
 		// void Update(float deltaTime) override;

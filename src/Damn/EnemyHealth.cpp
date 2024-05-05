@@ -9,11 +9,11 @@ damn::GameManager* damn::EnemyHealth::_gameManager = nullptr;
 
 damn::EnemyHealth::~EnemyHealth()
 {
-	
 }
 
 void damn::EnemyHealth::Start()
 {
+	Health::Start();
 	if(_gameManager == nullptr)
 		_gameManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<GameManager>();
 }

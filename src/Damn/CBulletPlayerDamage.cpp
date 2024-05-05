@@ -24,6 +24,9 @@ void damn::CBulletPlayerDamage::HasHitPlayer()
 	if (_other->HasComponent("PLAYER_HEALTH")) {
 		_healthComponent = _other->GetComponent<PlayerHealth>();
 		_healthComponent->LoseHealth(_self->GetComponent<CBulletPlayerDamage>()->_damage);
+		_self->SetAlive(false);
 	}
-	_self->SetAlive(false);
+	else if (!_other->HasComponent("BULLET_ENEMY_DAMAGE") && !_other->HasComponent("BULLET_PLAYER_DAMAGE")) {
+		_self->SetAlive(false);
+	}
 }

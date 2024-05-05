@@ -24,7 +24,8 @@ void damn::WeaponComponent::Start()
 {
 	_tr = _ent->GetComponent<eden_ec::CTransform>();
 	_animator = _ent->GetComponent<eden_ec::CAnimator>();
-	_tr->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
+	_player = eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0");
+	_tr->SetParent(_player->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _tr->GetParent();
 	PlayIdleAnim();
 }

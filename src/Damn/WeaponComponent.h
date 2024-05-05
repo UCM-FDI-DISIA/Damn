@@ -4,6 +4,7 @@
 #include <Component.h>
 
 namespace eden_ec {
+	class Entity;
 	class CTransform;
 	class CAnimator;
 }
@@ -64,6 +65,7 @@ namespace damn {
 		eden_ec::CTransform* _cameraTransform;
 		eden_ec::CTransform* _tr;
 		eden_ec::CAnimator* _animator;
+		eden_ec::Entity* _player;
 
 
 		virtual void PlayIdleAnim();

@@ -5,8 +5,8 @@
 
 void damn::PlayerHealth::Start()
 {
+	Health::Start();
 	_uiManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<UIManager>();
-	_currentHealth = _maxHealth;
 }
 
 void damn::PlayerHealth::LoseHealth(int health)
