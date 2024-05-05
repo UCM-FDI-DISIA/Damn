@@ -6,10 +6,16 @@
 #include "RayCast.h"
 #include "Vector3.h"
 #include <iostream>
+#include "EnemyHealth.h"
+#include "Entity.h"
+#include <ComponentArguments.h>
+#include "PhysicsManager.h"
+#include "CAudioEmitter.h"
 
 void damn::Rifle::Init(eden_script::ComponentArguments* args)
 {
 	WeaponComponent::Init(args);
+	_rifleDamage = args->GetValueToInt("Damage");
 }
 
 void damn::Rifle::Start()
@@ -21,13 +27,19 @@ void damn::Rifle::Start()
 
 void damn::Rifle::Shoot()
 {
+	eden_ec::CTransform* _pTr = _player->GetComponent<eden_ec::CTransform>();
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
-		//physics_wrapper::RayCast* _rayCast = physics_wrapper::RayCast::getInstance();
-		//physics_wrapper::RayCastHitResult result;
-		//result = physics_wrapper::RayCast::getInstance()->SingleHitRayCast(_tr->GetPosition() + _tr->GetForward(), _tr->GetPosition() + _tr->GetForward() * 100, true);
-		//std::cout << result.entityHit->GetEntityID() << '\n';
+		physics_wrapper::RayCastHitResult result;
+		result = physics_manager::PhysicsManager::getInstance()->SingleHitRayCast(_pTr->GetPosition() + _pTr->GetForward()*-3, _pTr->GetPosition() + _pTr->GetForward() * -100, true);
+		if (result.hasHit && result.entityHit->HasComponent("ENEMY_HEALTH")) {
+			result.entityHit->GetComponent<damn::EnemyHealth>()->LoseHealth(_rifleDamage);
+		}
+		_canShoot = false;
 		_magazineAmmo--;
 		PlayShootAnim();
+	}
+	else if (_magazineAmmo <= 0) {
+		Reload();
 	}
 }
 
@@ -43,12 +55,20 @@ void damn::Rifle::PlayShootAnim()
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootRifle")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootRifle");
 	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("rifleShoot.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+	}
 }
 
 void damn::Rifle::PlayReloadAnim()
 {
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadRifle")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadRifle");
+	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("rifleReload.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
 	}
 }
 

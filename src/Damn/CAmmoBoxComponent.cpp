@@ -33,13 +33,17 @@ void eden_ec::CAmmoBoxComponent::Update(float t)
 		_transform->Yaw(_rotationSpeed * t);
 		_transform->SetScale(_originalScale * (_scaleGrowth * (abs(sin(_timeCounter))) + _minScale));
 	}
+	if (_timeCounter >= _lifeTime) {
+		_ent->SetAlive(false);
+	}
 }
 
 void eden_ec::CAmmoBoxComponent::PickUpAmmo()
 {
 	Entity* otherEnt = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "other");
+	Entity* selfEnt = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "self");
 	if (otherEnt->HasComponent("WEAPON_MANAGER")) {
-		otherEnt->GetComponent<damn::WeaponManager>()->AddAmmo(_ammoGiven);
-		_ent->SetAlive(false);
+		otherEnt->GetComponent<damn::WeaponManager>()->AddAmmo(selfEnt->GetComponent<CAmmoBoxComponent>()->_ammoGiven);
+		selfEnt->SetAlive(false);
 	}
 }

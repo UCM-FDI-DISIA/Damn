@@ -7,6 +7,7 @@
 #include <ComponentArguments.h>
 #include "CAnimator.h"
 #include <CMeshRenderer.h>
+#include "CAudioEmitter.h"
 
 void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 {
@@ -24,7 +25,8 @@ void damn::WeaponComponent::Start()
 {
 	_tr = _ent->GetComponent<eden_ec::CTransform>();
 	_animator = _ent->GetComponent<eden_ec::CAnimator>();
-	_tr->SetParent(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0")->GetComponent<eden_ec::CTransform>());
+	_player = eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0");
+	_tr->SetParent(_player->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _tr->GetParent();
 	PlayIdleAnim();
 }
@@ -48,8 +50,9 @@ void damn::WeaponComponent::Shoot()
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
 		
 		eden_ec::Entity* bullet = CreateBullet("Bullet");
-		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
-
+		if (bullet) {
+			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
+		}
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
@@ -100,6 +103,10 @@ void damn::WeaponComponent::PlayShootAnim()
 	if (!_animator->IsPlaying("shootPistol")) {
 		_animator->PlayAnim("shootPistol");
 	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("pistolShoot.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+	}
 }
 
 void damn::WeaponComponent::PlayReloadAnim()
@@ -108,6 +115,10 @@ void damn::WeaponComponent::PlayReloadAnim()
 		int x = rand() % 101;
 		if (x < 90) {
 			_animator->PlayAnim("reloadPistol");
+			if (_ent->HasComponent("AUDIO_EMITTER")) {
+				_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("pistolReload.wav");
+				_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+			}
 		}
 		else {
 			_animator->PlayAnim("reloadSpecialPistol");

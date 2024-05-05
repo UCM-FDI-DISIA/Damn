@@ -22,6 +22,8 @@ namespace damn {
 		virtual void PlayShootAnim() override;
 		virtual void PlayReloadAnim() override;
 		virtual bool isAnyAnimPlaying() override;
+
+		int _rifleDamage;
 	};
 }
 #endif // !RIFLE_H

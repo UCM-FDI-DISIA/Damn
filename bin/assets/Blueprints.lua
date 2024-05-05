@@ -26,7 +26,7 @@ Ammo = {
             Arguments = {
                 Position = "0|0|0",
                 Rotation = "false|1.0|0.0|0.0|0.0",
-                Scale = "0.3|0.3|0.3"
+                Scale = "1|1|1"
             }
 		},
 		{
@@ -84,13 +84,34 @@ ShotgunShell = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.001"
+                Speed = "40"
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.3",
+				Shape = "SPHERE",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_ENEMY_DAMAGE",
+			Arguments = {
+				Damage = "20"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsEnemy"
 			}
 		}
     }
@@ -115,13 +136,34 @@ EnemyBullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.5"
+                Speed = "10"
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.2",
+				Shape = "SPHERE",
+				CollisionFlag = "DINAMIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_PLAYER_DAMAGE",
+			Arguments = {
+				Damage = "15"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsPlayer"
 			}
 		}
     }
@@ -146,13 +188,34 @@ Bullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "0.001"
+                Speed = "40"
             }
         },
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1|1|1",
+				PosOffset = "0|0|0",
+				Radius = "0.2",
+				Shape = "SPHERE",
+				CollisionFlag = "DINAMIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "true"
+			}
+		},
+		{
+			Name = "BULLET_ENEMY_DAMAGE",
+			Arguments = {
+				Damage = "20"
+			}
+		},
+		{
 			Name = "BEHAVIOUR",
 			Arguments = {
-				Script = "CollisionDamage"
+				Script = "bulletHitsEnemy"
 			}
 		}
     }
@@ -213,7 +276,18 @@ Player = {
 		},
 		{
 			Name = "WEAPON_MANAGER",
-			Arguments = {}
+			Arguments = { }
+		},
+		{
+			Name = "AUDIO_EMITTER",
+			Arguments = {
+				SongName = "ammoPickUpEffect.wav",
+				Is3D = "false"
+			}
+		},
+		{
+			Name = "AUDIO_LISTENER",
+			Arguments = { }
 		}
     }
 }
@@ -318,21 +392,36 @@ Enemy = {
 			}
 		},
 		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1.5|1.5|1.5",
+				PosOffset = "0|0|0",
+				Radius = "1.5",
+				Shape = "SPHERE",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		},
+		{
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "Cube.057"
+                Mesh = "Demon"
             }
         },
 		{
 			Name = "ENEMY_HEALTH",
 			Arguments = {
-				MaximumHealth = "1000"
+				MaximumHealth = "50"
 			}
 		},
 		{
 			Name = "ENEMY_ATTACK",
 			Arguments = {
-				AttackRate = "0.5",
+				AttackRate = "1.5",
 				RotationSpeed = "0.2"	
 			}
 		}

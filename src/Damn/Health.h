@@ -3,12 +3,6 @@
 
 #include <Component.h>
 
-const int DAMAGE_TAKEN = 20;
-
-namespace eden_script {
-	class LuaManager;
-}
-
 namespace damn {
 	class Health : public eden_ec::Component
 	{
@@ -30,7 +24,6 @@ namespace damn {
 		int GetCurrentHealth();
 
 		void SetCurrentToMax(); // jugador
-		void HasBeenHit();
 	protected:
 		int _maxHealth;
 		int _currentHealth;

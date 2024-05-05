@@ -3,6 +3,7 @@
 #include "Shotgun.h"
 #include "Rifle.h"
 #include <SceneManager.h>
+#include "CAudioEmitter.h"
 #include <Scene.h>
 #include <Entity.h>
 #include "UIManager.h"
@@ -42,12 +43,15 @@ void damn::WeaponManager::Reload()
 
 void damn::WeaponManager::AddAmmo(int ammo)
 {
+	_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
 	_weapons[_actualWeapon]->AddAmmo(ammo);
 	UpdateUIAmmo();
 }
 
 void damn::WeaponManager::ChangeWeapon()
 {
+	//Si se están reproduciendo animaciones no se puede cambiar
+	if (_weapons[_actualWeapon]->isAnyAnimPlaying()) return;
 	_weapons[_actualWeapon]->SetVisible(false);
 	_actualWeapon = static_cast<WEAPON>((static_cast<int>(_actualWeapon) + 1) % NUM_WEAPONS);
 	_weapons[_actualWeapon]->SetVisible(true);

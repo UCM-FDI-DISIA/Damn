@@ -4,6 +4,7 @@
 #include <Component.h>
 
 namespace eden_ec {
+	class Entity;
 	class CTransform;
 	class CAnimator;
 }
@@ -52,6 +53,9 @@ namespace damn {
 		/// @return Número de balas del cargador y las balas restantes
 		std::pair<int, int> GetAmmo();
 
+		/// @brief Método que permite saber si se están reproduciendo las animaciones de disparo o recarga de un arma en concreto
+		virtual bool isAnyAnimPlaying();
+
 		static std::string GetID() { return "WEAPON_COMPONENT"; }
 	protected:
 		int _maxAmmo;
@@ -64,12 +68,13 @@ namespace damn {
 		eden_ec::CTransform* _cameraTransform;
 		eden_ec::CTransform* _tr;
 		eden_ec::CAnimator* _animator;
+		eden_ec::Entity* _player;
 
 
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();
 		virtual void PlayReloadAnim();
-		virtual bool isAnyAnimPlaying();
+		
 	};
 }
 #endif 
