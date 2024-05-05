@@ -26,7 +26,7 @@ Ammo = {
             Arguments = {
                 Position = "0|0|0",
                 Rotation = "false|1.0|0.0|0.0|0.0",
-                Scale = "0.3|0.3|0.3"
+                Scale = "1|1|1"
             }
 		},
 		{

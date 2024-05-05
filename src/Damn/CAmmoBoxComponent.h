@@ -33,7 +33,8 @@ namespace eden_ec {
 		float _timeCounter = 0;
 		float _scaleGrowth = 1.2;
 		float _minScale = 1;
-		int _ammoGiven = 10;
+		float _lifeTime = 5;
+		int _ammoGiven = 3;
 		eden_utils::Vector3 _originalScale;
 	};
 }

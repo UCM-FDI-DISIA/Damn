@@ -11,7 +11,7 @@ void damn::PlayerHealth::Start()
 
 void damn::PlayerHealth::LoseHealth(int health)
 {
-	_currentHealth -= health;
+	Health::LoseHealth(health);
 	if (_currentHealth < 0) _currentHealth = 0;
 	_uiManager->UpdateHealthBar(_currentHealth, _maxHealth);
 }

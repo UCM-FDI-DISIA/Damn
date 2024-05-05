@@ -18,21 +18,18 @@ void damn::Health::Start()
 
 void damn::Health::Update(float deltaTime)
 {
-	// std::cout << "Vida actual: " << _currentHealth << ", vida maxima: " << _maxHealth << std::endl;
+
 }
 
 void damn::Health::GainHealth(int health)
 {
 	_currentHealth += health;
 	if (_currentHealth > _maxHealth) _currentHealth = _maxHealth;
-	std::cout << "Vida actual: " << _currentHealth << ", vida maxima: " << _maxHealth << std::endl;
 }
 
 void damn::Health::LoseHealth(int health)
 {
 	_currentHealth -= health;
-	if (_currentHealth < 0);
-	std::cout << "Vida actual: " << _currentHealth << ", vida maxima: " << _maxHealth << std::endl;
 }
 
 int damn::Health::GetMaxHealth()

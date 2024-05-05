@@ -4,6 +4,7 @@
 #include "GameManager.h"
 #include "UIManager.h"
 #include "SceneManager.h"
+#include "PlayerHealth.h"
 #include "Entity.h"
 #include <Transform.h>
 
@@ -16,7 +17,7 @@ void damn::GameManager::Update(float dt)
 		_timerText = left;
 	}
 
-	if (_roundState == ENEMIES && _enemiesLeft == 0) {
+	if (_roundState == ENEMIES && _enemiesLeft <= 0) {
 		_roundState = CALM;
 		_numRound++;
 		_timeNextRound = _timer + TIME_CALM;
@@ -46,10 +47,21 @@ void damn::GameManager::RegisterEnemy()
 	_uiManager->SetEnemiesLeft(_enemiesLeft);
 }
 
-void damn::GameManager::DieEnemy()
+void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 {
+	if (!e || !e->IsAlive()) return;
 	_enemiesLeft--;
 	_uiManager->SetEnemiesLeft(_enemiesLeft);
+	AddScore(5);
+	if (rand() % 101 <= 60) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("AmmoBox", e->GetComponent<eden_ec::CTransform>()->GetPosition());
+	}
+	if (_player && _player->HasComponent("PLAYER_HEALTH")) {
+		damn::PlayerHealth* health = _player->GetComponent<PlayerHealth>();
+		health->GainHealth(5);
+		_uiManager->UpdateHealthBar(health->GetCurrentHealth(), health->GetMaxHealth());
+	}
+	e->SetAlive(false);
 }
 
 void damn::GameManager::AddScore(int score)
@@ -79,6 +91,7 @@ void damn::GameManager::GenerateEnemies()
 			++i;
 		}
 	}
+	_uiManager->SetRound(_numRound);
 }
 
 void damn::GameManager::Awake()
@@ -94,4 +107,5 @@ void damn::GameManager::Awake()
 void damn::GameManager::Start()
 {
 	_numRound = 1;
+	_player = eden::SceneManager::getInstance()->FindEntity("Player_0"); 
 }

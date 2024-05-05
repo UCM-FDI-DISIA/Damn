@@ -9,6 +9,7 @@
 #include "Component.h"
 
 namespace eden_ec {
+	class Entity;
 	class CTransform;
 }
 
@@ -24,7 +25,7 @@ namespace damn {
 		void Awake() override;
 		void Start() override;
 		void RegisterEnemy();
-		void DieEnemy();
+		void DieEnemy(eden_ec::Entity* e);
 		void AddScore(int score);
 		void AddWaypoint(eden_ec::CTransform* transform);
 		static std::string GetID() { return "GAMEMANAGER"; }
@@ -36,6 +37,7 @@ namespace damn {
 		int _score;
 		int _enemiesLeft;
 		UIManager* _uiManager;
+		eden_ec::Entity* _player;
 		int _numRound;
 		std::vector<eden_ec::CTransform*> _spawnPoints;
 		enum {ENEMIES, CALM} _roundState;
