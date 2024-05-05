@@ -201,6 +201,261 @@ material quitgame_darkred.png {
     }
 }
 
+material atras_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material atras_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material atras_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenoff_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenoff_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenoff_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenoff_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenon_green.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenon_green.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenon_darkgreen.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenon_darkgreen.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material cubestudios.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture cubestudios.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material screensize.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture screensize.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material soundvolume.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture soundvolume.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material volumebar.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture volumebar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material volumebarbackground.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture volumebarbackground.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
 material Pistol.png {
     receive_shadows on
     technique {

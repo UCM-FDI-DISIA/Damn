@@ -23,6 +23,7 @@
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
     <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
     <ClCompile Include="..\..\src\Damn\Rifle.cpp" />
+    <ClCompile Include="..\..\src\Damn\CFullscreenButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -47,5 +48,6 @@
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
     <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
     <ClInclude Include="..\..\src\Damn\Rifle.h" />
+    <ClInclude Include="..\..\src\Damn\CFullscreenButton.h" />
   </ItemGroup>
 </Project>

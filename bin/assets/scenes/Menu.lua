@@ -26,7 +26,8 @@ Entity1 = {
 		{
 			Name = "ROTATE_MENU_CAMERA",
 			Arguments = {
-				Speed = "5"
+				Speed = "5",
+				Beginning = "0"
 			}
 		},
 		{
@@ -108,15 +109,7 @@ Entity4 = {
 			Arguments = {
                 Script= "MenuPlayButton"
 			}
-        },
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "-1.610821008682251|5.619948387145996|5.7784810066223145",
-				Rotation = "false|0.5458973050117493|0.14995510876178741|0.21834951639175415|0.7948793172836304",
-				Scale = "1.0|1.0|1.0"
-			}
-		}
+        }
 	}	
 }
 
@@ -140,17 +133,9 @@ Entity5 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "MenuPlayButton"
+                Script= "MenuOptionsButton"
 			}
-        },
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "-1.610821008682251|5.619948387145996|5.7784810066223145",
-				Rotation = "false|0.5458973050117493|0.14995510876178741|0.21834951639175415|0.7948793172836304",
-				Scale = "1.0|1.0|1.0"
-			}
-		}
+        }
 	}	
 }
 
@@ -176,13 +161,23 @@ Entity6 = {
 			Arguments = {
                 Script= "MenuExitButton"
 			}
-        },
+        }
+	}	
+}
+
+Entity7 = {
+	Name = "CubeStudiosText",
+	Components = {
 		{
-			Name = "TRANSFORM",
+			Name = "IMAGE",
 			Arguments = {
-				Position = "-1.610821008682251|5.619948387145996|5.7784810066223145",
-				Rotation = "false|0.5458973050117493|0.14995510876178741|0.21834951639175415|0.7948793172836304",
-				Scale = "1.0|1.0|1.0"
+                OverlayName= "textcubestudios",
+				XPos = "84",
+				YPos = "97",
+				Width = "30",
+				Height = "3.5",
+				Texture = "cubestudios.png",
+				Depth = "1"
 			}
 		}
 	}	
@@ -2009,7 +2004,7 @@ Entity63 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63 }
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63 }
 
 CollisionLayers = {
 	Layers = {

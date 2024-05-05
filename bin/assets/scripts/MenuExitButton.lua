@@ -15,7 +15,7 @@ function MenuExitButton:OnButtonClick()
 
 end
 function MenuExitButton:OnButtonReleased()
-	MainMenu:Exit();
+	Menu:Exit();
 end
 --Variable global de la clase (para Luabridge)
 MenuExitButtonLua = MenuExitButton:new()

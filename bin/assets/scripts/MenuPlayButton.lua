@@ -15,7 +15,7 @@ function MenuPlayButton:OnButtonClick()
 
 end
 function MenuPlayButton:OnButtonReleased()
-	MainMenu:StartGame();
+	Menu:StartGame();
 end
 --Variable global de la clase (para Luabridge)
 MenuPlayButtonLua = MenuPlayButton:new()

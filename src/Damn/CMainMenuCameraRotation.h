@@ -26,6 +26,7 @@ namespace damn {
 
 	private:
 		float _movingSpeed;
+		float _yawBeginning;
 
 		eden_ec::CTransform* _transform;
 	};
