@@ -5,6 +5,7 @@
 #include "UIManager.h"
 #include "SceneManager.h"
 #include "PlayerHealth.h"
+#include "CAudioEmitter.h"
 #include "Entity.h"
 #include <Transform.h>
 
@@ -108,4 +109,10 @@ void damn::GameManager::Start()
 {
 	_numRound = 1;
 	_player = eden::SceneManager::getInstance()->FindEntity("Player_0"); 
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
+	}
 }

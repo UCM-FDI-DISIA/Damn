@@ -10,6 +10,7 @@
 #include "Entity.h"
 #include <ComponentArguments.h>
 #include "PhysicsManager.h"
+#include "CAudioEmitter.h"
 
 void damn::Rifle::Init(eden_script::ComponentArguments* args)
 {
@@ -54,12 +55,20 @@ void damn::Rifle::PlayShootAnim()
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootRifle")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootRifle");
 	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("rifleShoot.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+	}
 }
 
 void damn::Rifle::PlayReloadAnim()
 {
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadRifle")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadRifle");
+	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("rifleReload.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
 	}
 }
 
