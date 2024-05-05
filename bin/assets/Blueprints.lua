@@ -136,7 +136,7 @@ EnemyBullet = {
         {
             Name = "PROYECTILE_MOVEMENT",
             Arguments = {
-                Speed = "5"
+                Speed = "10"
             }
         },
 		{
@@ -157,7 +157,7 @@ EnemyBullet = {
 		{
 			Name = "BULLET_PLAYER_DAMAGE",
 			Arguments = {
-				Damage = "10"
+				Damage = "15"
 			}
 		},
 		{
@@ -276,7 +276,18 @@ Player = {
 		},
 		{
 			Name = "WEAPON_MANAGER",
-			Arguments = {}
+			Arguments = { }
+		},
+		{
+			Name = "AUDIO_EMITTER",
+			Arguments = {
+				SongName = "ammoPickUpEffect.wav",
+				Is3D = "false"
+			}
+		},
+		{
+			Name = "AUDIO_LISTENER",
+			Arguments = { }
 		}
     }
 }

@@ -53,6 +53,9 @@ namespace damn {
 		/// @return Número de balas del cargador y las balas restantes
 		std::pair<int, int> GetAmmo();
 
+		/// @brief Método que permite saber si se están reproduciendo las animaciones de disparo o recarga de un arma en concreto
+		virtual bool isAnyAnimPlaying();
+
 		static std::string GetID() { return "WEAPON_COMPONENT"; }
 	protected:
 		int _maxAmmo;
@@ -71,7 +74,7 @@ namespace damn {
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();
 		virtual void PlayReloadAnim();
-		virtual bool isAnyAnimPlaying();
+		
 	};
 }
 #endif 

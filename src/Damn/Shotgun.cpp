@@ -9,6 +9,9 @@
 #include<Vector3.h>
 #include<CMeshRenderer.h>
 #include "CAnimator.h"
+#include "CAudioEmitter.h"
+
+
 void damn::Shotgun::Init(eden_script::ComponentArguments* args)
 {
 	_numBalas = args->GetValueToInt("Balas");
@@ -59,12 +62,20 @@ void damn::Shotgun::PlayShootAnim()
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("shootShotgun")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("shootShotgun");
 	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("shotgunShoot.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+	}
 }
 
 void damn::Shotgun::PlayReloadAnim()
 {
 	if (!_ent->GetComponent<eden_ec::CAnimator>()->IsPlaying("reloadShotgun")) {
 		_ent->GetComponent<eden_ec::CAnimator>()->PlayAnim("reloadShotgun");
+	}
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("shotgunReload.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
 	}
 }
 
