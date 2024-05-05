@@ -49,7 +49,9 @@ void damn::WeaponComponent::Shoot()
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying()) {
 		
 		eden_ec::Entity* bullet = CreateBullet("Bullet");
-		bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
+		if (bullet) {
+			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0, 0, 1));
+		}
 
 		_canShoot = false;
 		_elapsedTime = 0;
