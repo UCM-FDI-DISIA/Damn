@@ -14,6 +14,7 @@
 
 void damn::GameManager::Update(float dt)
 {
+	if (_sceneLoading) return;
 	_timer += dt;
 	int left = (int)_timer;
 	if (_timerText != left) {
@@ -25,6 +26,10 @@ void damn::GameManager::Update(float dt)
 		_roundState = CALM;
 		_numRound++;
 		_timeNextRound = _timer + TIME_CALM;
+		if (_numRound == 2) {
+			eden::SceneManager::getInstance()->ChangeScene("DamnGame_level2");
+			_sceneLoading = true;
+		}
 		if (_numRound == 5 && _weaponManager)
 			_weaponManager->UnlockShotGun();
 		else if (_numRound == 10 && _weaponManager)
@@ -81,6 +86,12 @@ void damn::GameManager::AddScore(int score)
 void damn::GameManager::AddWaypoint(eden_ec::CTransform* transform)
 {
 	_spawnPoints.push_back(transform);
+}
+
+void damn::GameManager::beginNewScene()
+{
+	_sceneLoading = false;
+	setupReferences();
 }
 
 void damn::GameManager::GenerateEnemies()

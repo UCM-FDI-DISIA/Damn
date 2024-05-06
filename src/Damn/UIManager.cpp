@@ -4,8 +4,9 @@
 #include "CBar.h"
 #include "CText.h"
 #include "CImage.h"
+#include "GameManager.h"
 
-void damn::UIManager::UpdateHealthBar(float value, float maxValue)	
+void damn::UIManager::UpdateHealthBar(float value, float maxValue)
 {
 	if (_ents[HEALTH_BAR] != nullptr) {
 		_ents[HEALTH_BAR]->GetComponent<eden_ec::CBar>()->SetBarPercentage(value / maxValue * 100);
@@ -111,7 +112,16 @@ std::string damn::UIManager::GetFormat(int value)
 
 void damn::UIManager::Awake()
 {
+	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
+	if (gM) {
+		gM->GetComponent<GameManager>()->beginNewScene();
+	}
 	for (int i = 0; i < _ids.size(); ++i) {
 		_ents[i] = eden::SceneManager::getInstance()->FindEntity(_ids[i]);
 	}
+}
+
+void damn::UIManager::Start()
+{
+	
 }

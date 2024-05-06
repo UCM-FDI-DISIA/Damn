@@ -30,6 +30,8 @@ namespace damn {
 		void AddScore(int score);
 		void AddWaypoint(eden_ec::CTransform* transform);
 		static std::string GetID() { return "GAMEMANAGER"; };
+
+		void beginNewScene();
 	private:
 		float _timer;
 		float _timeNextRound;
@@ -41,6 +43,7 @@ namespace damn {
 		WeaponManager* _weaponManager;
 		eden_ec::Entity* _player = nullptr;
 		eden_ec::Entity* _soundManager;
+		bool _sceneLoading = false;
 		int _numRound;
 		std::vector<eden_ec::CTransform*> _spawnPoints;
 		enum {ENEMIES, CALM} _roundState;

@@ -35,6 +35,6 @@ namespace damn {
 
 	protected:
 		void Awake() override;
-		void Start() override {};
+		void Start() override;
 	};
 }
