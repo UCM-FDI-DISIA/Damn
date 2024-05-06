@@ -32,7 +32,7 @@ Ammo = {
 		{
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "AmmoBox"
+                Mesh = "ammoBox"
             }
         },
 		{
