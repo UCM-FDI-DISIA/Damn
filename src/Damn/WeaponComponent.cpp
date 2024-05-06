@@ -40,6 +40,7 @@ void damn::WeaponComponent::Update(float deltaTime)
 }
 
 eden_ec::Entity*damn::WeaponComponent::CreateBullet(std::string blueprintID) {
+
 	eden_utils::Vector3 position = _tr->GetPosition();
 	eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
 	return eden::SceneManager::getInstance()->InstantiateBlueprint(blueprintID, position, rotation);

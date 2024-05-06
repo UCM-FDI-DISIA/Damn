@@ -25,14 +25,14 @@ Ammo = {
 			Name = "TRANSFORM", 
             Arguments = {
                 Position = "0|0|0",
-                Rotation = "false|1.0|0.0|0.0|0.0",
+                Rotation = "true|90|1.0|0.0|0.0",
                 Scale = "1|1|1"
             }
 		},
 		{
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "ammoBox"
+                Mesh = "AmmoBox"
             }
         },
 		{
@@ -130,7 +130,7 @@ EnemyBullet = {
         {
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "PistolBullet"
+                Mesh = "EnemyProjectile"
             }
         },
         {
@@ -164,6 +164,15 @@ EnemyBullet = {
 			Name = "BEHAVIOUR",
 			Arguments = {
 				Script = "bulletHitsPlayer"
+			}
+		},
+		{
+			Name = "PARTICLE_EMITTER",
+			Arguments = {
+				Loop = "true",
+				Time = "10.0",
+				Started = "true",
+				Name = "Gas"
 			}
 		}
     }

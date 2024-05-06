@@ -41,9 +41,9 @@ void eden_ec::CEnemyAttack::Update(float t)
 			_attackTimer += t;
 			if (_attackTimer >= _attackRate) {
 				_attackTimer = 0;
-				Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("EnemyBullet", _tr->GetPosition());
-				f->GetComponent<CTransform>()->SetPosition(_tr->GetPosition() + (_tr->GetForward() * 2));
-				f->GetComponent<CProyectileMovement>()->SetDirection(_tr->GetForward());
+				eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
+				Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("EnemyBullet", _tr->GetPosition() + (_tr->GetForward() * 2), rotation);
+				f->GetComponent<CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,-1));
 			}
 		}
 	}
