@@ -374,7 +374,8 @@ Wall = {
 				PosOffset = "0|0|0",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT"
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
 			}
 		}
 	}

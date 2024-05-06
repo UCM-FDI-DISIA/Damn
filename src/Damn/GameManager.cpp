@@ -6,6 +6,8 @@
 #include "SceneManager.h"
 #include "PlayerHealth.h"
 #include "CAudioEmitter.h"
+#include "WeaponManager.h"
+#include "SceneManager.h"
 #include "Entity.h"
 #include <Transform.h>
 
@@ -22,6 +24,10 @@ void damn::GameManager::Update(float dt)
 		_roundState = CALM;
 		_numRound++;
 		_timeNextRound = _timer + TIME_CALM;
+		if (_numRound == 5 && _weaponManager)
+			_weaponManager->UnlockShotGun();
+		else if (_numRound == 10 && _weaponManager)
+			_weaponManager->UnlockRifle();
 	}
 
 	if (_roundState == CALM && _timer >= _timeNextRound) {
@@ -109,10 +115,14 @@ void damn::GameManager::Start()
 {
 	_numRound = 1;
 	_player = eden::SceneManager::getInstance()->FindEntity("Player_0"); 
+	if (_player) {
+		_weaponManager = _player->GetComponent<WeaponManager>();
+	}
 	if (_ent->HasComponent("AUDIO_EMITTER")) {
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
 	}
+	//eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
 }

@@ -15,6 +15,7 @@ namespace eden_ec {
 
 namespace damn {
 	class UIManager;
+	class WeaponManager;
 	class GameManager : public eden_ec::Component
 	{
 	public:
@@ -37,6 +38,7 @@ namespace damn {
 		int _score;
 		int _enemiesLeft;
 		UIManager* _uiManager;
+		WeaponManager* _weaponManager;
 		eden_ec::Entity* _player;
 		int _numRound;
 		std::vector<eden_ec::CTransform*> _spawnPoints;

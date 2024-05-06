@@ -6,6 +6,11 @@
 
 void damn::Spawnpoint::Start()
 {
-	gameManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<GameManager>();
-	gameManager->AddWaypoint(_ent->GetComponent<eden_ec::CTransform>());
+	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("MANAGERS");
+	if (gM != nullptr) {
+		gameManager = gM->GetComponent<GameManager>();
+		if (gameManager) {
+			gameManager->AddWaypoint(_ent->GetComponent<eden_ec::CTransform>());
+		}
+	}
 }

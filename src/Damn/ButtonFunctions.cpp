@@ -34,7 +34,7 @@ void damn::ButtonFunctions::Register() {
 }
 
 void damn::ButtonFunctions::StartGame() {
-	eden::SceneManager::getInstance()->ChangeScene("DamnGame");
+	eden::SceneManager::getInstance()->ChangeScene("DamnGameLevel2");
 }
 
 void damn::ButtonFunctions::OptionsMenu() {
