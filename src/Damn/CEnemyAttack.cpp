@@ -21,7 +21,7 @@ void eden_ec::CEnemyAttack::Awake()
 void eden_ec::CEnemyAttack::Start()
 {
 	_player = eden::SceneManager::getInstance()->FindEntity("Player_0");
-	_playerTr = _player->GetComponent<CTransform>();
+	if(_player) _playerTr = _player->GetComponent<CTransform>();
 	_tr = _ent->GetComponent<CTransform>();
 }
 

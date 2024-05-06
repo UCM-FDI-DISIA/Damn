@@ -10,6 +10,7 @@
 #include "SceneManager.h"
 #include "Entity.h"
 #include <Transform.h>
+#include <ErrorHandler.h>
 
 void damn::GameManager::Update(float dt)
 {
@@ -117,6 +118,9 @@ void damn::GameManager::Start()
 	_player = eden::SceneManager::getInstance()->FindEntity("Player_0"); 
 	if (_player) {
 		_weaponManager = _player->GetComponent<WeaponManager>();
+	}
+	else {
+		eden_error::ErrorHandler::Instance()->Exception("DamnError", "Player not found");
 	}
 	if (_ent->HasComponent("AUDIO_EMITTER")) {
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
