@@ -26,7 +26,11 @@ namespace damn {
 
 	private:
 		float _movingSpeed;
-		float _yawBeginning;
+
+		static float _globalRotation;
+		float _localRotation;
+
+		static bool _isOnMainMenu;
 
 		eden_ec::CTransform* _transform;
 	};

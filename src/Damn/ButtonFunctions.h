@@ -18,6 +18,8 @@ namespace damn {
 		void Awake() override {}
 		void Start() override {}
 
+		void Update(float t) override;
+
 		void Register();
 
 		void StartGame();
@@ -45,6 +47,8 @@ namespace damn {
 		void VolumeDown();
 
 		void ChangeVolumeBar();
+	private:
+		int _iterations = 0;
 	};
 }
 

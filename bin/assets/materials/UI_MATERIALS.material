@@ -456,6 +456,20 @@ material volumebarbackground.png {
     }
 }
 
+vertex_program BlurMenuBackgroundVS glsl {
+	source BlurMenuBGVS.glsl
+	default_params {
+		param_named_auto modelViewProjMat worldviewproj_matrix
+	}
+}
+
+fragment_program BlurMenuBackgroundFS glsl {
+	source BlurMenuBGFS.glsl
+	default_params {
+		
+	}
+}
+
 material Pistol.png {
     receive_shadows on
     technique {

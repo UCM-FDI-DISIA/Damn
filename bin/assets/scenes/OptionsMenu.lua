@@ -26,8 +26,7 @@ Entity1 = {
 		{
 			Name = "ROTATE_MENU_CAMERA",
 			Arguments = {
-				Speed = "5",
-				Beginning = "0"
+				Speed = "5"
 			}
 		},
 		{
@@ -108,13 +107,7 @@ Entity4 = {
 			Arguments = {
                 Script= "OptionsFullscreen",
 			}
-        },
-		{
-			Name = "BUTTON_FULLSCREEN",
-			Arguments = {
-				Button = "Off"
-			}
-		}
+        }
 	}	
 }
 
@@ -140,13 +133,7 @@ Entity5 = {
 			Arguments = {
                 Script= "OptionsFullscreen",
 			}
-        },
-		{
-			Name = "BUTTON_FULLSCREEN",
-			Arguments = {
-				Button = "On"
-			}
-		}
+        }
 	}
 }
 

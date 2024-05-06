@@ -26,8 +26,7 @@ Entity1 = {
 		{
 			Name = "ROTATE_MENU_CAMERA",
 			Arguments = {
-				Speed = "5",
-				Beginning = "0"
+				Speed = "5"
 			}
 		},
 		{

@@ -10,6 +10,8 @@
 #include <Entity.h>
 #include <AudioManager.h>
 #include <CBar.h>
+#include <CButton.h>
+#include <Scene.h>
 
 damn::ButtonFunctions::ButtonFunctions() {
 	Register();
@@ -17,6 +19,25 @@ damn::ButtonFunctions::ButtonFunctions() {
 
 void damn::ButtonFunctions::Init(eden_script::ComponentArguments* args) {
 	Register();
+}
+
+void damn::ButtonFunctions::Update(float t) {
+	if (eden::SceneManager::getInstance()->GetCurrentScene()->GetSceneID() == "OptionsMenu") {
+		if (_iterations == 1) {
+			eden_ec::Entity* offButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOff");
+			eden_ec::Entity* onButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOn");
+			if (!eden_render::RenderManager::getInstance()->IsFullScreen()) {
+				offButton->GetComponent<eden_ec::CButton>()->Show();
+				onButton->GetComponent<eden_ec::CButton>()->Hide();
+			}
+			else {
+				offButton->GetComponent<eden_ec::CButton>()->Hide();
+				onButton->GetComponent<eden_ec::CButton>()->Show();
+			}
+		}
+		_iterations++;
+		ChangeResolutionText();
+	}
 }
 
 void damn::ButtonFunctions::Register() {
@@ -50,8 +71,19 @@ void damn::ButtonFunctions::Return() {
 }
 
 void damn::ButtonFunctions::SetFullscreen() {
-	//eden_render::RenderManager::getInstance()->FullScreen();
-	damn::CFullscreenButton::SetIsFullscreen();
+	eden_ec::Entity* offButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOff");
+	eden_ec::Entity* onButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOn");
+	if (eden_render::RenderManager::getInstance()->IsFullScreen()) {
+		offButton->GetComponent<eden_ec::CButton>()->Show();
+		onButton->GetComponent<eden_ec::CButton>()->Hide();
+	}
+	else {
+		offButton->GetComponent<eden_ec::CButton>()->Hide();
+		onButton->GetComponent<eden_ec::CButton>()->Show();
+	}
+	offButton->GetComponent<eden_ec::CButton>()->Resize();
+	onButton->GetComponent<eden_ec::CButton>()->Resize();
+	eden_render::RenderManager::getInstance()->FullScreen();
 }
 
 void damn::ButtonFunctions::NextResolution() {
