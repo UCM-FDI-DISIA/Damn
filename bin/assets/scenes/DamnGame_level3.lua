@@ -2051,6 +2051,15 @@ Entity62 = {
 				MagazineSize = "25",
 				Cadence = "0.25"
 			}
+		},
+		{
+			Name = "PARTICLE_EMITTER",
+			Arguments = {
+				Loop = "false",
+				Time = "0.05",
+				Started = "false",
+				Name = "Gas"
+			}
 		}
 	}
 }
@@ -2095,6 +2104,15 @@ Entity63 = {
 				MagazineSize = "2",
 				Cadence = "0.8",
 				Balas = "3"
+			}
+		},
+		{
+			Name = "PARTICLE_EMITTER",
+			Arguments = {
+				Loop = "false",
+				Time = "0.05",
+				Started = "false",
+				Name = "Gas"
 			}
 		}
 	}

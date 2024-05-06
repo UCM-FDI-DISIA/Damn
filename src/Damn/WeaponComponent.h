@@ -7,6 +7,7 @@ namespace eden_ec {
 	class Entity;
 	class CTransform;
 	class CAnimator;
+	class CParticleEmitter;
 }
 
 namespace damn {
@@ -69,7 +70,7 @@ namespace damn {
 		eden_ec::CTransform* _tr;
 		eden_ec::CAnimator* _animator;
 		eden_ec::Entity* _player;
-
+		eden_ec::CParticleEmitter* _particle;
 
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();
