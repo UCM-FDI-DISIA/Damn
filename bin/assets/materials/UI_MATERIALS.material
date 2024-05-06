@@ -448,25 +448,27 @@ material volumebarbackground.png {
                 depth_write off
                 diffuse vertexcolour
                 texture_unit {
-                texture volumebarbackground.png
-                tex_address_mode clamp
+					texture volumebarbackground.png
+					tex_address_mode clamp
                 
-            }
+				}
         }
     }
 }
 
-vertex_program BlurMenuBackgroundVS glsl {
-	source BlurMenuBGVS.glsl
-	default_params {
-		param_named_auto modelViewProjMat worldviewproj_matrix
-	}
-}
-
-fragment_program BlurMenuBackgroundFS glsl {
-	source BlurMenuBGFS.glsl
-	default_params {
-		
+material blurtransparentbg.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture blurtransparentbg.png
+                tex_address_mode clamp
+			}
+		}
 	}
 }
 
