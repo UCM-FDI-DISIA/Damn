@@ -22,6 +22,8 @@ namespace damn {
 
 		void Update(float t) override;
 
+		inline float GetGlobalRotation() const { return _globalRotation; }
+
 		static std::string GetID() { return "ROTATE_MENU_CAMERA"; }
 
 	private:

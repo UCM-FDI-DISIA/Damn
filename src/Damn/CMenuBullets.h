@@ -25,8 +25,8 @@ namespace damn {
 
 		std::deque<eden_ec::Entity*> _instantiatedBullets;
 
-		int _minAngle = 225;
-		int _maxAngle = 270;
+		int _minAngle = 0;
+		int _totalAngle = 70;
 		int _maxBullets = 300;
 		int _totalBullets = 0;
 

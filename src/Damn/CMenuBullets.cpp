@@ -5,14 +5,14 @@
 #include <Vector3.h>
 #include <Quaternion.h>
 #include "CProyectileMovement.h"
-#include <iostream>
+#include "CMainMenuCameraRotation.h"
 
 void damn::CMenuBullets::Start() {
 	_cameraTransform = eden::SceneManager::getInstance()->FindEntity("Camera")->GetComponent<eden_ec::CTransform>();
 }
 
 void damn::CMenuBullets::Update(float t) {
-    int angle = rand() % (_maxAngle + 1) + _minAngle;
+    int angle = rand() % (_totalAngle + 1) + _minAngle;
 
     eden_utils::Vector3 positionOffset(cosf((angle) * PI / 180.0f) * 10, 20.0f, sinf((angle) * PI / 180.0f) * 10);
 
@@ -26,9 +26,7 @@ void damn::CMenuBullets::Update(float t) {
         _instantiatedBullets.push_back(bullet);
         _totalBullets++;
     }
-    _maxAngle++;
-    _minAngle++;
-    _maxAngle %= 360;
+    _minAngle = std::abs(_ent->GetComponent<damn::CMainMenuCameraRotation>()->GetGlobalRotation()) - 115;
     _minAngle %= 360;
 
     for (auto it = _instantiatedBullets.begin(); it != _instantiatedBullets.end();) {
