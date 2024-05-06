@@ -1,8 +1,6 @@
 #ifndef _WEAPON_MANAGER_H
 #define _WEAPON_MANAGER_H
 
-#define NUM_WEAPONS 3
-
 #include "Component.h"
 #include<vector>
 
@@ -54,8 +52,7 @@ namespace damn {
 		enum WEAPON { GUN, SHOTGUN, RIFLE };
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
-		bool _shotgun = false;
-		bool _rifle = false;
+		int _numWeapons = 1;
 		UIManager* _uiManager;
 	};
 }
