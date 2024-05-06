@@ -230,6 +230,32 @@ Bullet = {
     }
 }
 
+MenuBullet = {
+    Name = "MenuBullet", 
+    Components = {
+        {
+            Name = "TRANSFORM", 
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+        {
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "PistolBullet"
+            }
+        },
+        {
+            Name = "PROYECTILE_MOVEMENT",
+            Arguments = {
+                Speed = "20"
+            }
+        }
+    }
+}
+
 Player = {
     Name = "Player",
     Components = {
@@ -438,4 +464,4 @@ Enemy = {
 	}
 }
 
-Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo }
+Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet }

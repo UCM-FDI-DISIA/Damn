@@ -40,7 +40,12 @@ Entity1 = {
             Name = "BUTTON_FUNCTIONS",
             Arguments = {
 			}
-        }
+        },
+		{
+			Name = "MENU_BULLETS",
+			Arguments = {
+			}
+		}
 	}
 }
 

@@ -23,6 +23,7 @@
 #include "Rifle.h"
 #include "CBulletEnemyDamage.h"
 #include "CBulletPlayerDamage.h"
+#include "CMenuBullets.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -33,6 +34,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::InputController>();
 	factory->RegisterComponent<damn::CChangeCameraBackground>();
 	factory->RegisterComponent<damn::CMainMenuCameraRotation>();
+	factory->RegisterComponent<damn::CMenuBullets>();
 	factory->RegisterComponent<eden_ec::CEnemyAttack>();
 	factory->RegisterComponent<eden_ec::CameraMovement>();
 	factory->RegisterComponent<eden_ec::CProyectileMovement>();

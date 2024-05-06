@@ -103,6 +103,7 @@
     <ClInclude Include="..\..\src\Damn\CBulletPlayerDamage.h" />
     <ClInclude Include="..\..\src\Damn\CChangeCameraBackground.h" />
     <ClInclude Include="..\..\src\Damn\CMainMenuCameraRotation.h" />
+    <ClInclude Include="..\..\src\Damn\CMenuBullets.h" />
     <ClInclude Include="..\..\src\Damn\CProyectileMovement.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
     <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
@@ -130,6 +131,7 @@
     <ClCompile Include="..\..\src\Damn\CBulletPlayerDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CChangeCameraBackground.cpp" />
     <ClCompile Include="..\..\src\Damn\CMainMenuCameraRotation.cpp" />
+    <ClCompile Include="..\..\src\Damn\CMenuBullets.cpp" />
     <ClCompile Include="..\..\src\Damn\CProyectileMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
     <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
