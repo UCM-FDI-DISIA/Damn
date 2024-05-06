@@ -10,7 +10,7 @@
 #include<CMeshRenderer.h>
 #include "CAnimator.h"
 #include "CAudioEmitter.h"
-
+#include <CParticleEmitter.h>
 
 void damn::Shotgun::Init(eden_script::ComponentArguments* args)
 {
@@ -44,6 +44,7 @@ void damn::Shotgun::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
+		_particle->SetActive(true);
 		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)

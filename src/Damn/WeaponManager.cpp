@@ -11,7 +11,7 @@
 void damn::WeaponManager::Start()
 {
 	//eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
-	_uiManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<UIManager>();
+	_uiManager = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER")->GetComponent<UIManager>();
 	_actualWeapon = GUN;
 
 #ifdef _DEBUG

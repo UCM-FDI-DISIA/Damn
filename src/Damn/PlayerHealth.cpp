@@ -6,7 +6,7 @@
 void damn::PlayerHealth::Start()
 {
 	Health::Start();
-	_uiManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<UIManager>();
+	_uiManager = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER")->GetComponent<UIManager>();
 }
 
 void damn::PlayerHealth::LoseHealth(int health)

@@ -8,6 +8,7 @@
 #include "CAnimator.h"
 #include <CMeshRenderer.h>
 #include "CAudioEmitter.h"
+#include "CParticleEmitter.h"
 
 void damn::WeaponComponent::Init(eden_script::ComponentArguments* args)
 {
@@ -25,6 +26,8 @@ void damn::WeaponComponent::Start()
 {
 	_tr = _ent->GetComponent<eden_ec::CTransform>();
 	_animator = _ent->GetComponent<eden_ec::CAnimator>();
+	_particle = _ent->GetComponent<eden_ec::CParticleEmitter>();
+
 	_player = eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Player_0");
 	if(_player) _tr->SetParent(_player->GetComponent<eden_ec::CTransform>());
 	_cameraTransform = _tr->GetParent();
@@ -57,6 +60,7 @@ void damn::WeaponComponent::Shoot()
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
+		_particle->SetActive(true);
 		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)
