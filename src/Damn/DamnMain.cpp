@@ -21,7 +21,6 @@
 #include "CMainMenuCameraRotation.h"
 #include "Spawnpoint.h"
 #include "Rifle.h"
-#include "CFullscreenButton.h"
 #include "CBulletEnemyDamage.h"
 #include "CBulletPlayerDamage.h"
 
@@ -34,7 +33,6 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::InputController>();
 	factory->RegisterComponent<damn::CChangeCameraBackground>();
 	factory->RegisterComponent<damn::CMainMenuCameraRotation>();
-	factory->RegisterComponent<damn::CFullscreenButton>();
 	factory->RegisterComponent<eden_ec::CEnemyAttack>();
 	factory->RegisterComponent<eden_ec::CameraMovement>();
 	factory->RegisterComponent<eden_ec::CProyectileMovement>();

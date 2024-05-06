@@ -23,7 +23,6 @@
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
     <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
     <ClCompile Include="..\..\src\Damn\Rifle.cpp" />
-    <ClCompile Include="..\..\src\Damn\CFullscreenButton.cpp" />
     <ClCompile Include="..\..\src\Damn\CBulletDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CBulletEnemyDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CBulletPlayerDamage.cpp" />
@@ -51,7 +50,6 @@
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
     <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
     <ClInclude Include="..\..\src\Damn\Rifle.h" />
-    <ClInclude Include="..\..\src\Damn\CFullscreenButton.h" />
     <ClInclude Include="..\..\src\Damn\CBulletDamage.h" />
     <ClInclude Include="..\..\src\Damn\CBulletEnemyDamage.h" />
     <ClInclude Include="..\..\src\Damn\CBulletPlayerDamage.h" />
