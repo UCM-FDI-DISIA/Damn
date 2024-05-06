@@ -6,7 +6,7 @@
 
 void damn::Spawnpoint::Start()
 {
-	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("MANAGERS");
+	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
 	if (gM != nullptr) {
 		gameManager = gM->GetComponent<GameManager>();
 		if (gameManager) {

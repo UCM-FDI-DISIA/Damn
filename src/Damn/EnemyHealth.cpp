@@ -15,7 +15,7 @@ void damn::EnemyHealth::Start()
 {
 	Health::Start();
 	if(_gameManager == nullptr)
-		_gameManager = eden::SceneManager::getInstance()->FindEntity("MANAGERS")->GetComponent<GameManager>();
+		_gameManager = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER")->GetComponent<GameManager>();
 }
 
 void damn::EnemyHealth::LoseHealth(int health)

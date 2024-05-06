@@ -11,6 +11,7 @@
 #include <CBar.h>
 #include <CButton.h>
 #include <Scene.h>
+//#include "CFullscreenButton.h"
 
 damn::ButtonFunctions::ButtonFunctions() {
 	Register();
@@ -54,7 +55,7 @@ void damn::ButtonFunctions::Register() {
 }
 
 void damn::ButtonFunctions::StartGame() {
-	eden::SceneManager::getInstance()->ChangeScene("DamnGameLevel2");
+	eden::SceneManager::getInstance()->ChangeScene("DamnGame_level1");
 }
 
 void damn::ButtonFunctions::OptionsMenu() {

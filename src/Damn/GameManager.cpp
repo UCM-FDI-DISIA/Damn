@@ -106,27 +106,45 @@ void damn::GameManager::Awake()
 {
 	_enemiesLeft = 0;
 	_score = 0;
-	_uiManager = _ent->GetComponent<UIManager>();
-	_uiManager->SetScore(_score);
-	_uiManager->SetTimeLeft(_maxTime);
 	_roundState = CALM;
 }
 
 void damn::GameManager::Start()
 {
 	_numRound = 1;
-	_player = eden::SceneManager::getInstance()->FindEntity("Player_0"); 
+	setupReferences();
+	eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
+}
+
+void damn::GameManager::setupReferences() {
+	_player = eden::SceneManager::getInstance()->FindEntity("Player_0");
 	if (_player) {
 		_weaponManager = _player->GetComponent<WeaponManager>();
 	}
 	else {
 		eden_error::ErrorHandler::Instance()->Exception("DamnError", "Player not found");
 	}
-	if (_ent->HasComponent("AUDIO_EMITTER")) {
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
+	_soundManager = eden::SceneManager::getInstance()->FindEntity("AUDIO_MANAGER");
+	if (_soundManager) {
+		if (_soundManager->HasComponent("AUDIO_EMITTER")) {
+			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
+			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->Play();
+			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
+		}
 	}
-	//eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
+	else {
+		eden_error::ErrorHandler::Instance()->Exception("DamnError", "Sound manager not found");
+	}
+	eden_ec::Entity* ui = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER");
+	if (ui) {
+		_uiManager = ui->GetComponent<UIManager>();
+		if (_uiManager) {
+			_uiManager->SetScore(_score);
+			_uiManager->SetTimeLeft(_maxTime);
+		}
+	}
+	else {
+		eden_error::ErrorHandler::Instance()->Exception("DamnError", "UI manager not found");
+	}
 }

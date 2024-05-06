@@ -1,7 +1,7 @@
 #ifndef _GAME_MANAGER_H
 #define _GAME_MANAGER_H
 
-#define NUM_ENEMIES 3
+#define NUM_ENEMIES 1
 #define TIME_CALM 5
 
 #include <vector>
@@ -29,7 +29,7 @@ namespace damn {
 		void DieEnemy(eden_ec::Entity* e);
 		void AddScore(int score);
 		void AddWaypoint(eden_ec::CTransform* transform);
-		static std::string GetID() { return "GAMEMANAGER"; }
+		static std::string GetID() { return "GAMEMANAGER"; };
 	private:
 		float _timer;
 		float _timeNextRound;
@@ -39,12 +39,14 @@ namespace damn {
 		int _enemiesLeft;
 		UIManager* _uiManager;
 		WeaponManager* _weaponManager;
-		eden_ec::Entity* _player;
+		eden_ec::Entity* _player = nullptr;
+		eden_ec::Entity* _soundManager;
 		int _numRound;
 		std::vector<eden_ec::CTransform*> _spawnPoints;
 		enum {ENEMIES, CALM} _roundState;
 
 		void GenerateEnemies();
+		void setupReferences();
 	protected:
 	};
 }
