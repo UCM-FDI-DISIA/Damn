@@ -8,13 +8,13 @@ particle_system Gas{
     material demonBody
 
     emitter Point{
-        direction 0 1 0
-        angle 0
-        emission_rate 500
-        time_to_live 1.5
+        direction 0 0 1
+        angle 20
+        emission_rate 300
+        time_to_live 1.0
         velocity_min 1
         velocity_max 5
-        colour 0.3 0.3 0.3 0.5
+        colour 1.0 0.3 0.3 0.5
     }
 
     affector ColourFader{

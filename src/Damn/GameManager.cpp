@@ -14,11 +14,11 @@
 
 void damn::GameManager::Update(float dt)
 {
-	if (_sceneLoading) return;
 	_timer += dt;
 	int left = (int)_timer;
 	if (_timerText != left) {
-		_uiManager->SetTimeLeft(left);
+		if(_uiManager)
+			_uiManager->SetTimeLeft(left);
 		_timerText = left;
 	}
 
@@ -27,8 +27,10 @@ void damn::GameManager::Update(float dt)
 		_numRound++;
 		_timeNextRound = _timer + TIME_CALM;
 		if (_numRound == 2) {
-			eden::SceneManager::getInstance()->ChangeScene("DamnGame_level2");
-			_sceneLoading = true;
+			ChangeScene("DamnGame_level2");
+		}
+		else if (_numRound == 3) {
+			ChangeScene("DamnGame_level3");
 		}
 		if (_numRound == 5 && _weaponManager)
 			_weaponManager->UnlockShotGun();
@@ -57,19 +59,21 @@ void damn::GameManager::Init(eden_script::ComponentArguments* args)
 void damn::GameManager::RegisterEnemy()
 {
 	_enemiesLeft++;
-	_uiManager->SetEnemiesLeft(_enemiesLeft);
+	if (_uiManager)
+		_uiManager->SetEnemiesLeft(_enemiesLeft);
 }
 
 void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 {
 	if (!e || !e->IsAlive()) return;
 	_enemiesLeft--;
-	_uiManager->SetEnemiesLeft(_enemiesLeft);
+	if (_uiManager)
+		_uiManager->SetEnemiesLeft(_enemiesLeft);
 	AddScore(5);
 	if (rand() % 101 <= 60) {
 		eden::SceneManager::getInstance()->InstantiateBlueprint("AmmoBox", e->GetComponent<eden_ec::CTransform>()->GetPosition());
 	}
-	if (_player && _player->HasComponent("PLAYER_HEALTH")) {
+	if (_player && _player->HasComponent("PLAYER_HEALTH") && _uiManager) {
 		damn::PlayerHealth* health = _player->GetComponent<PlayerHealth>();
 		health->GainHealth(5);
 		_uiManager->UpdateHealthBar(health->GetCurrentHealth(), health->GetMaxHealth());
@@ -80,7 +84,8 @@ void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 void damn::GameManager::AddScore(int score)
 {
 	_score += score;
-	_uiManager->SetScore(_score);
+	if(_uiManager)
+		_uiManager->SetScore(_score);
 }
 
 void damn::GameManager::AddWaypoint(eden_ec::CTransform* transform)
@@ -88,10 +93,27 @@ void damn::GameManager::AddWaypoint(eden_ec::CTransform* transform)
 	_spawnPoints.push_back(transform);
 }
 
-void damn::GameManager::beginNewScene()
+void damn::GameManager::setPlayer(eden_ec::Entity* p)
 {
-	_sceneLoading = false;
-	setupReferences();
+	_player = p;
+	_weaponManager = _player->GetComponent<WeaponManager>();
+}
+
+void damn::GameManager::setUIManager(UIManager* ui)
+{
+	_uiManager = ui;
+	_uiManager->SetScore(_score);
+	_uiManager->SetRound(_numRound);
+	if(_savedPlayerCurrentHealth > 0) 
+		_uiManager->UpdateHealthBar(_savedPlayerCurrentHealth, _savedPlayerMaxHealth);
+}
+
+void damn::GameManager::ChangeScene(std::string sceneName) {
+	_savedPlayerCurrentHealth = _player->GetComponent<PlayerHealth>()->GetCurrentHealth();
+	_savedPlayerMaxHealth = _player->GetComponent<PlayerHealth>()->GetMaxHealth();
+	_player = nullptr; _soundManager = nullptr; _uiManager = nullptr;
+	_spawnPoints.clear();
+	eden::SceneManager::getInstance()->ChangeScene(sceneName);
 }
 
 void damn::GameManager::GenerateEnemies()
@@ -110,7 +132,8 @@ void damn::GameManager::GenerateEnemies()
 			++i;
 		}
 	}
-	_uiManager->SetRound(_numRound);
+	if(_uiManager)
+		_uiManager->SetRound(_numRound);
 }
 
 void damn::GameManager::Awake()
@@ -123,7 +146,12 @@ void damn::GameManager::Awake()
 void damn::GameManager::Start()
 {
 	_numRound = 1;
-	setupReferences();
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
+	}
 	eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
 }
 
@@ -134,18 +162,6 @@ void damn::GameManager::setupReferences() {
 	}
 	else {
 		eden_error::ErrorHandler::Instance()->Exception("DamnError", "Player not found");
-	}
-	_soundManager = eden::SceneManager::getInstance()->FindEntity("AUDIO_MANAGER");
-	if (_soundManager) {
-		if (_soundManager->HasComponent("AUDIO_EMITTER")) {
-			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
-			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->Play();
-			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
-			_soundManager->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
-		}
-	}
-	else {
-		eden_error::ErrorHandler::Instance()->Exception("DamnError", "Sound manager not found");
 	}
 	eden_ec::Entity* ui = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER");
 	if (ui) {

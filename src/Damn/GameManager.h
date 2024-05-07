@@ -31,7 +31,9 @@ namespace damn {
 		void AddWaypoint(eden_ec::CTransform* transform);
 		static std::string GetID() { return "GAMEMANAGER"; };
 
-		void beginNewScene();
+		void setPlayer(eden_ec::Entity* p);
+		inline eden_ec::Entity* getPlayer() { return _player; }
+		void setUIManager(UIManager* ui);
 	private:
 		float _timer;
 		float _timeNextRound;
@@ -39,16 +41,17 @@ namespace damn {
 		float _maxTime;
 		int _score;
 		int _enemiesLeft;
-		UIManager* _uiManager;
-		WeaponManager* _weaponManager;
+		UIManager* _uiManager = nullptr;
+		WeaponManager* _weaponManager = nullptr;
 		eden_ec::Entity* _player = nullptr;
-		eden_ec::Entity* _soundManager;
-		bool _sceneLoading = false;
+		eden_ec::Entity* _soundManager = nullptr;
+		int _savedPlayerCurrentHealth = -1, _savedPlayerMaxHealth;
 		int _numRound;
 		std::vector<eden_ec::CTransform*> _spawnPoints;
 		enum {ENEMIES, CALM} _roundState;
 
 		void GenerateEnemies();
+		void ChangeScene(std::string sceneName);
 		void setupReferences();
 	protected:
 	};

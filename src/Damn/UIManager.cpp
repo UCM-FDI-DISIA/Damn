@@ -112,12 +112,12 @@ std::string damn::UIManager::GetFormat(int value)
 
 void damn::UIManager::Awake()
 {
-	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
-	if (gM) {
-		gM->GetComponent<GameManager>()->beginNewScene();
-	}
 	for (int i = 0; i < _ids.size(); ++i) {
 		_ents[i] = eden::SceneManager::getInstance()->FindEntity(_ids[i]);
+	}
+	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
+	if (gM) {
+		gM->GetComponent<GameManager>()->setUIManager(this);
 	}
 }
 

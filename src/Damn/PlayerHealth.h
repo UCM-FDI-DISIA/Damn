@@ -11,9 +11,10 @@ namespace damn {
 		PlayerHealth() = default;
 		~PlayerHealth() override = default;
 
+
 		//void Init(eden_script::ComponentArguments* args) override;
 		void Start() override;
-		//void Awake() override {};
+		void Awake() override;
 		//void Update(float deltaTime) override;
 
 		static std::string GetID() { return "PLAYER_HEALTH"; }

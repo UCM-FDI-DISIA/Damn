@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "CProyectileMovement.h"
 #include <math.h>
+#include <iostream>
 #include <ComponentArguments.h>
 
 void eden_ec::CEnemyAttack::Init(eden_script::ComponentArguments* args)
@@ -37,13 +38,15 @@ void eden_ec::CEnemyAttack::Update(float t)
 			else _rotationCoef = 1;
 			_tr->Yaw(_rotationSpeed * _rotationCoef);
 		}
+		
 		if(frontAngle <= 3) {
 			_attackTimer += t;
 			if (_attackTimer >= _attackRate) {
 				_attackTimer = 0;
 				eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
 				Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("EnemyBullet", _tr->GetPosition() + (_tr->GetForward() * 2), rotation);
-				f->GetComponent<CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,-1));
+				eden_utils::Vector3 proyectileDir = (_playerTr->GetPosition() - _tr->GetPosition()).Normalized();
+				f->GetComponent<CProyectileMovement>()->SetDirection(eden_utils::Vector3(0, proyectileDir.GetY(), -1));
 			}
 		}
 	}

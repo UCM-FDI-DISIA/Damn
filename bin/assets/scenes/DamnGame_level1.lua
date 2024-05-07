@@ -1814,7 +1814,7 @@ Entity55 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-24.583890914916992|4.428698539733887|-4.364519119262695",
-				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775714837014675|-0.014775780029594898",
+				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.0147757139056921|-0.014775781892240047",
 				Scale = "0.6255058646202087|0.6564507484436035|0.6564506888389587"
 			}
 		},
@@ -1884,7 +1884,7 @@ Entity57 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-26.89447784423828|4.006252288818359|2.9490795135498047",
-				Rotation = "false|0.185776948928833|0.6822690963745117|-0.6822633743286133|-0.18577535450458527",
+				Rotation = "false|0.18342359364032745|0.6829054951667786|-0.6828998923301697|-0.1834220439195633",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1894,7 +1894,7 @@ Entity57 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0000001407336034|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -1919,7 +1919,7 @@ Entity58 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.7322416305542|4.006254196166992|3.315239191055298",
-				Rotation = "false|0.185776948928833|0.6822690963745117|-0.6822633743286133|-0.18577535450458527",
+				Rotation = "false|0.18342359364032745|0.6829054951667786|-0.6828998923301697|-0.1834220439195633",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1929,7 +1929,7 @@ Entity58 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0000001407336034|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -1954,7 +1954,7 @@ Entity59 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.433406829833984|4.006251335144043|-2.0262086391448975",
-				Rotation = "false|0.44976159930229187|0.5456361770629883|-0.545631468296051|-0.4497576951980591",
+				Rotation = "false|0.4413900375366211|0.5524300932884216|-0.5524255037307739|-0.44138631224632263",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1989,7 +1989,7 @@ Entity60 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.845291137695312|7.811142921447754|3.72383189201355",
-				Rotation = "false|0.4474998116493225|0.5474923849105835|-0.5474881529808044|-0.44749605655670166",
+				Rotation = "false|0.4487236440181732|0.5464898347854614|-0.5464855432510376|-0.44871985912323",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1999,7 +1999,7 @@ Entity60 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001407336034|2.0",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -2102,20 +2102,20 @@ Entity64 = {
 			}
 		},
 		{
-			Name = "WEAPON_COMPONENT",
-			Arguments = {
-				MaxAmmo = "50",
-				MagazineSize = "25",
-				Cadence = "0.25"
-			}
-		},
-		{
 			Name = "PARTICLE_EMITTER",
 			Arguments = {
 				Loop = "false",
 				Time = "0.05",
 				Started = "false",
-				Name = "Gas"
+				Name = "Muzzle"
+			}
+		},
+		{
+			Name = "WEAPON_COMPONENT",
+			Arguments = {
+				MaxAmmo = "50",
+				MagazineSize = "25",
+				Cadence = "0.25"
 			}
 		}
 	}
@@ -2155,21 +2155,21 @@ Entity65 = {
 			}
 		},
 		{
+			Name = "PARTICLE_EMITTER",
+			Arguments = {
+				Loop = "false",
+				Time = "0.05",
+				Started = "false",
+				Name = "Muzzle"
+			}
+		},
+		{
 			Name = "SHOTGUN",
 			Arguments = {
 				MaxAmmo = "10",
 				MagazineSize = "2",
 				Cadence = "0.8",
 				Balas = "3"
-			}
-		},
-		{
-			Name = "PARTICLE_EMITTER",
-			Arguments = {
-				Loop = "false",
-				Time = "0.05",
-				Started = "false",
-				Name = "Gas"
 			}
 		}
 	}
@@ -2242,6 +2242,15 @@ Entity68 = {
 			Arguments = {
 				SongName = "rifleShoot.wav",
 				Is3D = "false"
+			}
+		},
+		{
+			Name = "PARTICLE_EMITTER",
+			Arguments = {
+				Loop = "false",
+				Time = "0.05",
+				Started = "false",
+				Name = "Muzzle"
 			}
 		},
 		{
@@ -2423,6 +2432,13 @@ Entity76 = {
 			}
 		},
 		{
+			Name = "AUDIO_EMITTER",
+			Arguments = {
+				SongName = "gameTheme.wav",
+				Is3D = "false"
+			}
+		},
+		{
 			Name = "GAMEMANAGER",
 			Arguments = {
 				MaxTime = "60"
@@ -2431,28 +2447,7 @@ Entity76 = {
 	}
 }
 
-Entity77 = {
-	Name = "AUDIO_MANAGER",
-	Components = {
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "0.6480690240859985|1.407318353652954|0.683670163154602",
-				Rotation = "false|0.7071067094802856|-0.7071068286895752|0.0|-0.0",
-				Scale = "0.6571059823036194|0.6571059823036194|0.6571059823036194"
-			}
-		},
-		{
-			Name = "AUDIO_EMITTER",
-			Arguments = {
-				SongName = "gameTheme.wav",
-				Is3D = "false"
-			}
-		}
-	}
-}
-
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76, Entity77 }
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76 }
 
 CollisionLayers = {
 	Layers = {
