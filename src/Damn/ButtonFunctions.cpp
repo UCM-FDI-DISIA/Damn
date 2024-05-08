@@ -12,6 +12,7 @@
 #include <CButton.h>
 #include <Scene.h>
 #include <RenderManager.h>
+#include <CAudioEmitter.h>
 
 damn::ButtonFunctions::ButtonFunctions() {
 	Register();
@@ -48,7 +49,7 @@ void damn::ButtonFunctions::Register() {
 
 void damn::ButtonFunctions::Click() {
 	eden_ec::Entity* other = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "selfButton");
-
+	
 	if (other->GetEntityID() == "PlayButton") StartGame();
 	else if (other->GetEntityID() == "SettingsButton") OptionsMenu();
 	else if (other->GetEntityID() == "ExitButton") Exit();
@@ -59,6 +60,8 @@ void damn::ButtonFunctions::Click() {
 	else if (other->GetEntityID() == "VolumeDownButton") VolumeDown();
 	else if (other->GetEntityID() == "VolumeUpButton") VolumeUp();
 	else if (other->GetEntityID() == "MainMenuButton") BackToMainMenu();
+
+	PlaySound("buttonsound.wav", 0.3f);
 }
 
 void damn::ButtonFunctions::StartGame() {
@@ -141,6 +144,14 @@ void damn::ButtonFunctions::ChangeVolumeBar() {
 void damn::ButtonFunctions::BackToMainMenu() {
 	eden::SceneManager* mngr = eden::SceneManager::getInstance();
 	mngr->ChangeScene("Menu");
-	eden_ec::Entity* gm = mngr->FindEntity("GAME_MANAGER");
-	if (gm) gm->SetAlive(false);
+	eden_ec::Entity* tmp = mngr->FindEntity("GAME_MANAGER");
+	if (tmp) tmp->SetAlive(false);
+}
+
+void damn::ButtonFunctions::PlaySound(std::string filename, float volume, bool loop) {
+	eden_ec::CAudioEmitter* _emitter = eden::SceneManager::getInstance()->FindEntity("SoundsControllerEntity")->GetComponent<eden_ec::CAudioEmitter>();
+	_emitter->ChangeClip(filename);
+	_emitter->Play();
+	_emitter->SetVolume(volume);
+	_emitter->SetLoop(loop);
 }

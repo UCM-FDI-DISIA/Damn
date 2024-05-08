@@ -27,6 +27,7 @@
     <ClCompile Include="..\..\src\Damn\CBulletEnemyDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CBulletPlayerDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\CMenuBullets.cpp" />
+    <ClCompile Include="..\..\src\Damn\SoundController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -55,5 +56,6 @@
     <ClInclude Include="..\..\src\Damn\CBulletEnemyDamage.h" />
     <ClInclude Include="..\..\src\Damn\CBulletPlayerDamage.h" />
     <ClInclude Include="..\..\src\Damn\CMenuBullets.h" />
+    <ClInclude Include="..\..\src\Damn\SoundController.h" />
   </ItemGroup>
 </Project>

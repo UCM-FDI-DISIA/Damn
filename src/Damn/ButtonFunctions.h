@@ -14,8 +14,11 @@ namespace damn {
 		void Init(eden_script::ComponentArguments* args) override;
 
 		static std::string GetID() { return "BUTTON_FUNCTIONS"; }
-	protected:
+	private:
+		int _iterations = 0;
+
 		void Awake() override {}
+
 		void Start() override {}
 
 		void Update(float t) override;
@@ -51,9 +54,8 @@ namespace damn {
 		void ChangeVolumeBar();
 
 		void BackToMainMenu();
-	private:
 
-		int _iterations = 0;
+		void PlaySound(std::string filename, float volume = 1.0f, bool loop = false);
 	};
 }
 

@@ -187,6 +187,24 @@ Entity7 = {
 	}	
 }
 
+Entity8 = {
+	Name = "SoundsControllerEntity",
+	Components = {
+		{
+			Name = "AUDIO_EMITTER",
+			Arguments = {
+				SongName = "buttonsound.wav",
+				Is3D = "false"
+			}
+		},
+		{
+			Name = "SOUND_CONTROLLER",
+			Arguments = {
+			}
+		}
+	}	
+}
+
 Entity10 = {
 	Name = "Wall",
 	Components = {
@@ -2009,7 +2027,7 @@ Entity63 = {
 }
 
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63 }
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63 }
 
 CollisionLayers = {
 	Layers = {
