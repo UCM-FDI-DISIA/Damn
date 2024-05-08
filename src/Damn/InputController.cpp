@@ -62,3 +62,9 @@ void damn::InputController::Update(float deltatime)
 		eden::SceneManager::getInstance()->PushScene("PauseMenu");
 	}
 }
+
+void damn::InputController::Clear()
+{
+	_movementController->SetDirection(eden_utils::Vector3(0, 0, 0));
+	_cameraMovement->SetMouseDirection({ 0,0 });
+}

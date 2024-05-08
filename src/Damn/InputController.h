@@ -32,6 +32,9 @@ namespace damn {
 		/// @brief Metodo update heredado de Component 
 		void Update(float deltatime) override;
 
+		/// @brief Limpia el estado de las direcciones dadas a los diferentes componentes
+		void Clear();
+
 		static std::string GetID() { return "INPUT_CONTROLLER"; }
 	private:
 		MovementController* _movementController;

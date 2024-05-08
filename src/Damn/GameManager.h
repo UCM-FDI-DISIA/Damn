@@ -8,6 +8,13 @@
 
 #define ROUNDS_FOR_NEXT_GUN 1
 
+#define ROUND_FOR_WINNING 2
+
+#define SCORE_PER_ENEMY 5
+#define HEALTH_GAIN_PER_ENEMY 5
+
+#define AMMOBOX_CHANCE 60
+
 #include <vector>
 
 #include "Component.h"
@@ -39,8 +46,10 @@ namespace damn {
 		inline eden_ec::Entity* getPlayer() { return _player; }
 		void setUIManager(UIManager* ui);
 
-	private:
+		void Play();
 
+	private:
+		static bool _IsPresent;
 		// Timers
 		float _timer;
 		float _timeNextRound;
@@ -51,9 +60,7 @@ namespace damn {
 		int _score;
 		int _enemiesLeft;
 		int _numRound, _lastRoundMapChanged, _lastRoundWeaponWasGiven;
-		enum {ENEMIES, CALM} _roundState;
-
-		int _numIteration;
+		enum {ENEMIES, CALM, MENU, WIN_MENU} _roundState;
 
 		// Jugador
 		int _numWeapons;
@@ -61,6 +68,7 @@ namespace damn {
 		// Niveles
 		int _currentMap;
 		std::vector<std::string> _extraLevelNames;
+		bool _winCondition;
 		
 		// Referencias
 		UIManager* _uiManager = nullptr;
@@ -88,8 +96,11 @@ namespace damn {
 		// Jugador
 		void UnlockGuns(bool newWeapon);
 
-		void OnMapChanged();
 		void Setup();
+
+		void ManageTimer(float dt);
+
+		bool Win();
 	protected:
 	};
 }

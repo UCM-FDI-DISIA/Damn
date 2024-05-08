@@ -1,6 +1,7 @@
 #include <unordered_set>
 #include <random>
 
+#include "InputController.h"
 #include "GameManager.h"
 #include "UIManager.h"
 #include "SceneManager.h"
@@ -12,38 +13,66 @@
 #include <Transform.h>
 #include <ErrorHandler.h>
 
-void damn::GameManager::Update(float dt)
-{
-	_numIteration++;
-	if (_numIteration == 2) OnMapChanged();
+bool damn::GameManager::_IsPresent = false;
 
+void damn::GameManager::ManageTimer(float dt)
+{
 	_timer += dt;
 	int left = (int)_timer;
 	if (_timerText != left) {
-		if(_uiManager)
+		if (_uiManager)
 			_uiManager->SetTimeLeft(left);
 		_timerText = left;
 	}
+}
 
-	if (_roundState == ENEMIES && _enemiesLeft <= 0) {
-		_roundState = CALM;
-		_numRound++;
-		_timeNextRound = _timer + TIME_CALM;
-		if (_numRound == _lastRoundWeaponWasGiven + ROUNDS_FOR_NEXT_GUN) {
-			UnlockGuns(true);
+void damn::GameManager::Update(float dt)
+{
+	switch (_roundState)
+	{
+	case damn::GameManager::ENEMIES: 
+		{
+		ManageTimer(dt);
+		if (_enemiesLeft <= 0) {
+			_roundState = CALM;
+			_numRound++;
+
+			if (Win()) return;
+
+			_timeNextRound = _timer + TIME_CALM;
+			if (_numRound == _lastRoundWeaponWasGiven + ROUNDS_FOR_NEXT_GUN) {
+				UnlockGuns(true);
+			}
+			if (_numRound == _lastRoundMapChanged + ROUNDS_FOR_NEXT_MAP) {
+				NextMap();
+			}
 		}
-		if (_numRound == _lastRoundMapChanged + ROUNDS_FOR_NEXT_MAP) {
-			NextMap();
 		}
-	}
+		break;
+	case damn::GameManager::CALM:
+		{
+		ManageTimer(dt);
+		if (_timer >= _timeNextRound) {
+			_roundState = ENEMIES;
+			GenerateEnemies();
+		}
+		}
+		break;
+	case damn::GameManager::WIN_MENU:
+	{
+		if (_timer == 0) {
+			// _uiManager = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER")->GetComponent<damn::UIManager>();
+			_uiManager->SetupWinMenu(_score);
+			_player->GetComponent<InputController>()->Clear();
+			_player->RemoveComponent<InputController>();
+		}
+		else _uiManager->StepWinMenu(_timer);
+		_timer += dt;
 
-	if (_roundState == CALM && _timer >= _timeNextRound) {
-		_roundState = ENEMIES;
-		GenerateEnemies();
 	}
-
-	if (_timer <= 0) {
-		// ALGO
+		break;
+	default:
+		break;
 	}
 }
 
@@ -68,13 +97,13 @@ void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 	_enemiesLeft--;
 	if (_uiManager)
 		_uiManager->SetEnemiesLeft(_enemiesLeft);
-	AddScore(5);
-	if (rand() % 101 <= 60) {
+	AddScore(SCORE_PER_ENEMY);
+	if (rand() % 101 <= AMMOBOX_CHANCE) {
 		eden::SceneManager::getInstance()->InstantiateBlueprint("AmmoBox", e->GetComponent<eden_ec::CTransform>()->GetPosition());
 	}
 	if (_player && _player->HasComponent("PLAYER_HEALTH") && _uiManager) {
 		damn::PlayerHealth* health = _player->GetComponent<PlayerHealth>();
-		health->GainHealth(5);
+		health->GainHealth(HEALTH_GAIN_PER_ENEMY);
 		_uiManager->UpdateHealthBar(health->GetCurrentHealth(), health->GetMaxHealth());
 	}
 	e->SetAlive(false);
@@ -96,6 +125,7 @@ void damn::GameManager::setPlayer(eden_ec::Entity* p)
 {
 	_player = p;
 	_weaponManager = _player->GetComponent<WeaponManager>();
+	UnlockGuns(false);
 }
 
 void damn::GameManager::setUIManager(UIManager* ui)
@@ -105,6 +135,11 @@ void damn::GameManager::setUIManager(UIManager* ui)
 	_uiManager->SetRound(_numRound);
 	if(_savedPlayerCurrentHealth > 0) 
 		_uiManager->UpdateHealthBar(_savedPlayerCurrentHealth, _savedPlayerMaxHealth);
+}
+
+void damn::GameManager::Play()
+{
+	_roundState = CALM;
 }
 
 void damn::GameManager::ChangeScene(std::string sceneName) {
@@ -137,7 +172,7 @@ void damn::GameManager::GenerateEnemies()
 
 void damn::GameManager::Awake()
 {
-	_extraLevelNames = std::vector<std::string>({ "DamnGame_level1", "DamnGame_level2", "DamnGame_level3" });
+	_extraLevelNames = std::vector<std::string>({ "DamnGame_level1", "DamnGame_level3" });
 }
 
 void damn::GameManager::Start()
@@ -183,19 +218,15 @@ void damn::GameManager::UnlockGuns(bool newWeapon)
 	}
 }
 
-void damn::GameManager::OnMapChanged()
-{
-	UnlockGuns(false);
-}
-
 void damn::GameManager::Setup()
 {
+	_winCondition = false;
+
 	_enemiesLeft = 0;
 	_score = 0;
-	_roundState = CALM;
-	_numIteration = 0;
+	_roundState = MENU;
 
-	_currentMap = 0;
+	_currentMap = 1;
 
 	_numRound = 1;
 	_lastRoundMapChanged = 1;
@@ -213,11 +244,22 @@ void damn::GameManager::Setup()
 	}
 }
 
+bool damn::GameManager::Win()
+{
+	_winCondition = _numRound == ROUND_FOR_WINNING;
+	if (_winCondition) {
+		// ChangeScene("WinMenu");
+		_timer = 0;
+		_roundState = WIN_MENU;
+	}
+
+	return _winCondition;
+}
+
 void damn::GameManager::NextMap() {
 	_lastRoundMapChanged = _numRound;
 	if (++_currentMap >= _extraLevelNames.size()) {
 		_currentMap = 0;
 	}
 	ChangeScene(_extraLevelNames[_currentMap]);
-	_numIteration = 0;
 }

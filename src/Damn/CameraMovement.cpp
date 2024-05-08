@@ -33,6 +33,8 @@ namespace eden_ec {
 		if (cam) {
 			cam->SetNearClipDistance(0.1);
 		}
+
+		_transform->SetRotation(eden_utils::Quaternion::Identity());
 	}
 	void CameraMovement::Init(eden_script::ComponentArguments* args) {
 		_sensivity = args->GetValueToFloat("Sensivity");

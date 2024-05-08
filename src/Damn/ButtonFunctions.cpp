@@ -13,6 +13,7 @@
 #include <Scene.h>
 #include <RenderManager.h>
 #include <CAudioEmitter.h>
+#include "GameManager.h"
 
 damn::ButtonFunctions::ButtonFunctions() {
 	Register();
@@ -50,22 +51,30 @@ void damn::ButtonFunctions::Register() {
 void damn::ButtonFunctions::Click() {
 	eden_ec::Entity* other = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "selfButton");
 	
-	if (other->GetEntityID() == "PlayButton") StartGame();
-	else if (other->GetEntityID() == "SettingsButton") OptionsMenu();
-	else if (other->GetEntityID() == "ExitButton") Exit();
-	else if (other->GetEntityID() == "FullscreenButtonOff" || other->GetEntityID() == "FullscreenButtonOn") SetFullscreen();
-	else if (other->GetEntityID() == "BackButton") Return();
-	else if (other->GetEntityID() == "ResolutionsPreviousButton") PreviousResolution();
-	else if (other->GetEntityID() == "ResolutionsForwardButton") NextResolution();
-	else if (other->GetEntityID() == "VolumeDownButton") VolumeDown();
-	else if (other->GetEntityID() == "VolumeUpButton") VolumeUp();
-	else if (other->GetEntityID() == "MainMenuButton") BackToMainMenu();
+	std::string tmp = other->GetEntityID();
+	std::string id = "";
+	for (int i = 0;i < tmp.size() && tmp[i] != '_'; ++i) {
+		id.push_back(tmp[i]);
+	}
+
+	if (id == "PlayButton") StartGame();
+	else if (id == "SettingsButton") OptionsMenu();
+	else if (id == "ExitButton") Exit();
+	else if (id == "FullscreenButtonOff" || id == "FullscreenButtonOn") SetFullscreen();
+	else if (id == "BackButton") Return();
+	else if (id == "ResolutionsPreviousButton") PreviousResolution();
+	else if (id == "ResolutionsForwardButton") NextResolution();
+	else if (id == "VolumeDownButton") VolumeDown();
+	else if (id == "VolumeUpButton") VolumeUp();
+	else if (id == "MainMenuButton") BackToMainMenu();
 
 	PlaySound("buttonsound.wav", 0.3f);
 }
 
 void damn::ButtonFunctions::StartGame() {
-	eden::SceneManager::getInstance()->ChangeScene("DamnGame_level1");
+	eden::SceneManager* mngr = eden::SceneManager::getInstance();
+	mngr->ChangeScene("DamnGame_level1");
+	mngr->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->Play();
 }
 
 void damn::ButtonFunctions::OptionsMenu() {
