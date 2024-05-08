@@ -11,14 +11,6 @@ void damn::PlayerHealth::Start()
 
 }
 
-void damn::PlayerHealth::Awake()
-{
-	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
-	if (gM) {
-		gM->GetComponent<GameManager>()->setPlayer(_ent);
-	}
-}
-
 void damn::PlayerHealth::LoseHealth(int health)
 {
 	Health::LoseHealth(health);

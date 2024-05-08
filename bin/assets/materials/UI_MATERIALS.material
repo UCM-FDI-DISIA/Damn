@@ -15,22 +15,6 @@ material Cursor.png {
     }
 }
 
-material meme.png {
-    receive_shadows on
-    technique {
-        pass {
-                lighting off
-                scene_blend alpha_blend
-                depth_write off
-                diffuse vertexcolour
-            	texture_unit {
-                texture meme.png
-                tex_address_mode clamp
-                
-            }
-        }
-    }
-}
 material PlayButton_Ini.png {
      receive_shadows on
     technique {
@@ -498,6 +482,70 @@ material pause_white.png {
 			diffuse vertexcolour
 			texture_unit {
                 texture pause_white.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material winText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture winText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material winMenuBackground.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture winMenuBackground.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material finalScoreText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture finalScoreText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material vignette.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture vignette.png
                 tex_address_mode clamp
 			}
 		}

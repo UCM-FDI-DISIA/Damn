@@ -7,6 +7,8 @@
 #define MAX_UI_NUMBER 99999
 #define MAX_ROUND_NUMBER 1000
 
+#define NEXT_WINMENU_STEP 1.0f
+
 namespace damn {
 	class UIManager : public eden_ec::Component
 	{
@@ -20,6 +22,9 @@ namespace damn {
 		void SetTimeLeft(int time);
 		void SetScore(int score);
 		void SetRound(int round);
+
+		void SetupWinMenu(int score);
+		void StepWinMenu(float timePassed);
 		static std::string GetID() { return "UIMANAGER"; }
 		void Init(eden_script::ComponentArguments* args){}
 
@@ -32,6 +37,11 @@ namespace damn {
 		std::vector<eden_ec::Entity*> _ents = std::vector< eden_ec::Entity*>(_ids.size());
 		enum UIEnts {HEALTH_BAR, AMMO_TEXT, GUN_IMAGE, TIME_TEXT, ENEMIES_LEFT_TEXT, SCORE_TEXT, ROUND_TEXT };
 		const std::vector<char> _numbers = { 'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+
+		enum WinMenuStates {VIGNETTE, WIN_TEXT, FINAL_SCORE_TEXT, WIN_SCORE_TEXT, MAIN_MENU_BUTTON, END };
+		WinMenuStates _winMenuState;
+		int _finalScore;
+		
 
 	protected:
 		void Awake() override;

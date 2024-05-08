@@ -19,7 +19,7 @@ namespace damn {
 
 		void LoseHealth(int health) override;
 	private:
-		static GameManager* _gameManager;
+		GameManager* _gameManager;
 	};
 }
 

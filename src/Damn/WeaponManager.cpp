@@ -7,13 +7,16 @@
 #include <Scene.h>
 #include <Entity.h>
 #include "UIManager.h"
+#include "GameManager.h"
 
 void damn::WeaponManager::Start()
 {
-	if(!_uiManager) _uiManager = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER")->GetComponent<UIManager>();
+	eden::SceneManager* mngr = eden::SceneManager::getInstance();
+	if(!_uiManager) _uiManager = mngr->FindEntity("UI_MANAGER")->GetComponent<UIManager>();
 	_actualWeapon = GUN;
 
 	UnlockBaseWeapon();
+	mngr->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->setPlayer(_ent);
 }
 
 void damn::WeaponManager::Shoot()

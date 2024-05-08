@@ -4,9 +4,6 @@
 #include "GameManager.h"
 #include <iostream>
 
-damn::GameManager* damn::EnemyHealth::_gameManager = nullptr;
-
-
 damn::EnemyHealth::~EnemyHealth()
 {
 }

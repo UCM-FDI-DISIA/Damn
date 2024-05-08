@@ -464,4 +464,127 @@ Enemy = {
 	}
 }
 
-Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet }
+WinScoreText = {
+	Name = "WinScoreText",
+	Components = {
+		{
+			Name = "TEXT",
+			Arguments = {
+				OverlayName = "WinScoreText",
+				XPos = "50",
+				YPos = "65",
+				Depth = "1",
+				Tam = "12",
+				Text = "00000",
+				Font = "DooM.ttf",
+				Color = "255|255|255"
+			}
+		}
+	}
+}
+
+VignetteEffect = {
+	Name = "VignetteEffect",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "vignette",
+				XPos = "50",
+				YPos = "50",
+				Width = "100",
+				Height = "100",
+				Texture = "vignette.png",
+				Depth = "2"
+			}
+		}
+	}
+}
+
+FinalScoreText = {
+	Name = "FinalScoreText",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "FinalScoreText",
+				XPos = "50",
+				YPos = "50",
+				Width = "40",
+				Height = "12",
+				Texture = "finalScoreText.png",
+				Depth = "3"
+			}
+		}
+	}
+}
+
+WinText = {
+	Name = "WinText",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "WinText",
+				XPos = "50",
+				YPos = "25",
+				Width = "40",
+				Height = "12",
+				Texture = "winText.png",
+				Depth = "3"
+			}
+		}
+	}
+}
+
+MainMenuButton = {
+	Name = "MainMenuButton",
+	Components = {
+		{
+			Name = "BUTTON",
+			Arguments = {
+                OverlayName= "mmbutton",
+				XPos = "50",
+                YPos = "90",
+                Width = "35",
+                Height = "10",
+                Texture1 = "mainmenu_white.png",
+                Texture2 = "mainmenu_red.png",
+                Texture3 = "mainmenu_darkred.png",
+                Depth = "5"
+			}
+		},
+        {
+            Name = "BEHAVIOUR",
+			Arguments = {
+                Script= "ButtonScript"
+			}
+        }
+	}	
+}
+
+Cursor = {
+	Name = "UI_Cursor",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+				OverlayName= "image",
+				XPos = "0",
+				YPos = "0",
+				Width = "5",
+				Height = "5",
+				Texture = "Cursor.png",
+				Depth = "10"
+			}
+		},
+		{
+			Name = "CURSOR",
+			Arguments = {
+			}
+		}
+	}		
+}
+
+Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet, 
+WinScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor }

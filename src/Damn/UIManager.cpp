@@ -6,6 +6,8 @@
 #include "CImage.h"
 #include "GameManager.h"
 
+#include "RenderManager.h"
+
 void damn::UIManager::UpdateHealthBar(float value, float maxValue)
 {
 	if (_ents[HEALTH_BAR] != nullptr) {
@@ -90,6 +92,45 @@ void damn::UIManager::SetRound(int round)
 			index += 2;
 		}
 		_ents[ROUND_TEXT]->GetComponent<eden_ec::CText>()->SetNewText(finalText, false);
+	}
+}
+
+void damn::UIManager::SetupWinMenu(int score)
+{
+	_winMenuState = VIGNETTE;
+	_finalScore = score;
+
+	for (int i = 0; i < _ents.size(); ++i) {
+		if(_ents[i]) _ents[i]->SetAlive(false);
+		_ents[i] = nullptr;
+	}
+}
+
+void damn::UIManager::StepWinMenu(float timePassed)
+{
+	if (timePassed >= NEXT_WINMENU_STEP && _winMenuState == VIGNETTE) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("VignetteEffect");
+		_winMenuState = WIN_TEXT;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP*2 && _winMenuState == WIN_TEXT) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("WinText");
+		_winMenuState = FINAL_SCORE_TEXT;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP*3 && _winMenuState == FINAL_SCORE_TEXT) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("FinalScoreText");
+		_winMenuState = WIN_SCORE_TEXT;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP*4 && _winMenuState == WIN_SCORE_TEXT) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("WinScoreText")->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(_finalScore));
+		_winMenuState = MAIN_MENU_BUTTON;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP*5 && _winMenuState == MAIN_MENU_BUTTON) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("MainMenuButton");
+		eden::SceneManager::getInstance()->InstantiateBlueprint("UI_Cursor");
+		eden_render::RenderManager* renderMngr = eden_render::RenderManager::getInstance();
+		renderMngr->SetRelativeMouseMode(false);
+		renderMngr->SetWindowGrab(false);
+		_winMenuState = END;
 	}
 }
 
