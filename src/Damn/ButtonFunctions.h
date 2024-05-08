@@ -52,6 +52,7 @@ namespace damn {
 
 		void BackToMainMenu();
 	private:
+
 		int _iterations = 0;
 	};
 }

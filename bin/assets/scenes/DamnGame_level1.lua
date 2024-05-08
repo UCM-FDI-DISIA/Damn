@@ -694,8 +694,8 @@ Entity21 = {
 				OverlayName = "HealthBar",
 				XPos = "18",
 				YPos = "24",
-				Width = "20",
-				Height = "4",
+				Width = "22",
+				Height = "7",
 				Texture = "HealthBar.png",
 				Depth = "2"
 			}
@@ -811,11 +811,11 @@ Entity25 = {
 			Name = "TEXT",
 			Arguments = {
 				OverlayName = "EnemiesLeftText",
-				XPos = "80",
+				XPos = "77",
 				YPos = "20",
 				Depth = "1",
 				Tam = "3",
-				Text = "ENEMIES: XXXXXX",
+				Text = "ENEMIES: XX",
 				Font = "01-digit2000.regular.ttf",
 				Color = "0|0|0"
 			}
@@ -1814,7 +1814,7 @@ Entity55 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-24.583890914916992|4.428698539733887|-4.364519119262695",
-				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.014775712974369526|-0.014775782823562622",
+				Rotation = "false|0.7069522738456726|-0.7069525122642517|-0.0147757139056921|-0.014775781892240047",
 				Scale = "0.6255058646202087|0.6564507484436035|0.6564506888389587"
 			}
 		},
@@ -1884,7 +1884,7 @@ Entity57 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-26.89447784423828|4.006252288818359|2.9490795135498047",
-				Rotation = "false|0.18258897960186005|0.683129072189331|-0.6831235289573669|-0.18258748948574066",
+				Rotation = "false|0.18342359364032745|0.6829054951667786|-0.6828998923301697|-0.1834220439195633",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1894,7 +1894,7 @@ Entity57 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0000001407336034|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -1919,7 +1919,7 @@ Entity58 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.7322416305542|4.006254196166992|3.315239191055298",
-				Rotation = "false|0.18258897960186005|0.683129072189331|-0.6831235289573669|-0.18258748948574066",
+				Rotation = "false|0.18342359364032745|0.6829054951667786|-0.6828998923301697|-0.1834220439195633",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1929,7 +1929,7 @@ Entity58 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0000001407336034|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -1954,7 +1954,7 @@ Entity59 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.433406829833984|4.006251335144043|-2.0262086391448975",
-				Rotation = "false|0.4418124556541443|0.5520923137664795|-0.552087664604187|-0.4418087601661682",
+				Rotation = "false|0.4413900375366211|0.5524300932884216|-0.5524255037307739|-0.44138631224632263",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1989,7 +1989,7 @@ Entity60 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-12.845291137695312|7.811142921447754|3.72383189201355",
-				Rotation = "false|0.4484066665172577|0.5467499494552612|-0.5467455387115479|-0.4484030604362488",
+				Rotation = "false|0.4487236440181732|0.5464898347854614|-0.5464855432510376|-0.44871985912323",
 				Scale = "1.9370683431625366|0.938348114490509|0.8470563292503357"
 			}
 		},
@@ -1999,7 +1999,7 @@ Entity60 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|1.9999998729583535",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
 				Radius = "3.8741366863250732",
 				Shape = "BOX",
@@ -2446,6 +2446,7 @@ Entity76 = {
 		}
 	}
 }
+
 
 Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76 }
 

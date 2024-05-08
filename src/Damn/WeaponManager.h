@@ -48,8 +48,12 @@ namespace damn {
 		void UpdateUIAmmo();
 
 		static std::string GetID() { return "WEAPON_MANAGER"; }
-	private:
 		enum WEAPON { GUN, SHOTGUN, RIFLE };
+	private:
+
+		void UnlockBaseWeapon();
+		bool _hasDefaultWeapon;
+
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
 		int _numWeapons = 1;

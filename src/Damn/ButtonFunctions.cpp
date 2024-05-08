@@ -139,5 +139,8 @@ void damn::ButtonFunctions::ChangeVolumeBar() {
 }
 
 void damn::ButtonFunctions::BackToMainMenu() {
-	eden::SceneManager::getInstance()->ChangeScene("Menu");
+	eden::SceneManager* mngr = eden::SceneManager::getInstance();
+	mngr->ChangeScene("Menu");
+	eden_ec::Entity* gm = mngr->FindEntity("GAME_MANAGER");
+	if (gm) gm->SetAlive(false);
 }

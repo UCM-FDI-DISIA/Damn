@@ -14,6 +14,9 @@
 
 void damn::GameManager::Update(float dt)
 {
+	_numIteration++;
+	if (_numIteration == 2) OnMapChanged();
+
 	_timer += dt;
 	int left = (int)_timer;
 	if (_timerText != left) {
@@ -26,16 +29,12 @@ void damn::GameManager::Update(float dt)
 		_roundState = CALM;
 		_numRound++;
 		_timeNextRound = _timer + TIME_CALM;
-		if (_numRound == 2) {
-			ChangeScene("DamnGame_level2");
+		if (_numRound == _lastRoundWeaponWasGiven + ROUNDS_FOR_NEXT_GUN) {
+			UnlockGuns(true);
 		}
-		else if (_numRound == 3) {
-			ChangeScene("DamnGame_level3");
+		if (_numRound == _lastRoundMapChanged + ROUNDS_FOR_NEXT_MAP) {
+			NextMap();
 		}
-		if (_numRound == 5 && _weaponManager)
-			_weaponManager->UnlockShotGun();
-		else if (_numRound == 10 && _weaponManager)
-			_weaponManager->UnlockRifle();
 	}
 
 	if (_roundState == CALM && _timer >= _timeNextRound) {
@@ -138,20 +137,13 @@ void damn::GameManager::GenerateEnemies()
 
 void damn::GameManager::Awake()
 {
-	_enemiesLeft = 0;
-	_score = 0;
-	_roundState = CALM;
+	_extraLevelNames = std::vector<std::string>({ "DamnGame_level1", "DamnGame_level2", "DamnGame_level3" });
 }
 
 void damn::GameManager::Start()
 {
-	_numRound = 1;
-	if (_ent->HasComponent("AUDIO_EMITTER")) {
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
-	}
+	Setup();
+
 	eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
 }
 
@@ -174,4 +166,58 @@ void damn::GameManager::setupReferences() {
 	else {
 		eden_error::ErrorHandler::Instance()->Exception("DamnError", "UI manager not found");
 	}
+}
+
+void damn::GameManager::UnlockGuns(bool newWeapon)
+{
+	if (newWeapon && _numWeapons >= WeaponManager::WEAPON::RIFLE + 1) return;
+	if (newWeapon) {
+		_lastRoundWeaponWasGiven = _numRound;
+		_numWeapons++;
+	}
+	if (_numWeapons > WeaponManager::WEAPON::SHOTGUN) {
+		_weaponManager->UnlockShotGun();
+	}
+	if (_numWeapons > WeaponManager::WEAPON::RIFLE) {
+		_weaponManager->UnlockRifle();
+	}
+}
+
+void damn::GameManager::OnMapChanged()
+{
+	UnlockGuns(false);
+}
+
+void damn::GameManager::Setup()
+{
+	_enemiesLeft = 0;
+	_score = 0;
+	_roundState = CALM;
+	_numIteration = 0;
+
+	_currentMap = 0;
+
+	_numRound = 1;
+	_lastRoundMapChanged = 1;
+	_lastRoundWeaponWasGiven = 1;
+	_numWeapons = 1;
+
+	_timer = 0;
+	_timerText = _maxTime;
+
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
+	}
+}
+
+void damn::GameManager::NextMap() {
+	_lastRoundMapChanged = _numRound;
+	if (++_currentMap >= _extraLevelNames.size()) {
+		_currentMap = 0;
+	}
+	ChangeScene(_extraLevelNames[_currentMap]);
+	_numIteration = 0;
 }
