@@ -12,14 +12,16 @@ namespace damn {
 	public:
 		SoundController() = default;
 		~SoundController() = default;
-		void Init(eden_script::ComponentArguments* args) override {}
-
+		
 		static std::string GetID() { return "SOUND_CONTROLLER"; }
-	private:
-		static bool _alreadyFound;
 
+	protected:
+		void Init(eden_script::ComponentArguments* args) override {}
 		void Awake() override {}
 		void Start() override;
+
+	private:
+		static bool _alreadyFound;
 	};
 }
 

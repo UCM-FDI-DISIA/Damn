@@ -16,11 +16,6 @@ void damn::Health::Start()
 	_currentHealth = _maxHealth;
 }
 
-void damn::Health::Update(float deltaTime)
-{
-
-}
-
 void damn::Health::GainHealth(int health)
 {
 	_currentHealth += health;
@@ -30,6 +25,7 @@ void damn::Health::GainHealth(int health)
 void damn::Health::LoseHealth(int health)
 {
 	_currentHealth -= health;
+	if (_currentHealth < 0) _currentHealth = 0;
 }
 
 int damn::Health::GetMaxHealth()

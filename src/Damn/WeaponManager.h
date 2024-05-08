@@ -12,17 +12,7 @@ namespace damn {
 	public:
 		WeaponManager() = default;
 		~WeaponManager() = default;
-
-		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
-		/// @param args Argumentos leidos de .lua
-		void Init(eden_script::ComponentArguments* args) override {}
-
-		/// @brief Metodo Awake override de Component
-		void Awake() override {};
-
-		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso las armas
-		void Start() override;
-
+		
 		/// @brief Metodo update heredado de Component 
 		/// @param deltaTime El tiempo entre frames calculado por el motor
 		void Update(float deltaTime) override {}
@@ -47,13 +37,25 @@ namespace damn {
 
 		void UpdateUIAmmo();
 
-		static std::string GetID() { return "WEAPON_MANAGER"; }
 		enum WEAPON { GUN, SHOTGUN, RIFLE };
+
+		static std::string GetID() { return "WEAPON_MANAGER"; }
+
+	protected:
+		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
+		/// @param args Argumentos leidos de .lua
+		void Init(eden_script::ComponentArguments* args) override {}
+
+		/// @brief Metodo Awake override de Component
+		void Awake() override {};
+
+		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso las armas
+		void Start() override;
+
 	private:
-
 		void UnlockBaseWeapon();
-		bool _hasDefaultWeapon;
 
+		bool _hasDefaultWeapon;
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
 		int _numWeapons = 1;

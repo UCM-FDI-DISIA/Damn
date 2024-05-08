@@ -46,7 +46,8 @@ void damn::WeaponManager::ChangeWeapon()
 	_actualWeapon = static_cast<WEAPON>((static_cast<int>(_actualWeapon) + 1) % _numWeapons);
 	_weapons[_actualWeapon]->SetVisible(true);
 	std::pair<int,int> ammo = _weapons[_actualWeapon]->GetAmmo();
-	_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
+	if (_uiManager)
+		_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
 }
 
 void damn::WeaponManager::UnlockShotGun()
@@ -59,7 +60,8 @@ void damn::WeaponManager::UnlockShotGun()
 	_actualWeapon = static_cast<WEAPON>((static_cast<int>(_numWeapons-1)));
 	_weapons[_actualWeapon]->SetVisible(true);
 	std::pair<int, int> ammo = _weapons[_actualWeapon]->GetAmmo();
-	_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
+	if (_uiManager)
+		_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
 }
 
 void damn::WeaponManager::UnlockRifle()
@@ -72,13 +74,15 @@ void damn::WeaponManager::UnlockRifle()
 	_actualWeapon = static_cast<WEAPON>((static_cast<int>(_numWeapons - 1)));
 	_weapons[_actualWeapon]->SetVisible(true);
 	std::pair<int, int> ammo = _weapons[_actualWeapon]->GetAmmo();
-	_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
+	if (_uiManager)
+		_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
 }
 
 void damn::WeaponManager::UpdateUIAmmo()
 {
 	std::pair<int, int> ammo = _weapons[_actualWeapon]->GetAmmo();
-	_uiManager->UpdateAmmo(ammo.first, ammo.second);
+	if(_uiManager)
+		_uiManager->UpdateAmmo(ammo.first, ammo.second);
 }
 
 void damn::WeaponManager::UnlockBaseWeapon()
@@ -88,7 +92,7 @@ void damn::WeaponManager::UnlockBaseWeapon()
 	_weapons = std::vector<WeaponComponent*>();
 	_weapons.push_back(eden::SceneManager::getInstance()->GetCurrentScene()->GetEntityByID("Gun")->GetComponent<WeaponComponent>());
 	std::pair<int, int> ammo = _weapons[_actualWeapon]->GetAmmo();
-	_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
-
+	if (_uiManager)
+		_uiManager->ChangeWeapon(ammo.first, ammo.second, _actualWeapon);
 	_hasDefaultWeapon = true; 
 }

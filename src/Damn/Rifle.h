@@ -10,14 +10,14 @@ namespace damn {
 		Rifle() = default;
 		~Rifle() = default;
 
-		void Init(eden_script::ComponentArguments* args) override;
-
-		void Start() override;
-
 		void Shoot() override final;
 
 		static std::string GetID() { return "RIFLE"; }
+
 	protected:
+		void Init(eden_script::ComponentArguments* args) override;
+		void Start() override;
+
 		virtual void PlayIdleAnim() override;
 		virtual void PlayShootAnim() override;
 		virtual void PlayReloadAnim() override;

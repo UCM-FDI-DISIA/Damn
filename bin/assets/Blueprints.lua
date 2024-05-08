@@ -327,26 +327,6 @@ Player = {
     }
 }
 
-Frog = {
-    Name = "Frog", 
-    Components = {
-        {
-            Name = "TRANSFORM", 
-            Arguments = {
-                Position = "0|0|100",
-                Rotation = "false|1.0|0.0|0.0|0.0",
-                Scale = "10|10|10"
-            }
-        },
-        {
-            Name = "MESH_RENDERER",
-            Arguments = {
-                Mesh = "Cube.057"
-            }
-        }
-    }
-}
-
 Floor = {
 	Name = "Floor",
 	Components = {
@@ -586,5 +566,5 @@ Cursor = {
 	}		
 }
 
-Blueprints = { Cube, Frog, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet, 
+Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet, 
 WinScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor }

@@ -1,7 +1,7 @@
 #include<math.h>
 
 #include "Shotgun.h"
-#include"CProyectileMovement.h"
+#include"ProyectileMovement.h"
 #include<ComponentArguments.h>
 #include<SceneManager.h>
 #include<Transform.h>
@@ -39,7 +39,7 @@ void damn::Shotgun::Shoot()
 			dir = forward.RotatedAroundPoint(up, angle);
 			
 			bullet = CreateBullet("ShotgunShell");
-			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(dir.Normalized() * -1);
+			bullet->GetComponent<damn::ProyectileMovement>()->SetDirection(dir.Normalized() * -1);
 		}
 		_canShoot = false;
 		_elapsedTime = 0;

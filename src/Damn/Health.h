@@ -9,25 +9,25 @@ namespace damn {
 	public:
 		Health() = default;
 		~Health() override = default;
+		
+		void Update(float deltaTime) override {};
+
+		void GainHealth(int health); // jugador
+		virtual void LoseHealth(int health); // jugador y enemigo
+		int GetMaxHealth();
+		int GetCurrentHealth();
+		void SetCurrentToMax(); // jugador
+
+		static std::string GetID() { return "HEALTH"; }
+
+	protected:
 
 		void Init(eden_script::ComponentArguments* args) override;
 		void Start() override;
 		void Awake() override {};
-		void Update(float deltaTime) override;
 
-		static std::string GetID() { return "HEALTH"; }
-
-		void GainHealth(int health); // jugador
-		virtual void LoseHealth(int health); // jugador y enemigo
-
-		int GetMaxHealth();
-		int GetCurrentHealth();
-
-		void SetCurrentToMax(); // jugador
-	protected:
 		int _maxHealth;
 		int _currentHealth;
 	};
 }
-
 #endif // HEALTH_H_

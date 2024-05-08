@@ -8,12 +8,11 @@ void damn::PlayerHealth::Start()
 {
 	Health::Start();
 	_uiManager = eden::SceneManager::getInstance()->FindEntity("UI_MANAGER")->GetComponent<UIManager>();
-
 }
 
 void damn::PlayerHealth::LoseHealth(int health)
 {
 	Health::LoseHealth(health);
-	if (_currentHealth < 0) _currentHealth = 0;
-	_uiManager->UpdateHealthBar(_currentHealth, _maxHealth);
+	if(_uiManager)
+		_uiManager->UpdateHealthBar(_currentHealth, _maxHealth);
 }

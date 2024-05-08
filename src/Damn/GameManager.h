@@ -32,24 +32,28 @@ namespace damn {
 	public:
 		GameManager() = default;
 		~GameManager() = default;
+
 		void Update(float dt);
-		void Init(eden_script::ComponentArguments* args) override;
-		void Awake() override;
-		void Start() override;
+		
 		void RegisterEnemy();
 		void DieEnemy(eden_ec::Entity* e);
 		void AddScore(int score);
 		void AddWaypoint(eden_ec::CTransform* transform);
-		static std::string GetID() { return "GAMEMANAGER"; };
+		
 
 		void setPlayer(eden_ec::Entity* p);
 		inline eden_ec::Entity* getPlayer() { return _player; }
 		void setUIManager(UIManager* ui);
 
-		void Play();
+		void Play(); //Método llamado al empezar a jugar
+
+		static std::string GetID() { return "GAMEMANAGER"; };
+	protected:
+		void Init(eden_script::ComponentArguments* args) override;
+		void Awake() override;
+		void Start() override;
 
 	private:
-		static bool _IsPresent;
 		// Timers
 		float _timer;
 		float _timeNextRound;
@@ -90,9 +94,6 @@ namespace damn {
 		// Enemigos
 		void GenerateEnemies();
 
-		// Referencias
-		void setupReferences();
-
 		// Jugador
 		void UnlockGuns(bool newWeapon);
 
@@ -101,7 +102,6 @@ namespace damn {
 		void ManageTimer(float dt);
 
 		bool Win();
-	protected:
 	};
 }
 #endif

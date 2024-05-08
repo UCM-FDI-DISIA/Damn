@@ -13,8 +13,10 @@ namespace eden_input {
 namespace eden_ec {
 	class CTransform;
 	class CRigidBody;
+}
 
-	class CameraMovement : public Component
+namespace damn {
+	class CameraMovement : public eden_ec::Component
 	{
 	public:
 		CameraMovement() = default;
@@ -35,8 +37,8 @@ namespace eden_ec {
 		void Start() override;
 
 	private:
-		CTransform* _transform = nullptr;
-		CRigidBody* _rb = nullptr;
+		eden_ec::CTransform* _transform = nullptr;
+		eden_ec::CRigidBody* _rb = nullptr;
 
 		eden_input::InputManager* _inputMngr = nullptr;
 

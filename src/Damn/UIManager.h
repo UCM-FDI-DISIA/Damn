@@ -15,6 +15,9 @@ namespace damn {
 	public:
 		UIManager() = default;
 		~UIManager() = default;
+
+		void Update(float dt) override {};
+
 		void UpdateHealthBar(float value, float maxValue);
 		void UpdateAmmo(int magazineAmmo, int leftAmmo);
 		void ChangeWeapon(int magazineAmmo, int leftAmmo, int numWeapon);
@@ -25,13 +28,16 @@ namespace damn {
 
 		void SetupWinMenu(int score);
 		void StepWinMenu(float timePassed);
+
 		static std::string GetID() { return "UIMANAGER"; }
+
+	protected:
 		void Init(eden_script::ComponentArguments* args){}
+		void Awake() override;
+		void Start() override {};
 
 	private:
-		void Update(float dt);
 		std::string GetFormat(int value);
-		//void Init(eden_script::ComponentArguments* args) override;
 		const std::vector<std::string> _ids = { "AUI_HEALTH_BAR", "AUI_AMMO_TEXT", "AUI_GUN_IMAGE", "AUI_TIME_TEXT", "AUI_ENEMIES_LEFT_TEXT", "AUI_SCORE_TEXT", "AUI_ROUND_TEXT"};
 		const std::vector<std::string> _weaponImages = { "Pistol.png", "Shotgun.png", "Sniper.png"};
 		std::vector<eden_ec::Entity*> _ents = std::vector< eden_ec::Entity*>(_ids.size());
@@ -41,10 +47,5 @@ namespace damn {
 		enum WinMenuStates {VIGNETTE, WIN_TEXT, FINAL_SCORE_TEXT, WIN_SCORE_TEXT, MAIN_MENU_BUTTON, END };
 		WinMenuStates _winMenuState;
 		int _finalScore;
-		
-
-	protected:
-		void Awake() override;
-		void Start() override;
 	};
 }

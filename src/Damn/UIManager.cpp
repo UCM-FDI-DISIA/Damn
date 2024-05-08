@@ -134,10 +134,6 @@ void damn::UIManager::StepWinMenu(float timePassed)
 	}
 }
 
-void damn::UIManager::Update(float dt)
-{
-}
-
 std::string damn::UIManager::GetFormat(int value)
 {
 	if (value > MAX_UI_NUMBER) return std::to_string(MAX_UI_NUMBER);
@@ -160,9 +156,4 @@ void damn::UIManager::Awake()
 	if (gM) {
 		gM->GetComponent<GameManager>()->setUIManager(this);
 	}
-}
-
-void damn::UIManager::Start()
-{
-	
 }

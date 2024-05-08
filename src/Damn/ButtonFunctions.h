@@ -11,17 +11,17 @@ namespace damn {
 		ButtonFunctions();
 		~ButtonFunctions() = default;
 
-		void Init(eden_script::ComponentArguments* args) override;
+		void Update(float t) override;
 
 		static std::string GetID() { return "BUTTON_FUNCTIONS"; }
-	private:
-		int _iterations = 0;
+	protected:
+		void Init(eden_script::ComponentArguments* args) override;
 
 		void Awake() override {}
 
 		void Start() override {}
-
-		void Update(float t) override;
+	private:
+		int _iterations = 0;
 
 		void Click();
 

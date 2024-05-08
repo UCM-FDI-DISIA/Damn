@@ -17,16 +17,6 @@ namespace damn {
 		WeaponComponent() = default;
 		~WeaponComponent() override = default;
 
-		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
-		/// @param args Argumentos leidos de .lua
-		void Init(eden_script::ComponentArguments* args) override;
-
-		/// @brief Metodo Awake override de Component
-		void Awake() override {};
-
-		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso el Transform de la entidad
-		void Start() override;
-
 		/// @brief Metodo update heredado de Component 
 		/// @param deltaTime El tiempo entre frames calculado por el motor
 		void Update(float deltaTime) override;
@@ -58,11 +48,22 @@ namespace damn {
 		virtual bool isAnyAnimPlaying();
 
 		static std::string GetID() { return "WEAPON_COMPONENT"; }
+
 	protected:
-		int _maxAmmo;
-		int _magazineSize;
-		int _magazineAmmo;
-		int _currentAmmo;
+		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
+		/// @param args Argumentos leidos de .lua
+		void Init(eden_script::ComponentArguments* args) override;
+
+		/// @brief Metodo Awake override de Component
+		void Awake() override {};
+
+		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso el Transform de la entidad
+		void Start() override;
+
+		int _maxAmmo; //Capacidad de las reservas
+		int _magazineSize; //tramaño cargador
+		int _magazineAmmo; 
+		int _currentAmmo; //Munición cargada
 		float _cadence;
 		float _elapsedTime;
 		bool _canShoot;
@@ -75,7 +76,6 @@ namespace damn {
 		virtual void PlayIdleAnim();
 		virtual void PlayShootAnim();
 		virtual void PlayReloadAnim();
-		
 	};
 }
 #endif 

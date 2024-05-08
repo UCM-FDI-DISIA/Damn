@@ -10,12 +10,16 @@ namespace damn {
 	public:
 		Spawnpoint() = default;
 		~Spawnpoint() override = default;
+
 		void Update(float dt) {};
+
+		static std::string GetID() { return "SPAWNPOINT"; }
+
+	protected:
 		void Init(eden_script::ComponentArguments* args) override {};
 		void Awake() override {};
 		void Start() override;
 
-		static std::string GetID() { return "SPAWNPOINT"; }
 	private:
 		GameManager* gameManager;
 	};

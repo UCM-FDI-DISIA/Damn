@@ -1,5 +1,5 @@
 #include "WeaponComponent.h"
-#include "CProyectileMovement.h"
+#include "ProyectileMovement.h"
 #include <Transform.h>
 #include "Entity.h"
 #include "SceneManager.h"
@@ -55,7 +55,7 @@ void damn::WeaponComponent::Shoot()
 		
 		eden_ec::Entity* bullet = CreateBullet("Bullet");
 		if (bullet) {
-			bullet->GetComponent<eden_ec::CProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
+			bullet->GetComponent<damn::ProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
 		}
 		_canShoot = false;
 		_elapsedTime = 0;

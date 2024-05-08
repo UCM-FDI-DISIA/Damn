@@ -11,16 +11,19 @@ namespace damn {
 	public:
 		Shotgun() = default;
 		~Shotgun() = default;
+		
+		/// @brief Metodo que se llama cuando pueda disparar el arma
+		void Shoot() override final;
+
+		static std::string GetID() { return "SHOTGUN"; }
+
+	protected:
 		/// @brief Construye el componente dado unos argumentos. Se obtendran de una lectura de un .lua
 		/// @param args Argumentos leidos de .lua
 		void Init(eden_script::ComponentArguments* args) override;
 		/// @brief Metodo heredado de Component
 		void Start() override;
-		/// @brief Metodo que se llama cuando pueda disparar el arma
-		void Shoot() override final;
 
-		static std::string GetID() { return "SHOTGUN"; }
-	protected:
 		virtual void PlayIdleAnim() override;
 		virtual void PlayShootAnim() override;
 		virtual void PlayReloadAnim() override;

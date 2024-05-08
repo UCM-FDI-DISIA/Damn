@@ -8,16 +8,11 @@
 #include "CameraMovement.h"
 #include "SceneManager.h"
 
-void damn::InputController::Init(eden_script::ComponentArguments* args)
-{
-
-}
-
 void damn::InputController::Start()
 {
 	_movementController = _ent->GetComponent<damn::MovementController>();
 	_weaponManager = _ent->GetComponent<WeaponManager>();
-	_cameraMovement = _ent->GetComponent<eden_ec::CameraMovement>();
+	_cameraMovement = _ent->GetComponent<damn::CameraMovement>();
 	_transform = _ent->GetComponent<eden_ec::CTransform>();
 	_rb = _ent->GetComponent<eden_ec::CRigidBody>();
 	_rb->SetTemporalDeactivation(true);
@@ -41,9 +36,11 @@ void damn::InputController::Update(float deltatime)
 		newDir += _transform->GetRight() * -1;
 	}
 
-	_movementController->SetDirection(newDir);
+	if(_movementController)
+		_movementController->SetDirection(newDir);
 
-	_cameraMovement->SetMouseDirection(eden_input::InputManager::getInstance()->GetMouseDir());
+	if(_cameraMovement)
+		_cameraMovement->SetMouseDirection(eden_input::InputManager::getInstance()->GetMouseDir());
 
 	if (eden_input::InputManager::getInstance()->IsMouseButtonDown(eden_input::InputManager::MOUSEBUTTON::LEFT)) {
 		if(_weaponManager)
@@ -65,6 +62,8 @@ void damn::InputController::Update(float deltatime)
 
 void damn::InputController::Clear()
 {
-	_movementController->SetDirection(eden_utils::Vector3(0, 0, 0));
-	_cameraMovement->SetMouseDirection({ 0,0 });
+	if(_movementController)
+		_movementController->SetDirection(eden_utils::Vector3(0, 0, 0));
+	if(_cameraMovement)
+		_cameraMovement->SetMouseDirection({ 0,0 });
 }

@@ -18,7 +18,7 @@ void damn::EnemyHealth::Start()
 void damn::EnemyHealth::LoseHealth(int health)
 {
 	Health::LoseHealth(health);
-	if (_currentHealth <= 0) {
+	if (_currentHealth <= 0 && _gameManager) {
 		_gameManager->DieEnemy(_ent);
 	}
 }

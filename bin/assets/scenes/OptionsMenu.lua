@@ -30,13 +30,6 @@ Entity1 = {
 			}
 		},
 		{
-            Name = "AUDIO_EMITTER",
-            Arguments = {
-				SongName = "MainMenu.mp3",
-				Is3D = "false"
-			}
-        },
-		{
             Name = "BUTTON_FUNCTIONS",
             Arguments = {
 			}

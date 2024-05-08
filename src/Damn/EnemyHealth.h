@@ -11,16 +11,15 @@ namespace damn {
 		EnemyHealth() = default;
 		~EnemyHealth() override;
 
-		void Start() override;
-		// void Awake() override {};
-		// void Update(float deltaTime) override;
+		void LoseHealth(int health) override;
 
 		static std::string GetID() { return "ENEMY_HEALTH"; }
 
-		void LoseHealth(int health) override;
+	protected:
+		void Start() override;
+
 	private:
 		GameManager* _gameManager;
 	};
 }
-
 #endif // ENEMY_HEALTH_H_
