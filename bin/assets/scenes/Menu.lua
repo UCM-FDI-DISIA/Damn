@@ -111,7 +111,7 @@ Entity4 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "MenuPlayButton"
+                Script= "ButtonScript"
 			}
         }
 	}	
@@ -137,7 +137,7 @@ Entity5 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "MenuOptionsButton"
+                Script= "ButtonScript"
 			}
         }
 	}	
@@ -163,7 +163,7 @@ Entity6 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "MenuExitButton"
+                Script= "ButtonScript"
 			}
         }
 	}	

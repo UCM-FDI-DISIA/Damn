@@ -11,7 +11,7 @@
 #include <CBar.h>
 #include <CButton.h>
 #include <Scene.h>
-//#include "CFullscreenButton.h"
+#include <RenderManager.h>
 
 damn::ButtonFunctions::ButtonFunctions() {
 	Register();
@@ -22,7 +22,7 @@ void damn::ButtonFunctions::Init(eden_script::ComponentArguments* args) {
 }
 
 void damn::ButtonFunctions::Update(float t) {
-	if (eden::SceneManager::getInstance()->GetCurrentScene()->GetSceneID() == "OptionsMenu") {
+	if (eden::SceneManager::getInstance()->GetCurrentScene()->GetSceneID() == "OptionsMenu" || eden::SceneManager::getInstance()->GetCurrentScene()->GetSceneID() == "PauseMenu") {
 		if (_iterations == 1) {
 			eden_ec::Entity* offButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOff");
 			eden_ec::Entity* onButton = eden::SceneManager::getInstance()->FindEntity("FullscreenButtonOn");
@@ -42,16 +42,23 @@ void damn::ButtonFunctions::Update(float t) {
 
 void damn::ButtonFunctions::Register() {
 	eden_script::LuaManager* scriptM = eden_script::ScriptManager::getInstance()->GetLuaManager();
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::StartGame, "StartGame", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::Exit, "Exit", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::OptionsMenu, "Options", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::Return, "Back", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::SetFullscreen, "Fullscreen", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::PreviousResolution, "PreviousResolution", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::NextResolution, "NextResolution", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::VolumeUp, "VolumeUp", this);
-	scriptM->Regist(*this, "Menu", &damn::ButtonFunctions::VolumeDown, "VolumeDown", this);
-	scriptM->SetGlobal(this, "Menu");
+	scriptM->Regist(*this, "Buttons", &damn::ButtonFunctions::Click, "Click", this);
+	scriptM->SetGlobal(this, "Buttons");
+}
+
+void damn::ButtonFunctions::Click() {
+	eden_ec::Entity* other = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "selfButton");
+
+	if (other->GetEntityID() == "PlayButton") StartGame();
+	else if (other->GetEntityID() == "SettingsButton") OptionsMenu();
+	else if (other->GetEntityID() == "ExitButton") Exit();
+	else if (other->GetEntityID() == "FullscreenButtonOff" || other->GetEntityID() == "FullscreenButtonOn") SetFullscreen();
+	else if (other->GetEntityID() == "BackButton") Return();
+	else if (other->GetEntityID() == "ResolutionsPreviousButton") PreviousResolution();
+	else if (other->GetEntityID() == "ResolutionsForwardButton") NextResolution();
+	else if (other->GetEntityID() == "VolumeDownButton") VolumeDown();
+	else if (other->GetEntityID() == "VolumeUpButton") VolumeUp();
+	else if (other->GetEntityID() == "MainMenuButton") BackToMainMenu();
 }
 
 void damn::ButtonFunctions::StartGame() {
@@ -111,21 +118,26 @@ void damn::ButtonFunctions::ChangeResolutionText() {
 }
 
 void damn::ButtonFunctions::VolumeUp() {
-	ChangeVolume(5);
+	ChangeVolume(0.05);
 }
 
 void damn::ButtonFunctions::VolumeDown() {
-	ChangeVolume(-5);
+	ChangeVolume(-0.05);
 }
 
-void damn::ButtonFunctions::ChangeVolume(int num) {
-	float aux = eden_audio::AudioManager::GetInstance()->GetGlobalVolume() * 100 + num;
-	eden_audio::AudioManager::GetInstance()->SetGlobalVolume(aux / 100);
+void damn::ButtonFunctions::ChangeVolume(float num) {
+	float aux = eden_audio::AudioManager::GetInstance()->GetGlobalVolume() + num;
+	eden_audio::AudioManager::GetInstance()->SetGlobalVolume(aux);
 	ChangeVolumeBar();
 }
+
 void damn::ButtonFunctions::ChangeVolumeBar() {
 	eden_ec::Entity* _vol = eden::SceneManager::getInstance()->FindEntity("VolumeBar");
 	if (_vol != nullptr) {
 		_vol->GetComponent<eden_ec::CBar>()->SetBarPercentage(eden_audio::AudioManager::GetInstance()->GetGlobalVolume() * 100);
 	}
+}
+
+void damn::ButtonFunctions::BackToMainMenu() {
+	eden::SceneManager::getInstance()->ChangeScene("Menu");
 }

@@ -57,4 +57,8 @@ void damn::InputController::Update(float deltatime)
 		if (_weaponManager)
 			_weaponManager->ChangeWeapon();
 	}
+	
+	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::ESCAPE)) {
+		eden::SceneManager::getInstance()->PushScene("PauseMenu");
+	}
 }

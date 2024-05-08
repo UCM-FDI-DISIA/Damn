@@ -20,6 +20,8 @@ namespace damn {
 
 		void Update(float t) override;
 
+		void Click();
+
 		void Register();
 
 		void StartGame();
@@ -40,13 +42,15 @@ namespace damn {
 
 		void ChangeResolutionText();
 
-		void ChangeVolume(int num);
+		void ChangeVolume(float num);
 
 		void VolumeUp();
 
 		void VolumeDown();
 
 		void ChangeVolumeBar();
+
+		void BackToMainMenu();
 	private:
 		int _iterations = 0;
 	};

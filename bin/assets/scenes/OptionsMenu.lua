@@ -105,7 +105,7 @@ Entity4 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsFullscreen",
+                Script= "ButtonScript",
 			}
         }
 	}	
@@ -131,7 +131,7 @@ Entity5 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsFullscreen",
+                Script= "ButtonScript",
 			}
         }
 	}
@@ -157,17 +157,9 @@ Entity6 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "MenuBackButton"
+                Script= "ButtonScript"
 			}
-        },
-		{
-			Name = "TRANSFORM",
-			Arguments = {
-				Position = "-1.610821008682251|5.619948387145996|5.7784810066223145",
-				Rotation = "false|0.5458973050117493|0.14995510876178741|0.21834951639175415|0.7948793172836304",
-				Scale = "1.0|1.0|1.0"
-			}
-		}
+        }
 	}	
 }
 
@@ -191,7 +183,7 @@ Entity7 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsPreviousResolution",
+                Script= "ButtonScript",
 			}
         }
 	}	
@@ -236,7 +228,7 @@ Entity9 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsNextResolution",
+                Script= "ButtonScript",
 			}
         }
 	}	
@@ -2119,7 +2111,7 @@ Entity66 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsVolumeDown",
+                Script= "ButtonScript",
 			}
         }
 	}	
@@ -2175,7 +2167,7 @@ Entity68 = {
         {
             Name = "BEHAVIOUR",
 			Arguments = {
-                Script= "OptionsVolumeUp",
+                Script= "ButtonScript",
 			}
         }
 	}	

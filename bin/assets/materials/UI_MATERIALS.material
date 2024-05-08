@@ -472,6 +472,89 @@ material blurtransparentbg.png {
 	}
 }
 
+material pausemenubg.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture pausemenubg.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material pause_white.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture pause_white.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material mainmenu_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material mainmenu_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material mainmenu_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
 material Pistol.png {
     receive_shadows on
     technique {
