@@ -53,16 +53,15 @@ Entity2 = {
 	Name = "TitleTextP1",
 	Components = {
 		{
-			Name = "TEXT",
+			Name = "IMAGE",
 			Arguments = {
-                OverlayName= "titletextp1",
+				OverlayName = "damnlogo",
 				XPos = "50",
-				YPos = "10",
-				Tam = "20",
-				Text = "DamN",
-				Font = "AmazDamN.ttf",
-				Color = "0|0|255",
-				Depth = "0"
+                YPos = "25",
+                Width = "50",
+                Height = "50",
+                Texture = "damnlogo.png",
+                Depth = "0"
 			}
 		}
 	}	
