@@ -86,7 +86,11 @@ void damn::ButtonFunctions::Exit() {
 }
 
 void damn::ButtonFunctions::Return() {
-	eden::SceneManager::getInstance()->PopScene();
+	eden::SceneManager* mngr = eden::SceneManager::getInstance();
+	if (mngr->GetCurrentScene()->GetSceneID() == "PauseMenu") {
+		eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->Pause(false);
+	}
+	mngr->PopScene();
 }
 
 void damn::ButtonFunctions::SetFullscreen() {
