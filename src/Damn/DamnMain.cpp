@@ -1,6 +1,7 @@
 #include "DamnMain.h"
 #include "SceneManager.h"
 #include "ComponentFactory.h"
+#include <RenderManager.h>
 
 #include "ButtonFunctions.h"
 #include "MovementController.h"
@@ -51,6 +52,8 @@ void RegisterComponents() {
 }
 
 void LoadScene() {
+	eden_render::RenderManager::getInstance()->SetWindowName("DAMN");
+	eden_render::RenderManager::getInstance()->SetWindowIcon("damnlogo64.bmp");
 	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
 	scnManager->PushScene("Menu");
 }
