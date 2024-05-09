@@ -1,5 +1,5 @@
 #include "WeaponComponent.h"
-#include "ProyectileMovement.h"
+#include "ProjectileMovement.h"
 #include <Transform.h>
 #include "Entity.h"
 #include "SceneManager.h"
@@ -55,12 +55,12 @@ void damn::WeaponComponent::Shoot()
 		
 		eden_ec::Entity* bullet = CreateBullet("Bullet");
 		if (bullet) {
-			bullet->GetComponent<damn::ProyectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
+			bullet->GetComponent<damn::ProjectileMovement>()->SetDirection(eden_utils::Vector3(0,0,1));
 		}
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
-		_particle->SetActive(true);
+		_particle->Reset();
 		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)
@@ -69,7 +69,7 @@ void damn::WeaponComponent::Shoot()
 
 void damn::WeaponComponent::Reload()
 {
-	if (isAnyAnimPlaying() || _magazineAmmo >= _magazineSize) return;
+	if (isAnyAnimPlaying() || _magazineAmmo >= _magazineSize || _currentAmmo <= 0) return;
 	if (_currentAmmo - (_magazineSize - _magazineAmmo) >= 0) {
 		_currentAmmo -= (_magazineSize - _magazineAmmo);
 		_magazineAmmo += ((_magazineSize - _magazineAmmo));

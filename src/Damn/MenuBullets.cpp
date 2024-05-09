@@ -4,7 +4,7 @@
 #include <SceneManager.h>
 #include <Vector3.h>
 #include <Quaternion.h>
-#include "ProyectileMovement.h"
+#include "ProjectileMovement.h"
 #include "MainMenuCameraRotation.h"
 
 void damn::MenuBullets::Start() {
@@ -26,7 +26,7 @@ void damn::MenuBullets::Update(float t) {
 
         if (_totalBullets < _maxBullets) {
             eden_ec::Entity* bullet = eden::SceneManager::getInstance()->InstantiateBlueprint("MenuBullet", bulletPosition, rotation);
-            bullet->GetComponent<damn::ProyectileMovement>()->SetDirection(eden_utils::Vector3(0, 0, 1));
+            bullet->GetComponent<damn::ProjectileMovement>()->SetDirection(eden_utils::Vector3(0, 0, 1));
             _instantiatedBullets.push_back(bullet);
             _totalBullets++;
         }

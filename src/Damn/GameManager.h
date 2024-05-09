@@ -1,19 +1,19 @@
 #ifndef _GAME_MANAGER_H
 #define _GAME_MANAGER_H
 
-#define NUM_ENEMIES 1
-#define TIME_CALM 5
+//#define NUM_ENEMIES 1
+//#define TIME_CALM 5
 
-#define ROUNDS_FOR_NEXT_MAP 1
+#define ROUNDS_FOR_NEXT_MAP 5
 
-#define ROUNDS_FOR_NEXT_GUN 1
+#define ROUNDS_FOR_NEXT_GUN 6
 
-#define ROUND_FOR_WINNING 10
+#define ROUND_FOR_WINNING 15
 
 #define SCORE_PER_ENEMY 5
-#define HEALTH_GAIN_PER_ENEMY 5
+//#define HEALTH_GAIN_PER_ENEMY 5
 
-#define AMMOBOX_CHANCE 60
+//#define AMMOBOX_CHANCE 60
 
 #include <vector>
 
@@ -69,6 +69,11 @@ namespace damn {
 		// Parámetros de rondas
 		int _score;
 		int _enemiesLeft;
+		int _numEnemies = 1;
+		int _lastIncreasedEnemyNum = 0;
+		int _timeCalm = 5;
+		int _ammoBoxChance = 80;
+		int _healthGainPerEnemy = 30;
 		int _numRound, _lastRoundMapChanged, _lastRoundWeaponWasGiven;
 		enum states {ENEMIES, CALM, MENU, WIN_MENU, LOSE_MENU} _roundState;
 		states _lastState;
@@ -109,6 +114,8 @@ namespace damn {
 		void ManageTimer(float dt);
 
 		bool Win();
+
+		void IncreaseDifficulty(); 
 	};
 }
 #endif

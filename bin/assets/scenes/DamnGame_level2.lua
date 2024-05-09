@@ -306,7 +306,7 @@ Entity14 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-4.306380748748779|3.0691781044006348|1.9316953420639038",
-				Rotation = "false|0.45519503951072693|0.5411116480827332|-0.5411069393157959|-0.45519110560417175",
+				Rotation = "false|0.4556950032711029|0.5406906604766846|-0.5406859517097473|-0.45569106936454773",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -316,9 +316,9 @@ Entity14 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001793940623|2.0000002251642686",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086769104004",
+				Radius = "5.316086292266846",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -550,9 +550,9 @@ Entity21 = {
 		{
 			Name = "TRANSFORM",
 			Arguments = {
-				Position = "-21.376388549804688|7.666505336761475|-16.97388458251953",
-				Rotation = "false|0.5000001192092896|-0.5000001192092896|-0.49999988079071045|-0.49999991059303284",
-				Scale = "-7.888233184814453|-0.13727302849292755|-5.59731388092041"
+				Position = "-28.91828727722168|7.290066719055176|-36.11486053466797",
+				Rotation = "false|0.7016430497169495|-0.7016431093215942|0.08773255348205566|0.08773253858089447",
+				Scale = "-7.888233184814453|-0.13727302849292755|-5.314846038818359"
 			}
 		},
 		{
@@ -621,7 +621,7 @@ Entity23 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "11.6577730178833|3.069201946258545|1.3037166595458984",
-				Rotation = "false|0.44327789545059204|0.5509162545204163|-0.5509118437767029|-0.4432743191719055",
+				Rotation = "false|0.4434901177883148|0.55074542760849|-0.5507410168647766|-0.4434865117073059",
 				Scale = "1.0|1.0054153203964233|1.242368459701538"
 			}
 		},
@@ -656,7 +656,7 @@ Entity24 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "11.6577730178833|4.321034908294678|1.3037166595458984",
-				Rotation = "false|0.31515660881996155|0.632993221282959|-0.6329880356788635|-0.3151540458202362",
+				Rotation = "false|0.31345561146736145|0.6338372230529785|-0.6338320374488831|-0.3134530782699585",
 				Scale = "0.25183239579200745|0.7847268581390381|0.7847268581390381"
 			}
 		},
@@ -691,7 +691,7 @@ Entity25 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "11.86584758758545|4.675950527191162|0.8908287882804871",
-				Rotation = "false|0.13773846626281738|0.6935648918151855|-0.6935591101646423|-0.13773731887340546",
+				Rotation = "false|0.13470391929149628|0.6941605806350708|-0.6941549777984619|-0.13470283150672913",
 				Scale = "0.16858236491680145|0.5253140926361084|0.5253140926361084"
 			}
 		},
@@ -784,7 +784,7 @@ Entity27 = {
 }
 
 Entity28 = {
-	Name = "Wall",
+	Name = "FakeWall",
 	Components = {
 		{
 			Name = "MESH_RENDERER",
@@ -798,21 +798,6 @@ Entity28 = {
 				Position = "-29.127351760864258|7.540343761444092|-22.846242904663086",
 				Rotation = "false|1.3767875373105198e-07|-1.3767878215276141e-07|-0.7071067094802856|-0.7071068286895752",
 				Scale = "-7.888233184814453|-0.13727302849292755|-5.59731388092041"
-			}
-		},
-		{
-			Name = "RIGIDBODY",
-			Arguments = {
-				Mass = "1",
-				Bounciness = "0",
-				Friction = "1",
-				AABB = "2.0|2.0|2.0",
-				PosOffset = "0|0|0",
-				Radius = "15.776466369628906",
-				Shape = "BOX",
-				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
-				Trigger = "false"
 			}
 		}
 	}
@@ -1181,7 +1166,7 @@ Entity39 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-15.263190269470215|4.885397911071777|-7.665173053741455",
-				Rotation = "false|4.475187779462431e-06|3.147364964206645e-07|-0.0701560229063034|-0.9975360035896301",
+				Rotation = "false|4.475187779462431e-06|3.147364111555362e-07|-0.0701560229063034|-0.9975360035896301",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1321,7 +1306,7 @@ Entity43 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-16.862098693847656|4.552874565124512|4.99566650390625",
-				Rotation = "false|0.07015595585107803|-0.9975360631942749|4.4866237658425234e-06|-1.5221752391880727e-07",
+				Rotation = "false|0.07015595585107803|-0.9975360631942749|4.486625130084576e-06|-1.5221758076222613e-07",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1356,7 +1341,7 @@ Entity44 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-19.58003044128418|3.069197654724121|-4.661859035491943",
-				Rotation = "false|0.45519503951072693|0.5411116480827332|-0.5411069393157959|-0.45519110560417175",
+				Rotation = "false|0.4556950032711029|0.5406906604766846|-0.5406859517097473|-0.45569106936454773",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1366,9 +1351,9 @@ Entity44 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001793940623|2.0000002251642686",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086769104004",
+				Radius = "5.316086292266846",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -1461,7 +1446,7 @@ Entity47 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-27.174304962158203|3.0692293643951416|9.242532730102539",
-				Rotation = "false|0.30119431018829346|0.6397548913955688|-0.6397493481636047|-0.30119168758392334",
+				Rotation = "false|0.29737749695777893|0.6415379047393799|-0.6415324211120605|-0.2973749339580536",
 				Scale = "1.0|3.418976068496704|1.9319708347320557"
 			}
 		},
@@ -1471,7 +1456,7 @@ Entity47 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0|1.9999998765930753",
 				PosOffset = "0|0|0",
 				Radius = "6.837952136993408",
 				Shape = "BOX",
@@ -1531,7 +1516,7 @@ Entity49 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-32.14399719238281|3.0692050457000732|-6.614838123321533",
-				Rotation = "false|0.16669873893260956|0.6871796250343323|-0.6871737241744995|-0.16669730842113495",
+				Rotation = "false|0.16623638570308685|0.6872915625572205|-0.6872857213020325|-0.16623497009277344",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1541,9 +1526,9 @@ Entity49 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001793940623|2.0",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086769104004",
+				Radius = "5.316086292266846",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -1671,7 +1656,7 @@ Entity53 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-29.153276443481445|2.6029000282287598|-12.665074348449707",
-				Rotation = "false|0.025073036551475525|0.7066651582717896|-0.7066590785980225|-0.025072822347283363",
+				Rotation = "false|0.025078920647501945|0.7066649794578552|-0.7066588401794434|-0.025078698992729187",
 				Scale = "0.5336850881576538|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1681,9 +1666,9 @@ Entity53 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001793940623|2.0",
+				AABB = "2.0|1.9999998206059375|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086769104004",
+				Radius = "5.3160858154296875",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -1706,7 +1691,7 @@ Entity54 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-29.153276443481445|3.6702709197998047|-12.665074348449707",
-				Rotation = "false|0.06677072495222092|-0.7039502263069153|0.7039442658424377|-0.06677016615867615",
+				Rotation = "false|0.06652341783046722|-0.7039735913276672|0.7039676904678345|-0.06652285158634186",
 				Scale = "0.5336850881576538|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1716,7 +1701,7 @@ Entity54 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0000002251642686",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
 				Radius = "5.316086292266846",
 				Shape = "BOX",
@@ -1741,7 +1726,7 @@ Entity55 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-29.153276443481445|4.737640380859375|-12.665074348449707",
-				Rotation = "false|0.1793033480644226|-0.6839989423751831|0.6839931607246399|-0.17930184304714203",
+				Rotation = "false|0.17913228273391724|-0.6840437650680542|0.684037983417511|-0.17913079261779785",
 				Scale = "0.5336850881576538|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1751,9 +1736,9 @@ Entity55 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0000001793940623|2.0",
+				AABB = "2.0|1.9999998206059375|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086769104004",
+				Radius = "5.3160858154296875",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -1846,7 +1831,7 @@ Entity58 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-23.03545570373535|2.6028671264648438|-19.020837783813477",
-				Rotation = "false|0.49420255422592163|-0.5057352781295776|0.5057308673858643|-0.4941982626914978",
+				Rotation = "false|0.49518564343452454|-0.5047727823257446|0.5047683715820312|-0.49518129229545593",
 				Scale = "0.5336850881576538|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -1856,9 +1841,9 @@ Entity58 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|2.0000001793940623|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.316086292266846",
+				Radius = "5.316086769104004",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -1916,7 +1901,7 @@ Entity60 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-66.36528015136719|3.069218158721924|-2.720114231109619",
-				Rotation = "false|0.5014176964759827|0.4985825717449188|-0.498578280210495|-0.5014134049415588",
+				Rotation = "false|0.5003416538238525|0.4996623396873474|-0.49965813755989075|-0.5003374218940735",
 				Scale = "1.0|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -2021,7 +2006,7 @@ Entity63 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-66.36528015136719|7.237287521362305|-2.720114231109619",
-				Rotation = "false|0.45961233973503113|0.5373644232749939|-0.5373600721359253|-0.45960864424705505",
+				Rotation = "false|0.45788776874542236|0.5388346314430237|-0.5388303399085999|-0.45788413286209106",
 				Scale = "0.4184597134590149|2.658043146133423|1.0588650703430176"
 			}
 		},
@@ -2031,9 +2016,9 @@ Entity63 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|1.9999998206059375|2.0",
+				AABB = "2.0|2.0|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.3160858154296875",
+				Radius = "5.316086292266846",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -2266,7 +2251,7 @@ Entity70 = {
 			Name = "TRANSFORM",
 			Arguments = {
 				Position = "-42.817352294921875|7.813011646270752|2.1278393268585205",
-				Rotation = "false|0.17107261717319489|-0.6861038208007812|0.6860979199409485|-0.1710711568593979",
+				Rotation = "false|0.16890127956867218|-0.6866415739059448|0.6866356730461121|-0.16889984905719757",
 				Scale = "0.4277314245700836|2.5912654399871826|0.8263645768165588"
 			}
 		},
@@ -2276,9 +2261,9 @@ Entity70 = {
 				Mass = "1",
 				Bounciness = "0",
 				Friction = "1",
-				AABB = "2.0|2.0|2.0",
+				AABB = "2.0|1.9999998159828976|2.0",
 				PosOffset = "0|0|0",
-				Radius = "5.182530879974365",
+				Radius = "5.182530403137207",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
 				CollisionLayer = "DEFAULT",
@@ -2995,8 +2980,8 @@ Entity97 = {
 		{
 			Name = "RIFLE",
 			Arguments = {
-				MaxAmmo = "10",
-				MagazineSize = "5",
+				MaxAmmo = "6",
+				MagazineSize = "3",
 				Cadence = "1",
 				Damage = "50"
 			}
@@ -3018,7 +3003,146 @@ Entity98 = {
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76, Entity77, Entity78, Entity79, Entity80, Entity81, Entity82, Entity83, Entity84, Entity85, Entity86, Entity87, Entity88, Entity89, Entity90, Entity91, Entity92, Entity93, Entity94, Entity95, Entity96, Entity97, Entity98 }
+Entity99 = {
+	Name = "alejandro",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "alejandro"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-26.69738006591797|2.321011781692505|-32.05875015258789",
+				Rotation = "false|0.9986642599105835|-9.799348532624208e-08|0.05166934058070183|-9.851066629096294e-09",
+				Scale = "0.019999999552965164|0.019999999552965164|0.019999999552965164"
+			}
+		},
+		{
+			Name = "ANIMATOR",
+			Arguments = {
+				AnimNames = "sexy_dance",
+				AnimMeshNames = "sexy_dance",
+				NextAnim = "sexy_dance",
+				LoopAnims = "true"
+			}
+		},
+		{
+			Name = "ROME_COMP",
+			Arguments = {
+			}
+		}
+	}
+}
+
+Entity100 = {
+	Name = "Wall",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "HazardousWall"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-21.376388549804688|7.666505336761475|-16.97388458251953",
+				Rotation = "false|0.5000001192092896|-0.5000001192092896|-0.49999988079071045|-0.49999991059303284",
+				Scale = "-7.888233184814453|-0.13727302849292755|-5.59731388092041"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "15.776466369628906",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity101 = {
+	Name = "Wall",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "HazardousWall"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-21.376388549804688|7.666505336761475|-32.57884979248047",
+				Rotation = "false|0.5000001192092896|-0.5000001192092896|-0.49999988079071045|-0.49999991059303284",
+				Scale = "-7.888233184814453|-0.13727302849292755|-5.59731388092041"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "15.776466369628906",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entity102 = {
+	Name = "Wall",
+	Components = {
+		{
+			Name = "MESH_RENDERER",
+			Arguments = {
+				Mesh = "HazardousWall"
+			}
+		},
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "-32.06779479980469|7.290066719055176|-29.566919326782227",
+				Rotation = "false|0.6122497320175171|-0.6122497916221619|-0.3537657558917999|-0.3537657856941223",
+				Scale = "-7.888233184814453|-0.13727302849292755|-5.314846038818359"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1",
+				Bounciness = "0",
+				Friction = "1",
+				AABB = "2.0|2.0|2.0",
+				PosOffset = "0|0|0",
+				Radius = "15.776466369628906",
+				Shape = "BOX",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76, Entity77, Entity78, Entity79, Entity80, Entity81, Entity82, Entity83, Entity84, Entity85, Entity86, Entity87, Entity88, Entity89, Entity90, Entity91, Entity92, Entity93, Entity94, Entity95, Entity96, Entity97, Entity98, Entity99, Entity100, Entity101, Entity102 }
 
 CollisionLayers = {
 	Layers = {

@@ -4,7 +4,7 @@
 #include "Quaternion.h"
 #include "SceneManager.h"
 #include "PlayerHealth.h"
-#include "ProyectileMovement.h"
+#include "ProjectileMovement.h"
 #include <math.h>
 #include <iostream>
 #include <ComponentArguments.h>
@@ -47,7 +47,7 @@ void damn::EnemyAttack::Update(float t)
 				eden_utils::Quaternion rotation = _tr->GetRotation() * eden_utils::Quaternion(180, eden_utils::Vector3(0, 1, 0));
 				eden_ec::Entity* f = eden::SceneManager::getInstance()->InstantiateBlueprint("EnemyBullet", _tr->GetPosition() + (_tr->GetForward() * 2), rotation);
 				eden_utils::Vector3 proyectileDir = (_playerTr->GetPosition() - _tr->GetPosition()).Normalized(); //Vector que calcula la dirección teniendo en cuenta la altura
-				f->GetComponent<damn::ProyectileMovement>()->SetDirection(eden_utils::Vector3(0, proyectileDir.GetY(), -1));
+				f->GetComponent<damn::ProjectileMovement>()->SetDirection(eden_utils::Vector3(0, proyectileDir.GetY(), -1));
 			}
 		}
 	}

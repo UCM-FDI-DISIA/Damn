@@ -16,7 +16,8 @@ void damn::InputController::Start()
 	_cameraMovement = _ent->GetComponent<damn::CameraMovement>();
 	_transform = _ent->GetComponent<eden_ec::CTransform>();
 	_inputManager = eden_input::InputManager::getInstance();
-	
+	_rb = _ent->GetComponent<eden_ec::CRigidBody>();
+	_rb->SetTemporalDeactivation(true);
 }
 
 void damn::InputController::Update(float deltatime)

@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include<Transform.h>
 #include<CMeshRenderer.h>
+#include <CParticleEmitter.h>
 #include "RayCast.h"
 #include "Vector3.h"
 #include <iostream>
@@ -30,7 +31,7 @@ void damn::Rifle::Shoot()
 	eden_ec::CTransform* _pTr = _player->GetComponent<eden_ec::CTransform>();
 	if (_canShoot && _magazineAmmo > 0 && !isAnyAnimPlaying() && _player) {
 		physics_wrapper::RayCastHitResult result;
-		result = physics_manager::PhysicsManager::getInstance()->SingleHitRayCast(_pTr->GetPosition() + _pTr->GetForward()*-3, _pTr->GetPosition() + _pTr->GetForward() * -100, true);
+		result = physics_manager::PhysicsManager::getInstance()->SingleHitRayCast(_pTr->GetPosition() + _pTr->GetForward()*-3, _pTr->GetPosition() + _pTr->GetForward() * -1000, true);
 		if (result.hasHit && result.entityHit->HasComponent("ENEMY_HEALTH")) {
 			result.entityHit->GetComponent<damn::EnemyHealth>()->LoseHealth(_rifleDamage);
 		}

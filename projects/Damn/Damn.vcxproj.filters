@@ -8,7 +8,7 @@
     <ClCompile Include="..\..\src\Damn\InputController.cpp" />
     <ClCompile Include="..\..\src\Damn\EnemyAttack.cpp" />
     <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
-    <ClCompile Include="..\..\src\Damn\ProyectileMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\ProjectileMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
     <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
@@ -26,6 +26,7 @@
     <ClCompile Include="..\..\src\Damn\BulletPlayerDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\MenuBullets.cpp" />
     <ClCompile Include="..\..\src\Damn\SoundController.cpp" />
+    <ClCompile Include="..\..\src\Damn\RomeComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -35,7 +36,7 @@
     <ClInclude Include="..\..\src\Damn\MovementController.h" />
     <ClInclude Include="..\..\src\Damn\EnemyAttack.h" />
     <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
-    <ClInclude Include="..\..\src\Damn\ProyectileMovement.h" />
+    <ClInclude Include="..\..\src\Damn\ProjectileMovement.h" />
     <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
     <ClInclude Include="..\..\src\Damn\Shotgun.h" />
@@ -53,5 +54,6 @@
     <ClInclude Include="..\..\src\Damn\BulletPlayerDamage.h" />
     <ClInclude Include="..\..\src\Damn\MenuBullets.h" />
     <ClInclude Include="..\..\src\Damn\SoundController.h" />
+    <ClInclude Include="..\..\src\Damn\RomeComponent.h" />
   </ItemGroup>
 </Project>

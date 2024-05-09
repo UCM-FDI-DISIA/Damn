@@ -444,6 +444,54 @@ Enemy = {
 	}
 }
 
+EnemyHarder = {
+	Name = "EnemyHarder",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.0|1|0.0",
+				Rotation = "true|1.0|0.0|0.0|0.0",
+				Scale = "1.15|1.15|1.15"
+			}
+		},
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "0.0",
+				Bounciness = "0.0",
+				Friction = "0.0",
+				AABB = "1.5|1.5|1.5",
+				PosOffset = "0|0|0",
+				Radius = "1.5",
+				Shape = "SPHERE",
+				CollisionFlag = "STATIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		},
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "DemonHarder"
+            }
+        },
+		{
+			Name = "ENEMY_HEALTH",
+			Arguments = {
+				MaximumHealth = "70"
+			}
+		},
+		{
+			Name = "ENEMY_ATTACK",
+			Arguments = {
+				AttackRate = "1",
+				RotationSpeed = "180"	
+			}
+		}
+	}
+}
+
 ScoreText = {
 	Name = "ScoreText",
 	Components = {
@@ -602,5 +650,5 @@ Cursor = {
 	}		
 }
 
-Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet, 
+Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
 ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText }

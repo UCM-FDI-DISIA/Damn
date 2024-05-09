@@ -35,7 +35,7 @@ void damn::AmmoBoxComponent::PickUpAmmo()
 	eden_ec::Entity* otherEnt = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "other");
 	eden_ec::Entity* selfEnt = luabridge::getGlobal(eden_script::ScriptManager::getInstance()->GetLuaManager()->GetLuaState(), "self");
 	if (otherEnt->HasComponent("WEAPON_MANAGER")) {
-		otherEnt->GetComponent<damn::WeaponManager>()->AddAmmo(selfEnt->GetComponent<AmmoBoxComponent>()->_ammoGiven);
+		otherEnt->GetComponent<damn::WeaponManager>()->AddAmmo();
 		selfEnt->SetAlive(false);
 	}
 }

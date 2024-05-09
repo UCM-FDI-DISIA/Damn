@@ -1,7 +1,7 @@
 #include<math.h>
 
 #include "Shotgun.h"
-#include"ProyectileMovement.h"
+#include"ProjectileMovement.h"
 #include<ComponentArguments.h>
 #include<SceneManager.h>
 #include<Transform.h>
@@ -39,12 +39,12 @@ void damn::Shotgun::Shoot()
 			dir = forward.RotatedAroundPoint(up, angle);
 			
 			bullet = CreateBullet("ShotgunShell");
-			bullet->GetComponent<damn::ProyectileMovement>()->SetDirection(dir.Normalized() * -1);
+			bullet->GetComponent<damn::ProjectileMovement>()->SetDirection(dir.Normalized() * -1);
 		}
 		_canShoot = false;
 		_elapsedTime = 0;
 		_magazineAmmo--;
-		_particle->SetActive(true);
+		_particle->Reset();
 		PlayShootAnim();
 	}
 	else if (_magazineAmmo == 0)

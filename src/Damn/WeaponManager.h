@@ -25,7 +25,7 @@ namespace damn {
 
 		/// @brief Metodo que llama al metodo AddAmmo del arma actual
 		/// @param ammo Cantidad de municion que se añade
-		virtual void AddAmmo(int ammo);
+		virtual void AddAmmo();
 
 		/// @brief Metodo para cambiar de arma
 		void ChangeWeapon();
@@ -58,7 +58,7 @@ namespace damn {
 		bool _hasDefaultWeapon;
 		WEAPON _actualWeapon;
 		std::vector<WeaponComponent*> _weapons;
-		int _numWeapons = 1;
+		int _numWeapons = 0;
 		UIManager* _uiManager;
 	};
 }

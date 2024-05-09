@@ -38,7 +38,7 @@ void damn::GameManager::Update(float dt)
 
 			if (Win()) return;
 
-			_timeNextRound = _timer + TIME_CALM;
+			_timeNextRound = _timer + _timeCalm;
 			if (_numRound == _lastRoundWeaponWasGiven + ROUNDS_FOR_NEXT_GUN) {
 				UnlockGuns(true);
 			}
@@ -63,6 +63,7 @@ void damn::GameManager::Update(float dt)
 			EndGame("VictoryTheme.wav");
 		}
 		else _uiManager->StepWinMenu(_timer);
+		_timer += dt;
 	}
 		break;
 	case damn::GameManager::LOSE_MENU: 
@@ -87,8 +88,10 @@ void damn::GameManager::EndGame(std::string endSong) {
 		emitter->SetVolume(0.6);
 		emitter->SetLoop(true);
 	}
-	_player->GetComponent<InputController>()->Clear();
-	_player->RemoveComponent("INPUT_CONTROLLER");
+	if (_player->HasComponent("INPUT_CONTROLLER")) {
+		_player->GetComponent<InputController>()->Clear();
+		_player->RemoveComponent("INPUT_CONTROLLER");
+	}
 	if (endSong == "VictoryTheme.wav")_uiManager->SetupWinMenu(_score);
 	else {
 		_uiManager->SetupLoseMenu(_score);
@@ -110,7 +113,7 @@ void damn::GameManager::Init(eden_script::ComponentArguments* args)
 {
 	_maxTime = args->GetValueToFloat("MaxTime");
 	_timer = 0;
-	_timeNextRound = _timer + TIME_CALM;
+	_timeNextRound = _timer + _timeCalm;
 	_timerText = _maxTime;
 }
 
@@ -128,12 +131,12 @@ void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 	if (_uiManager)
 		_uiManager->SetEnemiesLeft(_enemiesLeft);
 	AddScore(SCORE_PER_ENEMY);
-	if (rand() % 101 <= AMMOBOX_CHANCE) {
+	if (rand() % 101 <= _ammoBoxChance) {
 		eden::SceneManager::getInstance()->InstantiateBlueprint("AmmoBox", e->GetComponent<eden_ec::CTransform>()->GetPosition());
 	}
 	if (_player && _player->HasComponent("PLAYER_HEALTH") && _uiManager) {
 		damn::PlayerHealth* health = _player->GetComponent<PlayerHealth>();
-		health->GainHealth(HEALTH_GAIN_PER_ENEMY);
+		health->GainHealth(_healthGainPerEnemy);
 		_uiManager->UpdateHealthBar(health->GetCurrentHealth(), health->GetMaxHealth());
 	}
 	e->SetAlive(false);
@@ -155,7 +158,10 @@ void damn::GameManager::setPlayer(eden_ec::Entity* p)
 {
 	_player = p;
 	_weaponManager = _player->GetComponent<WeaponManager>();
+	if (_savedPlayerCurrentHealth > 0)
+		_player->GetComponent<PlayerHealth>()->SetCurrentHealth(_savedPlayerCurrentHealth);
 	UnlockGuns(false);
+	//_weaponManager->ChangeWeapon();
 }
 
 void damn::GameManager::setUIManager(UIManager* ui)
@@ -199,15 +205,18 @@ void damn::GameManager::Pause(bool pause)
 
 void damn::GameManager::GenerateEnemies()
 {
+	IncreaseDifficulty();
 	std::srand(time(NULL));
-
 	std::unordered_set<int> numbers = std::unordered_set<int>();
 	int i = 0;
 	int index = 0;
-	while (i < NUM_ENEMIES && i < _spawnPoints.size()) {
+	while (i < _numEnemies && i < _spawnPoints.size()) {
 		index = std::rand() % _spawnPoints.size();
 		if (!numbers.contains(index)) {
-			eden::SceneManager::getInstance()->InstantiateBlueprint("Enemy", _spawnPoints[index]->GetPosition());
+			if(_numRound <= (2*ROUND_FOR_WINNING)/3)
+				eden::SceneManager::getInstance()->InstantiateBlueprint("Enemy", _spawnPoints[index]->GetPosition());
+			else
+				eden::SceneManager::getInstance()->InstantiateBlueprint("EnemyHarder", _spawnPoints[index]->GetPosition());
 			RegisterEnemy();
 			numbers.insert(index);
 			++i;
@@ -225,7 +234,6 @@ void damn::GameManager::Awake()
 void damn::GameManager::Start()
 {
 	Setup();
-
 	eden::SceneManager::getInstance()->AddEntityToDontDestroyOnLoad(_ent);
 }
 
@@ -279,6 +287,21 @@ bool damn::GameManager::Win()
 	}
 
 	return _winCondition;
+}
+
+void damn::GameManager::IncreaseDifficulty()
+{
+	_ammoBoxChance -= 5;
+	if ((_numRound - _lastIncreasedEnemyNum) > 3) {
+		_lastIncreasedEnemyNum = _numRound;
+		_numEnemies++;
+	}
+	if (_numRound == _lastRoundMapChanged) {
+		_healthGainPerEnemy /= 2;
+		if(_timeCalm > 1)
+			_timeCalm -= 1;
+	}
+
 }
 
 void damn::GameManager::NextMap() {

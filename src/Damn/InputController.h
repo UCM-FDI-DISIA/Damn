@@ -48,6 +48,7 @@ namespace damn {
 		CameraMovement* _cameraMovement;
 		eden_ec::CTransform* _transform;
 		eden_input::InputManager* _inputManager;
+		eden_ec::CRigidBody* _rb;
 	};
 }
 #endif 

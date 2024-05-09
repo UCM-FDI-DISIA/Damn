@@ -9,7 +9,7 @@
 #include "ChangeCameraBackground.h"
 #include "EnemyAttack.h"
 #include "CameraMovement.h"
-#include "ProyectileMovement.h"
+#include "ProjectileMovement.h"
 #include "PlayerHealth.h"
 #include "EnemyHealth.h"
 #include "WeaponManager.h"
@@ -24,6 +24,7 @@
 #include "BulletPlayerDamage.h"
 #include "MenuBullets.h"
 #include "SoundController.h"
+#include "RomeComponent.h"
 
 void RegisterComponents() {
 	eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::getInstance();
@@ -36,7 +37,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::SoundController>();
 	factory->RegisterComponent<damn::EnemyAttack>();
 	factory->RegisterComponent<damn::CameraMovement>();
-	factory->RegisterComponent<damn::ProyectileMovement>();
+	factory->RegisterComponent<damn::ProjectileMovement>();
 	factory->RegisterComponent<damn::EnemyHealth>();
 	factory->RegisterComponent<damn::PlayerHealth>();
 	factory->RegisterComponent<damn::WeaponManager>();
@@ -49,6 +50,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::Rifle>();
 	factory->RegisterComponent<damn::BulletEnemyDamage>();
 	factory->RegisterComponent<damn::BulletPlayerDamage>();
+	factory->RegisterComponent<damn::RomeComponent>();
 }
 
 void LoadScene() {

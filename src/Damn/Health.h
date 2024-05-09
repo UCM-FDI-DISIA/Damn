@@ -17,6 +17,7 @@ namespace damn {
 		int GetMaxHealth();
 		int GetCurrentHealth();
 		void SetCurrentToMax(); // jugador
+		inline void SetCurrentHealth(int value) { _currentHealth = value; }
 
 		static std::string GetID() { return "HEALTH"; }
 

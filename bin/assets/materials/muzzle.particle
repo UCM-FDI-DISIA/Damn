@@ -10,7 +10,7 @@ particle_system Muzzle{
     emitter Point{
         direction 0 1 0
         angle 0
-        emission_rate 500
+        emission_rate 100
         time_to_live 1.0
         velocity_min 1
         velocity_max 5
