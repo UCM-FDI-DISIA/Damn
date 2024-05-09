@@ -17,6 +17,7 @@ void damn::InputController::Start()
 	_transform = _ent->GetComponent<eden_ec::CTransform>();
 	_rb = _ent->GetComponent<eden_ec::CRigidBody>();
 	_rb->SetTemporalDeactivation(true);
+	_inputManager = eden_input::InputManager::getInstance();
 	
 }
 
@@ -24,16 +25,16 @@ void damn::InputController::Update(float deltatime)
 {
 	eden_utils::Vector3 newDir = eden_utils::Vector3(0, 0, 0);
 
-	if (eden_input::InputManager::getInstance()->IsKeyHeld('w')) {
+	if (_inputManager->IsKeyHeld('w')) {
 		newDir += _transform->GetForward() * -1;
 	}
-	else if (eden_input::InputManager::getInstance()->IsKeyHeld('s')) {
+	else if (_inputManager->IsKeyHeld('s')) {
 		newDir += _transform->GetForward();
 	}
-	if (eden_input::InputManager::getInstance()->IsKeyHeld('d')) {
+	if (_inputManager->IsKeyHeld('d')) {
 		newDir += _transform->GetRight();
 	}
-	else if (eden_input::InputManager::getInstance()->IsKeyHeld('a')) {
+	else if (_inputManager->IsKeyHeld('a')) {
 		newDir += _transform->GetRight() * -1;
 	}
 
@@ -43,20 +44,20 @@ void damn::InputController::Update(float deltatime)
 	if(_cameraMovement)
 		_cameraMovement->SetMouseDirection(eden_input::InputManager::getInstance()->GetMouseDir());
 
-	if (eden_input::InputManager::getInstance()->IsMouseButtonDown(eden_input::InputManager::MOUSEBUTTON::LEFT)) {
+	if (_inputManager->IsMouseButtonDown(eden_input::InputManager::MOUSEBUTTON::LEFT)) {
 		if(_weaponManager)
 			_weaponManager->Shoot();
 	}
-	if (eden_input::InputManager::getInstance()->IsKeyDown('r')) {
+	if (_inputManager->IsKeyDown('r')) {
 		if (_weaponManager)
 			_weaponManager->Reload();
 	}
-	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::TAB)) {
+	if (_inputManager->IsKeyDown(eden_input::InputManager::TAB)) {
 		if (_weaponManager)
 			_weaponManager->ChangeWeapon();
 	}
 	
-	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::ESCAPE)) {
+	if (_inputManager->IsKeyDown(eden_input::InputManager::ESCAPE)) {
 		eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->Pause(true);
 		eden::SceneManager::getInstance()->PushScene("PauseMenu");
 	}

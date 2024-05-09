@@ -438,7 +438,7 @@ Enemy = {
 			Name = "ENEMY_ATTACK",
 			Arguments = {
 				AttackRate = "1.5",
-				RotationSpeed = "0.2"	
+				RotationSpeed = "150"	
 			}
 		}
 	}

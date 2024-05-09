@@ -36,7 +36,7 @@ void damn::EnemyAttack::Update(float t)
 			float rightAngle = acos(dir.Dot(_tr->GetRight())) * (180 / PI); //Usando el vector derecha del enemigo determinamos el lado hacia el que tiene que rotar
 			if (rightAngle > 90) _rotationCoef = -1;
 			else _rotationCoef = 1;
-			_tr->Yaw(_rotationSpeed * _rotationCoef);
+			_tr->Yaw(_rotationSpeed * _rotationCoef * t);
 		}
 		
 		if(frontAngle <= 3) { //Si el ángulo formado es menor a 3 grados, el enemigo puede disparar
