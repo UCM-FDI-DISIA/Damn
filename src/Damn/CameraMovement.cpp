@@ -43,11 +43,10 @@ void damn::CameraMovement::SetMouseDirection(std::pair<int, int> mouseDir)
 }
 
 void damn::CameraMovement::Update(float dt) {
-
-	_transform->Yaw(-dt * _mouseDirection.first * _sensivity);
-	_transform->LocalPitch(-dt * _mouseDirection.second * _sensivity);
+	_transform->Yaw(-_mouseDirection.first * _sensivity);
+	_transform->LocalPitch(-_mouseDirection.second * _sensivity);
 	if (abs(_transform->GetRotation().ToEuler().GetX()) > 1) //Limita el pitch de la cámara
 	{ 
-		_transform->LocalPitch(dt * _mouseDirection.second * _sensivity);
+		_transform->LocalPitch(_mouseDirection.second * _sensivity);
 	}
 }

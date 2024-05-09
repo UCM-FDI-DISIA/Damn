@@ -296,7 +296,7 @@ Player = {
 		{
 			Name = "CAMERA_MOVEMENT",
 			Arguments = { 
-				Sensivity = "50.0"
+				Sensivity = "0.1"
 			}
 		},
 		{
