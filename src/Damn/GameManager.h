@@ -47,6 +47,8 @@ namespace damn {
 
 		void Play(); //Método llamado al empezar a jugar
 
+		void Pause(bool pause);
+
 		static std::string GetID() { return "GAMEMANAGER"; };
 	protected:
 		void Init(eden_script::ComponentArguments* args) override;
@@ -64,7 +66,8 @@ namespace damn {
 		int _score;
 		int _enemiesLeft;
 		int _numRound, _lastRoundMapChanged, _lastRoundWeaponWasGiven;
-		enum {ENEMIES, CALM, MENU, WIN_MENU} _roundState;
+		enum states {ENEMIES, CALM, MENU, WIN_MENU} _roundState;
+		states _lastState;
 
 		// Jugador
 		int _numWeapons;

@@ -159,6 +159,17 @@ void damn::GameManager::ChangeScene(std::string sceneName) {
 	eden::SceneManager::getInstance()->ChangeScene(sceneName);
 }
 
+void damn::GameManager::Pause(bool pause)
+{
+	if (pause) {
+		_lastState = _roundState;
+		_roundState = MENU;
+	}
+	else {
+		_roundState = _lastState;
+	}
+}
+
 void damn::GameManager::GenerateEnemies()
 {
 	std::srand(time(NULL));

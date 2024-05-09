@@ -7,6 +7,7 @@
 #include "WeaponManager.h"
 #include "CameraMovement.h"
 #include "SceneManager.h"
+#include "GameManager.h"
 
 void damn::InputController::Start()
 {
@@ -56,6 +57,7 @@ void damn::InputController::Update(float deltatime)
 	}
 	
 	if (eden_input::InputManager::getInstance()->IsKeyDown(eden_input::InputManager::ESCAPE)) {
+		eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->Pause(true);
 		eden::SceneManager::getInstance()->PushScene("PauseMenu");
 	}
 }
