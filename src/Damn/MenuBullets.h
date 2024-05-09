@@ -35,6 +35,8 @@ namespace damn {
 		int _maxBullets = 300;
 		int _totalBullets = 0;
 
+		const float _spawnTime = 0.05;
+		float _timer = 0;
 		
 	};
 }
