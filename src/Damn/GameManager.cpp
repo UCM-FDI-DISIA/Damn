@@ -63,8 +63,6 @@ void damn::GameManager::Update(float dt)
 			EndGame("VictoryTheme.wav");
 		}
 		else _uiManager->StepWinMenu(_timer);
-		_timer += dt;
-		std::cout << dt << '\n' << "------------------" << '\n';
 	}
 		break;
 	case damn::GameManager::LOSE_MENU: 

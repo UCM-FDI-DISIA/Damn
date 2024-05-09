@@ -47,7 +47,6 @@ namespace damn {
 		WeaponManager* _weaponManager;
 		CameraMovement* _cameraMovement;
 		eden_ec::CTransform* _transform;
-		eden_ec::CRigidBody* _rb;
 		eden_input::InputManager* _inputManager;
 	};
 }
