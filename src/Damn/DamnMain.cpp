@@ -52,8 +52,10 @@ void RegisterComponents() {
 }
 
 void LoadScene() {
+	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
+	// Desactiva los mensajes en consola al crear entidades 
+	scnManager->SetDebugLog(false);
 	eden_render::RenderManager::getInstance()->SetWindowName("DAMN");
 	eden_render::RenderManager::getInstance()->SetWindowIcon("damnlogo64.bmp");
-	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
 	scnManager->PushScene("Menu");
 }
