@@ -3,6 +3,7 @@
 #include "Transform.h"
 #include "Quaternion.h"
 #include "SceneManager.h"
+#include "PlayerHealth.h"
 #include "ProyectileMovement.h"
 #include <math.h>
 #include <iostream>
@@ -28,7 +29,7 @@ void damn::EnemyAttack::Start()
 
 void damn::EnemyAttack::Update(float t)
 {
-	if (_player) {
+	if (_player && !_player->GetComponent<PlayerHealth>()->isDead()) {
 		eden_utils::Vector3 newPlayePos(_playerTr->GetPosition().GetX(), _tr->GetPosition().GetY(), _playerTr->GetPosition().GetZ());
 		eden_utils::Vector3 dir = (newPlayePos - _tr->GetPosition()).Normalized();
 		float frontAngle = acos(dir.Dot(_tr->GetForward())) * (180/PI); //Calcula el ángulo que forma el jugador con el forward del enemigo 

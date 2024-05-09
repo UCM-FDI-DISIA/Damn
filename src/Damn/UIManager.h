@@ -29,6 +29,9 @@ namespace damn {
 		void SetupWinMenu(int score);
 		void StepWinMenu(float timePassed);
 
+		void SetupLoseMenu(int score);
+		void StepLoseMenu(float timePassed);
+
 		static std::string GetID() { return "UIMANAGER"; }
 
 	protected:
@@ -37,15 +40,19 @@ namespace damn {
 		void Start() override {};
 
 	private:
+		void InstantiateMainMenuButton();
 		std::string GetFormat(int value);
 		const std::vector<std::string> _ids = { "AUI_HEALTH_BAR", "AUI_AMMO_TEXT", "AUI_GUN_IMAGE", "AUI_TIME_TEXT", "AUI_ENEMIES_LEFT_TEXT", "AUI_SCORE_TEXT", "AUI_ROUND_TEXT"};
 		const std::vector<std::string> _weaponImages = { "Pistol.png", "Shotgun.png", "Sniper.png"};
 		std::vector<eden_ec::Entity*> _ents = std::vector< eden_ec::Entity*>(_ids.size());
+		eden_ec::Entity* _healthVignette;
 		enum UIEnts {HEALTH_BAR, AMMO_TEXT, GUN_IMAGE, TIME_TEXT, ENEMIES_LEFT_TEXT, SCORE_TEXT, ROUND_TEXT };
 		const std::vector<char> _numbers = { 'I', 'V', 'X', 'L', 'C', 'D', 'M'};
 
-		enum WinMenuStates {VIGNETTE, WIN_TEXT, FINAL_SCORE_TEXT, WIN_SCORE_TEXT, MAIN_MENU_BUTTON, END };
+		enum WinMenuStates {VIGNETTE, WIN_TEXT, FINAL_SCORE_TEXT, WIN_SCORE_TEXT, MAIN_MENU_BUTTON, WIN_END };
 		WinMenuStates _winMenuState;
+		enum LoseMenuStates { CAMERA_ROTATION, LOSE_TEXT, FINAL_LOSE_SCORE, LOSE_SCORE_TEXT, MAIN_MENU_LOSE, LOSE_END };
+		LoseMenuStates _loseMenuState;
 		int _finalScore;
 	};
 }

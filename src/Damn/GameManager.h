@@ -8,7 +8,7 @@
 
 #define ROUNDS_FOR_NEXT_GUN 1
 
-#define ROUND_FOR_WINNING 2
+#define ROUND_FOR_WINNING 10
 
 #define SCORE_PER_ENEMY 5
 #define HEALTH_GAIN_PER_ENEMY 5
@@ -39,7 +39,8 @@ namespace damn {
 		void DieEnemy(eden_ec::Entity* e);
 		void AddScore(int score);
 		void AddWaypoint(eden_ec::CTransform* transform);
-		
+
+		void LoseGame();
 
 		void setPlayer(eden_ec::Entity* p);
 		inline eden_ec::Entity* getPlayer() { return _player; }
@@ -51,6 +52,9 @@ namespace damn {
 
 		static std::string GetID() { return "GAMEMANAGER"; };
 	protected:
+
+		void EndGame(std::string endSong);
+
 		void Init(eden_script::ComponentArguments* args) override;
 		void Awake() override;
 		void Start() override;
@@ -66,7 +70,7 @@ namespace damn {
 		int _score;
 		int _enemiesLeft;
 		int _numRound, _lastRoundMapChanged, _lastRoundWeaponWasGiven;
-		enum states {ENEMIES, CALM, MENU, WIN_MENU} _roundState;
+		enum states {ENEMIES, CALM, MENU, WIN_MENU, LOSE_MENU} _roundState;
 		states _lastState;
 
 		// Jugador

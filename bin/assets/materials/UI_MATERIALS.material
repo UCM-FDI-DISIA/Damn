@@ -488,6 +488,86 @@ material pause_white.png {
 	}
 }
 
+material loseHealth100.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth100.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth75.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth75.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth50.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth50.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth25.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth25.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
 material winText.png {
 	receive_shadows on
 	technique {

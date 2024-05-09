@@ -2420,6 +2420,12 @@ Entity75 = {
 	}
 }
 
+Entity76 = {
+	Name = "healthEffect",
+	Components = {
+	}
+}
+
 Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, 
 Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15,
  Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23,
@@ -2429,7 +2435,7 @@ Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15,
    Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, 
    Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, 
    Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, 
-   Entity72, Entity73, Entity74, Entity75 }
+   Entity72, Entity73, Entity74, Entity75, Entity76 }
 
 CollisionLayers = {
 	Layers = {

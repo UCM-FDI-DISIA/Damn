@@ -25,6 +25,8 @@ namespace damn {
 		void Init(eden_script::ComponentArguments* args) override;
 		void Start() override;
 		void Awake() override {};
+		
+		inline virtual void Die() { _currentHealth = 0; };
 
 		int _maxHealth;
 		int _currentHealth;

@@ -12,6 +12,7 @@
 #include "Entity.h"
 #include <Transform.h>
 #include <ErrorHandler.h>
+#include "BulletPlayerDamage.h"
 
 void damn::GameManager::ManageTimer(float dt)
 {
@@ -59,24 +60,52 @@ void damn::GameManager::Update(float dt)
 	case damn::GameManager::WIN_MENU:
 	{
 		if (_timer == 0) {
-			if (_ent->HasComponent("AUDIO_EMITTER")) {
-				_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("VictoryTheme.wav");
-				_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
-				_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
-				_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
-			}
-			_uiManager->SetupWinMenu(_score);
-			_player->GetComponent<InputController>()->Clear();
-			_player->RemoveComponent("INPUT_CONTROLLER");
+			EndGame("VictoryTheme.wav");
 		}
 		else _uiManager->StepWinMenu(_timer);
 		_timer += dt;
-
+		std::cout << dt << '\n' << "------------------" << '\n';
+	}
+		break;
+	case damn::GameManager::LOSE_MENU: 
+	{
+		if (_timer == 0) {
+			EndGame("DeathMenuTheme.wav");
+		}
+		else _uiManager->StepLoseMenu(_timer);
+		_timer += dt;
 	}
 		break;
 	default:
 		break;
 	}
+}
+
+void damn::GameManager::EndGame(std::string endSong) {
+	if (_ent->HasComponent("AUDIO_EMITTER")) {
+		eden_ec::CAudioEmitter* emitter = _ent->GetComponent<eden_ec::CAudioEmitter>();
+		emitter->ChangeClip(endSong);
+		emitter->Play();
+		emitter->SetVolume(0.6);
+		emitter->SetLoop(true);
+	}
+	_player->GetComponent<InputController>()->Clear();
+	_player->RemoveComponent("INPUT_CONTROLLER");
+	if (endSong == "VictoryTheme.wav")_uiManager->SetupWinMenu(_score);
+	else {
+		_uiManager->SetupLoseMenu(_score);
+		_player->GetComponent<eden_ec::CTransform>()->LocalRoll(-90);
+	}
+
+	std::vector<eden_ec::Entity*> ents = eden::SceneManager::getInstance()->GetEntitiesWithComponent(BulletPlayerDamage::GetID());
+	for (auto it : ents) {
+		it->SetAlive(false);
+	}
+}
+
+void damn::GameManager::LoseGame() {
+	_roundState = LOSE_MENU;
+	_timer = 0;
 }
 
 void damn::GameManager::Init(eden_script::ComponentArguments* args)
@@ -225,7 +254,7 @@ void damn::GameManager::Setup()
 	_score = 0;
 	_roundState = MENU;
 
-	_currentMap = 1;
+	_currentMap = 0;
 
 	_numRound = 1;
 	_lastRoundMapChanged = 1;

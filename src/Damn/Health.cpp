@@ -25,7 +25,9 @@ void damn::Health::GainHealth(int health)
 void damn::Health::LoseHealth(int health)
 {
 	_currentHealth -= health;
-	if (_currentHealth < 0) _currentHealth = 0;
+	if (_currentHealth < 0) {
+		Die();
+	}
 }
 
 int damn::Health::GetMaxHealth()

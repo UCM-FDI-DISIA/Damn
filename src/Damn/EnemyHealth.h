@@ -17,6 +17,7 @@ namespace damn {
 
 	protected:
 		void Start() override;
+		void Die() override;
 
 	private:
 		GameManager* _gameManager;

@@ -5,6 +5,9 @@
 #include "CText.h"
 #include "CImage.h"
 #include "GameManager.h"
+#include "Scene.h"
+#include "CameraMovement.h"
+#include "Transform.h"
 
 #include "RenderManager.h"
 
@@ -12,6 +15,26 @@ void damn::UIManager::UpdateHealthBar(float value, float maxValue)
 {
 	if (_ents[HEALTH_BAR] != nullptr) {
 		_ents[HEALTH_BAR]->GetComponent<eden_ec::CBar>()->SetBarPercentage(value / maxValue * 100);
+		if (_healthVignette == nullptr) _healthVignette = eden::SceneManager::getInstance()->FindEntity("healthEffect_0");
+		if (value <= 0) {
+			_healthVignette->GetComponent<eden_ec::CImage>()->SetMaterial("loseHealth100.png");
+			_healthVignette->SetActive(true);
+		}
+		else if (value <= maxValue*0.25) {
+			_healthVignette->GetComponent<eden_ec::CImage>()->SetMaterial("loseHealth75.png");
+			_healthVignette->SetActive(true);
+		}
+		else if (value <= maxValue*0.5) {
+			_healthVignette->GetComponent<eden_ec::CImage>()->SetMaterial("loseHealth50.png");
+			_healthVignette->SetActive(true);
+		}
+		else if (value <= maxValue*0.75) {
+			_healthVignette->GetComponent<eden_ec::CImage>()->SetMaterial("loseHealth25.png");
+			_healthVignette->SetActive(true);
+		}
+		else {
+			_healthVignette->SetActive(false);
+		}
 	}
 }
 
@@ -106,6 +129,17 @@ void damn::UIManager::SetupWinMenu(int score)
 	}
 }
 
+void damn::UIManager::SetupLoseMenu(int score)
+{
+	_loseMenuState = CAMERA_ROTATION;
+	_finalScore = score;
+
+	for (int i = 0; i < _ents.size(); ++i) {
+		if (_ents[i]) _ents[i]->SetAlive(false);
+		_ents[i] = nullptr;
+	}
+}
+
 void damn::UIManager::StepWinMenu(float timePassed)
 {
 	if (timePassed >= NEXT_WINMENU_STEP && _winMenuState == VIGNETTE) {
@@ -113,7 +147,7 @@ void damn::UIManager::StepWinMenu(float timePassed)
 		_winMenuState = WIN_TEXT;
 	}
 	if (timePassed >= NEXT_WINMENU_STEP*2 && _winMenuState == WIN_TEXT) {
-		eden::SceneManager::getInstance()->InstantiateBlueprint("WinText");
+		eden_ec::Entity* ent = eden::SceneManager::getInstance()->InstantiateBlueprint("WinText");
 		_winMenuState = FINAL_SCORE_TEXT;
 	}
 	if (timePassed >= NEXT_WINMENU_STEP*3 && _winMenuState == FINAL_SCORE_TEXT) {
@@ -121,18 +155,46 @@ void damn::UIManager::StepWinMenu(float timePassed)
 		_winMenuState = WIN_SCORE_TEXT;
 	}
 	if (timePassed >= NEXT_WINMENU_STEP*4 && _winMenuState == WIN_SCORE_TEXT) {
-		eden::SceneManager::getInstance()->InstantiateBlueprint("WinScoreText")->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(_finalScore));
+		eden::SceneManager::getInstance()->InstantiateBlueprint("ScoreText")->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(_finalScore));
 		_winMenuState = MAIN_MENU_BUTTON;
 	}
 	if (timePassed >= NEXT_WINMENU_STEP*5 && _winMenuState == MAIN_MENU_BUTTON) {
-		eden::SceneManager::getInstance()->InstantiateBlueprint("MainMenuButton");
-		eden::SceneManager::getInstance()->InstantiateBlueprint("UI_Cursor");
-		eden_render::RenderManager* renderMngr = eden_render::RenderManager::getInstance();
-		renderMngr->SetRelativeMouseMode(false);
-		renderMngr->SetWindowGrab(false);
-		_winMenuState = END;
+		InstantiateMainMenuButton();
+		_winMenuState = WIN_END;
 	}
 }
+
+void damn::UIManager::StepLoseMenu(float timePassed) {
+	if (timePassed >= NEXT_WINMENU_STEP && _loseMenuState == CAMERA_ROTATION) {
+		_loseMenuState = LOSE_TEXT;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP * 2 && _loseMenuState == LOSE_TEXT) {
+		eden_ec::Entity* ent = eden::SceneManager::getInstance()->InstantiateBlueprint("LoseText");
+		_loseMenuState = FINAL_LOSE_SCORE;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP * 3 && _loseMenuState == FINAL_LOSE_SCORE) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("FinalScoreText");
+		_loseMenuState = LOSE_SCORE_TEXT;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP * 4 && _loseMenuState == LOSE_SCORE_TEXT) {
+		eden::SceneManager::getInstance()->InstantiateBlueprint("ScoreText")->GetComponent<eden_ec::CText>()->SetNewText(std::to_string(_finalScore));
+		_loseMenuState = MAIN_MENU_LOSE;
+	}
+	if (timePassed >= NEXT_WINMENU_STEP * 5 && _loseMenuState == MAIN_MENU_LOSE) {
+		InstantiateMainMenuButton();
+		_loseMenuState = LOSE_END;
+	}
+}
+
+void damn::UIManager::InstantiateMainMenuButton() {
+	eden::SceneManager::getInstance()->InstantiateBlueprint("MainMenuButton");
+	eden::SceneManager::getInstance()->InstantiateBlueprint("UI_Cursor");
+	eden_render::RenderManager* renderMngr = eden_render::RenderManager::getInstance();
+	renderMngr->SetRelativeMouseMode(false);
+	renderMngr->SetWindowGrab(false);
+}
+
+
 
 std::string damn::UIManager::GetFormat(int value)
 {
@@ -149,11 +211,18 @@ std::string damn::UIManager::GetFormat(int value)
 
 void damn::UIManager::Awake()
 {
+	_healthVignette = nullptr;
 	for (int i = 0; i < _ids.size(); ++i) {
 		_ents[i] = eden::SceneManager::getInstance()->FindEntity(_ids[i]);
 	}
 	eden_ec::Entity* gM = eden::SceneManager::getInstance()->FindEntity("GAME_MANAGER");
 	if (gM) {
 		gM->GetComponent<GameManager>()->setUIManager(this);
+	}
+
+	if (!_healthVignette) {
+		eden::SceneManager* mngr = eden::SceneManager::getInstance();
+		_healthVignette = mngr->FindEntity("healthEffect_0");
+		_healthVignette->SetActive(false);
 	}
 }

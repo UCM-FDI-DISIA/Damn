@@ -444,13 +444,13 @@ Enemy = {
 	}
 }
 
-WinScoreText = {
-	Name = "WinScoreText",
+ScoreText = {
+	Name = "ScoreText",
 	Components = {
 		{
 			Name = "TEXT",
 			Arguments = {
-				OverlayName = "WinScoreText",
+				OverlayName = "ScoreText",
 				XPos = "50",
 				YPos = "65",
 				Depth = "1",
@@ -458,6 +458,24 @@ WinScoreText = {
 				Text = "00000",
 				Font = "DooM.ttf",
 				Color = "255|255|255"
+			}
+		}
+	}
+}
+
+healthEffect = {
+	Name = "healthEffect",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "healthEffect",
+				XPos = "50",
+				YPos = "50",
+				Width = "100",
+				Height = "100",
+				Texture = "loseHealth25.png",
+				Depth = "4"
 			}
 		}
 	}
@@ -517,6 +535,24 @@ WinText = {
 	}
 }
 
+LoseText = {
+	Name = "LoseText",
+	Components = {
+		{
+			Name = "IMAGE",
+			Arguments = {
+                OverlayName= "LoseText",
+				XPos = "50",
+				YPos = "25",
+				Width = "60",
+				Height = "18",
+				Texture = "loseText.png",
+				Depth = "3"
+			}
+		}
+	}
+}
+
 MainMenuButton = {
 	Name = "MainMenuButton",
 	Components = {
@@ -567,4 +603,4 @@ Cursor = {
 }
 
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, Ammo, MenuBullet, 
-WinScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText }
