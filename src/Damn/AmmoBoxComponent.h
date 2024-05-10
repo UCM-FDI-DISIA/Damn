@@ -42,22 +42,22 @@ namespace damn {
 		void Start() override;
 	private:
 		/// @brief Referencia al Transform
-		eden_ec::CTransform* _transform;
+		eden_ec::CTransform* _transform = nullptr;
 		
 		/// @brief Velocidad de rotacion
-		float _rotationSpeed = 70;
+		float _rotationSpeed = 70.0f;
 
 		/// @brief Contador de tiempo
-		float _timeCounter = 0;
+		float _timeCounter = 0.0f;
 
 		/// @brief Factor de escala
-		float _scaleGrowth = 1.2;
+		float _scaleGrowth = 1.2f;
 
 		/// @brief Escala minima
-		float _minScale = 1;
+		float _minScale = 1.0f;
 
 		/// @brief Tiempo de vida
-		float _lifeTime = 5;
+		float _lifeTime = 5.0f;
 
 		/// @brief Municion dada
 		int _ammoGiven = 3;

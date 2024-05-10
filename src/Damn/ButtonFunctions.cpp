@@ -134,11 +134,11 @@ void damn::ButtonFunctions::ChangeResolutionText() {
 }
 
 void damn::ButtonFunctions::VolumeUp() {
-	ChangeVolume(0.05);
+	ChangeVolume(0.05f);
 }
 
 void damn::ButtonFunctions::VolumeDown() {
-	ChangeVolume(-0.05);
+	ChangeVolume(-0.05f);
 }
 
 void damn::ButtonFunctions::ChangeVolume(float num) {

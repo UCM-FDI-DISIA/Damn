@@ -48,13 +48,13 @@ namespace damn {
 		eden_ec::CTransform* _playerTr = nullptr;
 
 		/// @brief Cadencia de ataque
-		float _attackRate = 1;
+		float _attackRate = 1.0f;
 
 		/// @brief Temporizador de ataque
-		float _attackTimer = 0;
+		float _attackTimer = 0.0f;
 
 		/// @brief Velocidad de rotacion
-		float _rotationSpeed = 0.4;
+		float _rotationSpeed = 0.4f;
 
 		/// @brief Coeficiente de rotacion
 		int _rotationCoef = 1;

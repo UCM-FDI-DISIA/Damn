@@ -56,7 +56,7 @@ namespace damn {
 		int _totalBullets = 0;
 
 		/// @brief Tiempo de aparicion de balas
-		const float _spawnTime = 0.05;
+		float _spawnTime = 0.05f;
 
 		/// @brief Contador de tiempo
 		float _timer = 0;

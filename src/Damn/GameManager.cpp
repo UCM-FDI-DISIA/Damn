@@ -21,7 +21,7 @@ void damn::GameManager::ManageTimer(float dt)
 	if (_timerText != left) {
 		if (_uiManager)
 			_uiManager->SetTimeLeft(left);
-		_timerText = left;
+		_timerText = (float)left;
 	}
 }
 
@@ -85,7 +85,7 @@ void damn::GameManager::EndGame(std::string endSong) {
 		eden_ec::CAudioEmitter* emitter = _ent->GetComponent<eden_ec::CAudioEmitter>();
 		emitter->ChangeClip(endSong);
 		emitter->Play();
-		emitter->SetVolume(0.6);
+		emitter->SetVolume(0.6f);
 		emitter->SetLoop(true);
 	}
 	if (_player->HasComponent("INPUT_CONTROLLER")) {
@@ -137,7 +137,7 @@ void damn::GameManager::DieEnemy(eden_ec::Entity* e)
 	if (_player && _player->HasComponent("PLAYER_HEALTH") && _uiManager) {
 		damn::PlayerHealth* health = _player->GetComponent<PlayerHealth>();
 		health->GainHealth(_healthGainPerEnemy);
-		_uiManager->UpdateHealthBar(health->GetCurrentHealth(), health->GetMaxHealth());
+		_uiManager->UpdateHealthBar((float)(health->GetCurrentHealth()), (float)(health->GetMaxHealth()));
 	}
 	e->SetAlive(false);
 }
@@ -170,7 +170,7 @@ void damn::GameManager::setUIManager(UIManager* ui)
 	_uiManager->SetScore(_score);
 	_uiManager->SetRound(_numRound);
 	if(_savedPlayerCurrentHealth > 0) 
-		_uiManager->UpdateHealthBar(_savedPlayerCurrentHealth, _savedPlayerMaxHealth);
+		_uiManager->UpdateHealthBar((float)(_savedPlayerCurrentHealth), (float)(_savedPlayerMaxHealth));
 }
 
 void damn::GameManager::Play()
@@ -179,7 +179,7 @@ void damn::GameManager::Play()
 	if (_ent->HasComponent("AUDIO_EMITTER")) {
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("gameTheme.wav");
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6f);
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
 	}
 }
@@ -206,7 +206,7 @@ void damn::GameManager::Pause(bool pause)
 void damn::GameManager::GenerateEnemies()
 {
 	IncreaseDifficulty();
-	std::srand(time(NULL));
+	std::srand((unsigned int)(time(NULL)));
 	std::unordered_set<int> numbers = std::unordered_set<int>();
 	int i = 0;
 	int index = 0;
@@ -273,7 +273,7 @@ void damn::GameManager::Setup()
 	if (_ent->HasComponent("AUDIO_EMITTER")) {
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->ChangeClip("MenuTheme.wav");
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->Play();
-		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6);
+		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetVolume(0.6f);
 		_ent->GetComponent<eden_ec::CAudioEmitter>()->SetLoop(true);
 	}
 }

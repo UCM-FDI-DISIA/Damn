@@ -14,14 +14,23 @@ namespace damn {
 		/// @brief Destructora por defecto
 		~ButtonFunctions() = default;
 
+		/// @brief Metodo update heredado de Component 
+		/// @param t El tiempo entre frames calculado por el motor
 		void Update(float t) override;
 
+		/// @brief ID del componente
+		/// @return Devuelve el ID del componente
 		static std::string GetID() { return "BUTTON_FUNCTIONS"; }
 	protected:
+
+		/// @brief Construye el componente dado unos argumentos. Se obtendrán de una lectura de un .lua
+		/// @param args Argumentos leídos de .lua
 		void Init(eden_script::ComponentArguments* args) override;
 
+		/// @brief Metodo Awake override de Component
 		void Awake() override {}
 
+		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes
 		void Start() override {}
 	private:
 		/// @brief Control de las iteraciones realizadas
