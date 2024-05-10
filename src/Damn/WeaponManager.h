@@ -10,7 +10,10 @@ namespace damn {
 	class WeaponManager : public eden_ec::Component
 	{
 	public:
+		/// @brief Constructora por defecto
 		WeaponManager() = default;
+		
+		/// @brief Destructora por defecto
 		~WeaponManager() = default;
 		
 		/// @brief Metodo update heredado de Component 
@@ -30,15 +33,20 @@ namespace damn {
 		/// @brief Metodo para cambiar de arma
 		void ChangeWeapon();
 
-		/// @brief Metodo para desbloquear la escopeta, pone el booleano shotgun en true
+		/// @brief Metodo para desbloquear la escopeta
 		void UnlockShotGun();
 
+		/// @brief Metodo para desbloquear el rifle
 		void UnlockRifle();
 
+		/// @brief Actualiza el HUD del juego con la municion del arma actual
 		void UpdateUIAmmo();
 
+		/// @brief Enumerado para facilitar el acceso al vector de armas
 		enum WEAPON { GUN, SHOTGUN, RIFLE };
 
+		/// @brief ID del componente
+		/// @return Devuelve el ID del componente
 		static std::string GetID() { return "WEAPON_MANAGER"; }
 
 	protected:
@@ -53,13 +61,23 @@ namespace damn {
 		void Start() override;
 
 	private:
+		/// @brief Metodo para desbloquear la pistola, se llama al empezar el juego
 		void UnlockBaseWeapon();
 
-		bool _hasDefaultWeapon;
-		WEAPON _actualWeapon;
+		/// @brief Booleano para controlar si ya se ha añadido el arma principal al jugador
+		bool _hasDefaultWeapon = false;
+
+		/// @brief Enumerado de arma actual
+		WEAPON _actualWeapon = GUN;
+
+		/// @brief Vector de armas que tiene el jugador
 		std::vector<WeaponComponent*> _weapons;
+
+		/// @brief Numero de armas actuales
 		int _numWeapons = 0;
-		UIManager* _uiManager;
+
+		/// @brief Referencia al UIManager para actualizar la HUD
+		UIManager* _uiManager = nullptr;
 	};
 }
 #endif

@@ -20,15 +20,21 @@ namespace damn {
 	class InputController : public eden_ec::Component
 	{
 	public:
+		/// @brief Constructora por defecto
 		InputController() = default;
+
+		/// @brief Destructora por defecto
 		~InputController() override = default;
 
 		/// @brief Metodo update heredado de Component 
+		/// @param deltaTime El tiempo entre frames calculado por el motor
 		void Update(float deltatime) override;
 
 		/// @brief Limpia el estado de las direcciones dadas a los diferentes componentes
 		void Clear();
 
+		/// @brief ID del componente
+		/// @return Devuelve el ID del componente
 		static std::string GetID() { return "INPUT_CONTROLLER"; }
 
 	protected:
@@ -39,16 +45,27 @@ namespace damn {
 		/// @brief Metodo Awake override de Component
 		void Awake() override {};
 
-		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes, en este caso el MovementController de la entidad
+		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes
 		void Start() override;
 
 	private:
-		MovementController* _movementController;
-		WeaponManager* _weaponManager;
-		CameraMovement* _cameraMovement;
-		eden_ec::CTransform* _transform;
-		eden_input::InputManager* _inputManager;
-		eden_ec::CRigidBody* _rb;
+		/// @brief Referencia al componente de movimiento del jugador
+		MovementController* _movementController = nullptr;
+
+		/// @brief Referencia al manager de armas del jugador
+		WeaponManager* _weaponManager = nullptr;
+
+		/// @brief Referencia al componente para mover la camara
+		CameraMovement* _cameraMovement = nullptr;
+
+		/// @brief Referencia al Transform del jugador
+		eden_ec::CTransform* _transform = nullptr;
+
+		/// @brief Referencia al InputManager
+		eden_input::InputManager* _inputManager = nullptr;
+		
+		/// @brief Referencia al RigidBody
+		eden_ec::CRigidBody* _rb = nullptr;
 	};
 }
 #endif 
