@@ -87,7 +87,7 @@ void damn::UIManager::SetRound(int round)
 		std::string finalText = "";
 		std::string n = std::to_string(round);
 		int index = 2;
-		for (int i = n.size() - 1; i >= 0; i--) {
+		for (int i = (int)(n.size()) - 1; i >= 0; i--) {
 			if (n[i] == '4') {
 				text.push_back(_numbers[index - 2]);
 				text.push_back(_numbers[index - 1]);

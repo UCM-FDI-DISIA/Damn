@@ -18,7 +18,7 @@ void damn::MenuBullets::Update(float t) {
     if (_timer > _spawnTime) {
         int angle = rand() % (_totalAngle + 1) + _minAngle;
 
-        eden_utils::Vector3 positionOffset(cosf((angle) * PI / 180.0f) * 10, 20.0f, sinf((angle) * PI / 180.0f) * 10);
+        eden_utils::Vector3 positionOffset((float)(cosf(((float)(angle)) * (float)(PI) / 180.0f) * 10.0f), 20.0f, (float)(sinf(((float)(angle)) * (float)(PI) / 180.0f) * 10.0f));
 
         eden_utils::Vector3 bulletPosition = _cameraTransform->GetPosition() + positionOffset;
 
@@ -30,7 +30,7 @@ void damn::MenuBullets::Update(float t) {
             _instantiatedBullets.push_back(bullet);
             _totalBullets++;
         }
-        _minAngle = std::abs(_ent->GetComponent<damn::MainMenuCameraRotation>()->GetGlobalRotation()) - 115;
+        _minAngle = (int)(std::abs(_ent->GetComponent<damn::MainMenuCameraRotation>()->GetGlobalRotation())) - 115;
         _minAngle %= 360;
 
         for (auto it = _instantiatedBullets.begin(); it != _instantiatedBullets.end();) {

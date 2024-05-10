@@ -29,7 +29,7 @@ void damn::CameraMovement::Start() {
 
 	eden_ec::CCamera* cam = _ent->GetComponent<eden_ec::CCamera>();
 	if (cam) {
-		cam->SetNearClipDistance(0.1);
+		cam->SetNearClipDistance(0.1f);
 	}
 
 	_transform->SetRotation(eden_utils::Quaternion::Identity());
