@@ -164,3 +164,6 @@ Una raza alienígena ha secuestrado a nuestro protagonista, encerrándolo en una
 - GunRack2.mp3 by AKkingStudio -- (https://freesound.org/s/679877/) -- License: Creative Commons 0
 - Shotgun Shell Insert.wav by CombatSFX4You -- (https://freesound.org/s/563650/) -- License: Attribution NonCommercial 3.0
 - Música del juego del canal de Youtube de Karl Casey @ White Bat Audio (https://www.youtube.com/@WhiteBatAudio) de uso libre
+- Retro pickup 2 by MaoDin204 -- (https://freesound.org/s/717706/) -- License: Creative Commons 0
+- AmazDooM by Amazingmax -- (https://www.dafont.com/amazdoom.font#null) -- License: Creative Commons Attribution-Noncommercial 3.0 Unported (http://creativecommons.org/licenses/by-nc/3.0/).
+- Doom Font Generator by eevee (https://c.eev.ee/doom-text-generator/)
