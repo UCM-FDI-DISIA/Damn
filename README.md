@@ -149,3 +149,18 @@ Una raza alienígena ha secuestrado a nuestro protagonista, encerrándolo en una
 - [**Wolfenstein 3D**](https://store.steampowered.com/app/2270/Wolfenstein_3D/?l=spanish), *1992, [Id Software](https://www.idsoftware.com/)*
 - [**Portal**](https://store.steampowered.com/app/400/Portal/?l=spanish), *2007, [Valve](https://www.valvesoftware.com/es/)*
 - [**Portal 2**](https://store.steampowered.com/app/620/Portal_2/?l=spanish), *2011, [Valve](https://www.valvesoftware.com/es/)*
+
+## **11 - Assets Usados**
+- Double Barrel Shotgun by J-Toastie [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/Emvvx56omx)
+- Box of bullets by mason [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/buqhG_C-fWK)
+- Rigged Glock by J-Toastie [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/FpMvDqjZFr)
+- Sniper Rifle by J-Toastie [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/vGAzj2Of5M)
+- pickup_ammo.wav by BBBBilly -- (https://freesound.org/s/653032/) -- License: Creative Commons 0
+- Sniper Rifle Shot/Gun Shot (Outdoor/Close) with Bolt Action [Mixed] by EFlexMusic -- (https://freesound.org/s/393651/) -- License: Attribution NonCommercial 3.0
+- P38 Shot (3).ogg by smill.and.welson -- (https://freesound.org/s/699786/) -- License: Attribution 4.0
+- Shotgun Shot 01.wav by MATRIXXX_ -- (https://freesound.org/s/405504/) -- License: Creative Commons 0
+- M9 Reload by oneshotofficial -- (https://freesound.org/s/616758/) -- License: Creative Commons 0
+- galil reload sound.mp3 by GFL7 -- (https://freesound.org/s/276963/) -- License: Creative Commons 0
+- GunRack2.mp3 by AKkingStudio -- (https://freesound.org/s/679877/) -- License: Creative Commons 0
+- Shotgun Shell Insert.wav by CombatSFX4You -- (https://freesound.org/s/563650/) -- License: Attribution NonCommercial 3.0
+- Música del juego del canal de Youtube de Karl Casey @ White Bat Audio (https://www.youtube.com/@WhiteBatAudio) de uso libre
